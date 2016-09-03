@@ -1,0 +1,22 @@
+#article{
+    font-family: 楷体;
+    margin: auto;
+    margin-top: 20px;
+    width: 900px;
+    padding: 20px;
+    border-style: solid;
+    border-width: 0px 2px 0px 2px;
+    border-color: #e0e0e0;
+}
+
+#name{
+    text-align: center;
+}
+
+p{
+    padding-top: 10px;
+    font-size: 23px;
+    text-indent: 2em;
+    letter-spacing: 5px;
+    line-height: 30px;
+}
