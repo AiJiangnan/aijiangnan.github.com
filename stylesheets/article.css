@@ -13,6 +13,12 @@
     text-align: center;
 }
 
+.subname{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 p{
     padding-top: 10px;
     font-size: 23px;
