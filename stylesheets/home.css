@@ -3,10 +3,23 @@
     padding: 0px;
 }
 
-body{
-    background-color: #0000ff;
+#head{
+    height: 600px;
+    font-family: 楷体;
+    text-align: center;
 }
 
-#head{
-    background-color: #ff0000;
+h1{
+    font-size: 80px;
+    padding-top: 200px;
+}
+
+h2{
+    font-family: Helvetica;
+    text-decoration: none;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
 }
