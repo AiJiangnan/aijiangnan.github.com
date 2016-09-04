@@ -1,0 +1,21 @@
+body{
+	background-color: #1111FF;
+}
+
+#body{
+	width: 860px;
+	margin: auto;
+	margin-top: 40px;
+	padding: 20px;
+}
+
+table{
+	background-color: #ffffff;
+	border-collapse:collapse;
+	width: 860px;
+	text-align: center;
+}
+
+td{
+	padding: 5px;
+}
