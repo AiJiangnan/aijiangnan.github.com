@@ -1,7 +1,3 @@
-body{
-	background-color: #1111FF;
-}
-
 #body{
 	width: 860px;
 	margin: auto;
@@ -10,7 +6,6 @@ body{
 }
 
 table{
-	background-color: #ffffff;
 	border-collapse:collapse;
 	width: 860px;
 	text-align: center;
