@@ -5,6 +5,21 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
     <title>一品江南</title>
+    <script language="javascript"> 
+    function showPic(e,sUrl){
+                            var x,y; 
+                            x = e.clientX; 
+                            y = e.clientY; 
+                            document.getElementById("Layer1").style.left = x+2+'px';
+                            document.getElementById("Layer1").style.top = y+2+'px';
+                            document.getElementById("Layer1").innerHTML = "<img border='0' src=\"" + sUrl + "\">";
+                            document.getElementById("Layer1").style.display = "";
+                            }
+                            function hiddenPic(){
+                            document.getElementById("Layer1").innerHTML = "";
+                            document.getElementById("Layer1").style.display = "none";
+                        }
+    </script>
 </head>
 <body>
     <div><ul class="top_list">
@@ -13,12 +28,15 @@
     <div id="head">
     <h1>一品江南</h1>
     <h2>
-        AiJiangnan<br>
+        <!--<div id="Layer1" style="display: none; position: absolute; z-index: 100;">-->
+        <a href="" onmouseout="hiddenPic();" onmousemove="showPic(event,'http://a3.qpic.cn/psb?/V11dQAxI2WU4m1/KfahMtkxjeWxjgwT5xj1kyz5OnoLncRkIuMychurveY!/b/dPgAAAAAAAAA&bo=oADWAKAA1gAFCSo!&rf=viewer_4');">
+         AiJiangnan</a><br>
         <a title="点击这里给我发信息" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=904629998&site=qq&menu=yes">
             QQ:904629998
         </a><br>
         <img title="微信扫一扫" width="150" height="150" src="http://a3.qpic.cn/psb?/V11dQAxI2WU4m1/z7uhcjzzVmM*4L3F*fDQNlvr.M7bWYK1AjAQHQyQNhM!/b/dAYBAAAAAAAA&ek=1&kp=1&pt=0&bo=rgGuAQAAAAAFByQ!&sce=60-2-2&rf=viewer_4"/>
     </h2>
     </div>
+    <div id="Layer1" style="display: none; position: absolute; z-index: 100;">
 </body>
 </html>
