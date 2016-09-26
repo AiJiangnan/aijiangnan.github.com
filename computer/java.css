@@ -1,0 +1,22 @@
+#body{
+	width: 1200px;
+	height: 1000px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+iframe{
+	height: 800px;
+}
+
+#list{
+	background-color: #eeeeee;
+	border: 0px;
+	width: 300px;
+}
+
+#content{
+	background-color: #00bbff;
+	border: 0px;
+	width: 892px;
+}
