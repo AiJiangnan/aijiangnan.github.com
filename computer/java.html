@@ -5,6 +5,7 @@
 	<title>Java</title>
 	<link rel="stylesheet" href="java.css">
 	<link rel="stylesheet" href="../stylesheets/public.css">
+	
 </head>
 <body>
 	<div><ul class="top_list">
@@ -14,8 +15,24 @@
             <li class="top_item"><a href="../math.html">数学</a></li>
     </ul></div>
 	<div id="body">
-		<iframe id="list" src="java/java_list.html"></iframe>
-		<iframe id="content" src="java/title_1.html"></iframe>
+		<iframe id="list" src="java_list.html"></iframe>
+		<iframe id="content" name="myiframe" src="java/article_001.html"></iframe>
+	</div>
+	<div id="top_button">
+		<a href="#"><img title="回到顶部" id="top" src="http://p1.qhmsg.com/t016ec9e59c24e15457.png"/></a>
 	</div>
 </body>
 </html>
+<script>
+		function scroll(p){
+		var d = document,dd = d.documentElement,db = d.body,w = window,o = d.getElementById(p.id),ie = /msie/i.test(navigator.userAgent),style;
+		if(o){o.style.cssText +=";position:"+(p.f&&!ie?'fixed':'absolute')+";"+(p.l==undefined?'right:0;':'left:'+p.l+'px;')+(p.t!=undefined?'top:'+p.t+'px':'bottom:0');
+		if(p.f&&ie){o.style.cssText +=';left:expression(body.scrollLeft + '+(p.l==undefined?db.clientWidth-o.offsetWidth:p.l)+' + "px");top:expression(body.scrollTop +'+(p.t==undefined?db.clientHeight-o.offsetHeight:p.t)+'+ "px" );'
+		db.style.cssText +=";background-image:url(about:blank);background-attachment:fixed;"
+		}else{if(!p.f){w.onresize = w.onscroll = function(){var timer,timer1;return function(){
+		if(timer)clearTimeout(timer);timer = setTimeout(function(){timer1 = setInterval(function(){
+		var st = db.scrollTop,c;c = st  - o.offsetTop + (p.t!=undefined?p.t:(w.innerHeight||db.clientHeight)-o.offsetHeight);
+		if(c!=0){o.style.top = o.offsetTop + Math.ceil(Math.abs(c)/10)*(c<0?-1:1) + 'px';}else{clearInterval(timer1);
+		}},10)},100)}}()}}}}
+		scroll({id:'top_button',l:0,t:200,f:1})
+</script>

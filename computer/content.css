@@ -1,0 +1,19 @@
+#body{
+	font-family: "微软雅黑";
+}
+
+h1{
+	margin: 5px 0px 5px 0px;
+	font-size: 25px;
+}
+
+h2{
+	margin: 3px 0px 3px 0px;
+	font-size: 20px;
+}
+
+p{
+	margin: 3px 0px 3px 0px;
+	text-indent: 2em;
+	line-height: 24px;
+}

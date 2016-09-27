@@ -1,12 +1,11 @@
 #body{
 	width: 1200px;
-	height: 1000px;
 	margin: auto;
 	margin-top: 20px;
 }
 
 iframe{
-	height: 800px;
+	height: 2500px;
 }
 
 #list{
@@ -16,7 +15,17 @@ iframe{
 }
 
 #content{
-	background-color: #00bbff;
+	background-color: #eeeeee;
 	border: 0px;
 	width: 892px;
+}
+
+#top_button{
+	margin-top: 200px;
+	margin-left: 1300px;
+}
+
+#top{
+	position:absolute; 
+	clip:rect(0px 50px 50px 0px);
 }
