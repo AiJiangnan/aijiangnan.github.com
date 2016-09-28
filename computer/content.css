@@ -18,6 +18,28 @@ p{
 	line-height: 24px;
 }
 
-.image{
+table{
+	border-collapse: collapse;
+	margin: auto;
 	text-align: center;
+}
+
+ol{
+	margin: 0;
+}
+
+.image{
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+}
+
+textarea{
+	margin: 5px 0px 5px 0px;
+	padding: 5px;
+	width: 600px;
+	border: none;
+	resize: none;
+	font-family: 微软雅黑;
+	background-color: #5f5f5f;
+	color: #ffffff;
 }
