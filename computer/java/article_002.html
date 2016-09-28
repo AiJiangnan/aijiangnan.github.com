@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../content.css">
+</head>
+<body>
+	<div id="body">
+		<h1>Java开发环境与开发工具</h1>
+			<ul>
+				<li>JDK(Java Development Kit)</li>
+				<li>JRE(Java Runtime Environment)</li>
+				<li>eclipse(IDE)</li>
+			</ul>
+		<h2>JDK</h2>
+			<p>jdk是Java语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。</p>
+			<br>
+			<table border="1">
+				<caption>JDK包含的基本组件</caption>
+				<tr>
+					<th>程序</th><th>功能</th>
+				</tr>
+				<tr>
+					<td>javac</td><td>编译器，将源程序转成字节码</td>
+				</tr>
+				<tr>
+					<td>jar</td><td>打包工具，将相关的类文件打包成一个文件</td>
+				</tr>
+				<tr>
+					<td>javadoc</td><td>文档生成器，从源码注释中提取文档</td>
+				</tr>
+				<tr>
+					<td>jdb</td><td>debugger，查错工具</td>
+				</tr>
+				<tr>
+					<td>java</td><td>运行编译后的java程序(.class后缀的)</td>
+				</tr>
+				<tr>
+					<td>appletviewer</td><td>小程序浏览器，一种执行HTML文件上的Java小程序的Java浏览器。</td>
+				</tr>
+				<tr>
+					<td>Javah</td><td>产生可以调用Java过程的C过程，或建立能被Java程序调用的C过程的头文件。</td>
+				</tr>
+				<tr>
+					<td>Javap</td><td>Java反汇编器，显示编译类文件中的可访问功能和数据，同时显示字节代码含义。</td>
+				</tr>
+				<tr>
+					<td>Jconsole</td><td>Java进行系统调试和监控的工具。</td>
+				</tr>
+			</table>
+			<br>
+			<p><b>常用的包：</b></p>
+			<p>java.lang: 这个是系统的基础类,比如String等都是这里面的,这个包是唯一一个可以不用引入(import)就可以使用的包。</p>
+			<p>java.io: 这里面是所有输入输出有关的类，比如文件操作等。</p>
+			<p>java.nio: 为了完善io包中的功能，提高io包中性能而写的一个新包，例如NIO非堵塞应用。</p>
+			<p>java.net: 这里面是与网络有关的类，比如URL，URLConnection等。</p>
+			<p>java.util: 这个是系统辅助类，特别是集合类Collection，List，Map等。
+			<p>java.sql: 这个是数据库操作的类，Connection，Statement，ResultSet等。</p>
+			<p>javax.servlet: 这个是JSP，Servlet等使用到的类。</p>
+			<br>
+			<p><b>JDK环境搭建：</b></p>
+			<ol>
+				<li>从<a href="https://www.oracle.com/downloads/index.html" target="_black">www.oracle.com</a>官网免费下载JDK安装程序，下载好后安装，Windows系统下一般安装完成后会自动配置环境变量，如果没有自行配置。</li>
+				<div class="image"><img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/3e6fc1cb85bea9495b52742e51c3ad823a0e456e8eca218808b34dc3e41f6ddef9443be6b96c16dadea06e5aff38b243?pictype=scale&from=30111&version=2.0.0.2&uin=904629998&fname=001.png&size=640*640" /></div>
+				<li>Windows和Linux下配置JDK环境变量：Windows下右击<u>我的电脑->属性->高级->环境变量</u>，在这里设置Java的开发环境变量，在<u>系统变量</u>中新建JAVA_HOME变量，变量值填写JDK的安装目录(例：D:\Java\jdk1.7.0)。然后找到Path变量并编辑，在变量值后添加<u>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</u>，变量值之间用 ; 隔开。最后新建CLASSPATH变量，变量值填写<u>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</u>（注意最前面有一点）；Linux下在"/etc/.bash_profile"文件下的环境变量设置，在后追加代码：</li>
+				<textarea rows="4" readonly="readonly">
+1	JAVA_HOME=/opt/jdk1.7.0
+2	CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
+3	PATH=$PATH:$JAVA_HOME/bin:.
+4	export JAVA_HOME CLASSPATH PATH</textarea>
+				<li>检验是否安装成功，在Windows下的cmd或者Linux的终端下输入<u>java -version</u>若如图所示显示版本信息，则说明安装和配置成功。</li>
+				<div class="image"><img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/f408f73d21c8c26ba93aca6b993aec4af1050d3bfa6b3824fdc5a0b6a75a45de42764e5bd25bfad885b06828e413d931?pictype=scale&from=30111&version=2.0.0.2&uin=904629998&fname=002.png&size=640*640" /></div>
+			</ol>
+		<h2>JRE</h2>
+			<p>JRE是运行JAVA程序所必须的环境的集合，包含JVM标准实现及Java核心类库，还包括Java虚拟机(JVM)、和支持文件。</p>
+			<p>JVM是Java Virtual Machine(Java虚拟机)的缩写，JVM是一种用于计算设备的规范，它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。</p>
+			<p>Java语言的一个非常重要的特点就是与平台的无关性。而使用Java虚拟机是实现这一特点的关键。一般的高级语言如果要在不同的平台上运行，至少需要编译成不同的目标代码。而引入Java语言虚拟机后，Java语言在不同平台上运行时不需要重新编译。Java语言使用Java虚拟机屏蔽了与具体平台相关的信息，使得Java语言编译程序只需生成在Java虚拟机上运行的目标代码(字节码)，就可以在多种平台上不加修改地运行。Java虚拟机在执行字节码时，把字节码解释成具体平台上的机器指令执行。这就是Java的能够"一次编译，到处运行"的原因。</p>
+			<p>如果只是需要在电脑上运行Java程序而不做开发，则只需安装JRE。</p>
+		<h2>Eclipse</h2>
+			<p>Eclipse是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。</p>
+			<p>下载地址：<a href="http://www.eclipse.org/" target="_black">http://www.eclipse.org/</a></p>
+			<p>Eclipse的插件机制是轻型软件组件化架构。在富客户机平台上，Eclipse使用插件来提供所有的附加功能，例如支持Java以外的其他语言。已有的分离的插件已经能够支持C/C++(CDT)、Perl、Ruby，Python、telnet和数据库开发。插件架构能够支持将任意的扩展加入到现有环境中，例如配置管理，而决不仅仅限于支持各种编程语言。</p>
+			<p>Eclipse的设计思想是：一切皆插件。Eclipse核心很小，其它所有功能都以插件的形式附加于Eclipse核心之上。Eclipse基本内核包括：图形API(SWT/Jface)，Java开发环境插件(JDT)，插件开发环境(PDE)等。</p>
+		<br>
+		<b>参考文献</b>
+			<p>[1] jdk-SunMicrosystems针对Java开发员的产品，360百科，<a href="http://baike.so.com/doc/2360646-2496311.html" target=_black>http://baike.so.com/doc/2360646-2496311.html</a></p>
+			<p>[2] JRE，360百科，<a href="http://baike.so.com/doc/1063581-1125209.html" target=_black>http://baike.so.com/doc/1063581-1125209.html</a></p>
+			<p>[3] eclipse，360百科，<a href="http://baike.so.com/doc/2137168-2261267.html" target=_black>http://baike.so.com/doc/2137168-2261267.html</a></p>
+	</div>
+</body>
+</html>
