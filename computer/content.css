@@ -33,8 +33,13 @@ ol{
 	text-align: center;
 }
 
+.point{
+	background-color: #ffffff;
+}
+
 textarea{
 	margin: 5px 0px 5px 0px;
+	margin-left: 2em;
 	padding: 5px;
 	width: 600px;
 	border: none;

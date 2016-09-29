@@ -11,6 +11,7 @@
 				<li>JDK(Java Development Kit)</li>
 				<li>JRE(Java Runtime Environment)</li>
 				<li>eclipse(IDE)</li>
+				<li>Hello world</li>
 			</ul>
 		<h2>JDK</h2>
 			<p>jdk是Java语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。</p>
@@ -62,7 +63,7 @@
 			<ol>
 				<li>从<a href="https://www.oracle.com/downloads/index.html" target="_black">www.oracle.com</a>官网免费下载JDK安装程序，下载好后安装，Windows系统下一般安装完成后会自动配置环境变量，如果没有自行配置。</li>
 				<div class="image"><img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/3e6fc1cb85bea9495b52742e51c3ad823a0e456e8eca218808b34dc3e41f6ddef9443be6b96c16dadea06e5aff38b243?pictype=scale&from=30111&version=2.0.0.2&uin=904629998&fname=001.png&size=640*640" /></div>
-				<li>Windows和Linux下配置JDK环境变量：Windows下右击<u>我的电脑->属性->高级->环境变量</u>，在这里设置Java的开发环境变量，在<u>系统变量</u>中新建JAVA_HOME变量，变量值填写JDK的安装目录(例：D:\Java\jdk1.7.0)。然后找到Path变量并编辑，在变量值后添加<u>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</u>，变量值之间用 ; 隔开。最后新建CLASSPATH变量，变量值填写<u>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</u>（注意最前面有一点）；Linux下在"/etc/.bash_profile"文件下的环境变量设置，在后追加代码：</li>
+				<li>Windows和Linux下配置JDK环境变量：Windows下右击<b>我的电脑->属性->高级->环境变量</b>，在这里设置Java的开发环境变量，在<b>系统变量</b>中新建JAVA_HOME变量，变量值填写JDK的安装目录(例：D:\Java\jdk1.7.0)。然后找到Path变量并编辑，在变量值后添加<a class="point">%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</a>，变量值之间用 ; 隔开。最后新建CLASSPATH变量，变量值填写<a class="point">.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</a>（注意最前面有一点）；Linux下在"/etc/.bash_profile"文件下的环境变量设置，在后追加代码：</li>
 				<textarea rows="4" readonly="readonly">
 1	JAVA_HOME=/opt/jdk1.7.0
 2	CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
@@ -81,6 +82,18 @@
 			<p>下载地址：<a href="http://www.eclipse.org/" target="_black">http://www.eclipse.org/</a></p>
 			<p>Eclipse的插件机制是轻型软件组件化架构。在富客户机平台上，Eclipse使用插件来提供所有的附加功能，例如支持Java以外的其他语言。已有的分离的插件已经能够支持C/C++(CDT)、Perl、Ruby，Python、telnet和数据库开发。插件架构能够支持将任意的扩展加入到现有环境中，例如配置管理，而决不仅仅限于支持各种编程语言。</p>
 			<p>Eclipse的设计思想是：一切皆插件。Eclipse核心很小，其它所有功能都以插件的形式附加于Eclipse核心之上。Eclipse基本内核包括：图形API(SWT/Jface)，Java开发环境插件(JDT)，插件开发环境(PDE)等。</p>
+		<h2>第一个Java程序</h2>
+			<p>用记事本或者Vim等文本编辑软件新建文件<a class="point">Hello.java</a>写下下面代码：</p>
+			<textarea rows="6" readonly="readonly">
+1	/***Hello world***/
+2	public class Hello{
+3		public static void main(String[] args){
+4			System.out.println("Hello world!");
+5		}
+6	}</textarea>
+			<p>然后在文件所在的地方打开<b>命令提示符</b>(Windows)或者<b>终端命令窗口</b>(Linux)，输入<a class="point">javac Hello.java</a>进行编译，编译完后会在此目录下生成一个Hello.class文件。</p>
+			<p>运行输入命令<a class="point">java Hello</a>，则会在命令台窗口输出Hello world!</p>
+			<div class="image"><img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/20127a453f59441e6a0f6987f82aa21508ea3540c8fe4a7c990862f2be1112f1f2b1900a2132fdf9e57ed3ef8c5721d5?pictype=scale&from=30111&version=2.0.0.2&uin=904629998&fname=003.png&size=640*640" /></div>
 		<br>
 		<b>参考文献</b>
 			<p>[1] jdk-SunMicrosystems针对Java开发员的产品，360百科，<a href="http://baike.so.com/doc/2360646-2496311.html" target=_black>http://baike.so.com/doc/2360646-2496311.html</a></p>
