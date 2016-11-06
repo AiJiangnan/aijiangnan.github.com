@@ -1,29 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    color: #777777;
+    text-decoration: none;
+}
+
+a:cover{
+    color: #0000ff;
+}
+
 body{
     color: #777777;
+    font-family: 微软雅黑;
 }
 
 #head{
-    background-color: #0000ff;
+    /*background-color: #eeeeee;*/
     margin: auto;
     margin-top: 80px;
     width: 1200px;
 }
 
 #about{
-    background-color: #00ff00;
+    /*background-color: #00ff00;*/
+    margin-top: 50px;
     width: 600px;
     height: 400px;
 }
 
 #contact{
-    background-color: #005500;
-    margin-left: 600px;
-    width: 600px;
+    /*background-color: #005500;*/
+    margin-top: 50px;
+    margin-left: 700px;
+    width: 500px;
     height: 400px;
 }
 
 #knowledge{
-    background-color: #000055;
+    background-color: #eeeeee;
     margin: auto;
     width: 1200px;
     height: 500px;
@@ -31,10 +48,22 @@ body{
 
 h1{
     font-size: 25px;
-    /*padding-top: 150px;*/
+    padding-bottom: 20px;
 }
 
-h2{
-    font-family: Helvetica;
-    text-decoration: none;
+p{
+    padding: 20px 0 10px 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    margin: 4px 0px 4px 0px;
+}
+
+.con{
+    float: left;
+    margin-right: 80px;
 }
