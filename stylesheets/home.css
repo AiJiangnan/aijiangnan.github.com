@@ -1,12 +1,37 @@
+body{
+    color: #777777;
+}
+
 #head{
-    height: 600px;
-    font-family: 楷体;
-    text-align: center;
+    background-color: #0000ff;
+    margin: auto;
+    margin-top: 80px;
+    width: 1200px;
+}
+
+#about{
+    background-color: #00ff00;
+    width: 600px;
+    height: 400px;
+}
+
+#contact{
+    background-color: #005500;
+    margin-left: 600px;
+    width: 600px;
+    height: 400px;
+}
+
+#knowledge{
+    background-color: #000055;
+    margin: auto;
+    width: 1200px;
+    height: 500px;
 }
 
 h1{
-    font-size: 80px;
-    padding-top: 150px;
+    font-size: 25px;
+    /*padding-top: 150px;*/
 }
 
 h2{
