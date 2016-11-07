@@ -8,31 +8,24 @@ a{
     text-decoration: none;
 }
 
-a:cover{
-    color: #0000ff;
-}
-
 body{
     color: #777777;
     font-family: 微软雅黑;
 }
 
 #head{
-    /*background-color: #eeeeee;*/
     margin: auto;
     margin-top: 80px;
     width: 1200px;
 }
 
 #about{
-    /*background-color: #00ff00;*/
     margin-top: 50px;
     width: 600px;
     height: 400px;
 }
 
 #contact{
-    /*background-color: #005500;*/
     margin-top: 50px;
     margin-left: 700px;
     width: 500px;
@@ -40,7 +33,6 @@ body{
 }
 
 #knowledge{
-    background-color: #eeeeee;
     margin: auto;
     width: 1200px;
     height: 500px;
@@ -52,11 +44,12 @@ h1{
 }
 
 p{
-    padding: 20px 0 10px 0;
+    margin: 20px 0 10px 0;
 }
 
 ul{
     list-style-type: none;
+    margin: 10px 0 10px 0;
 }
 
 li{
