@@ -43,7 +43,7 @@ li a:hover{
 #menu_item ul{
     list-style-type: none;
     position: relative;
-    top: 50%;
+    top: 40%;
     font-size: 25px;
     font-family: 微软雅黑;
     margin-left: 30%;
@@ -54,18 +54,3 @@ li a:hover{
     float: left;
     margin-right: 60px;
 }
-
-/*.top_list{
-    margin-left: 20px;
-    margin-top: 10px;
-    height: 20px;
-    list-style-type: none;
-    font-family: 宋体;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.top_item{
-    padding-right: 10px;
-    float: left;
-}*/

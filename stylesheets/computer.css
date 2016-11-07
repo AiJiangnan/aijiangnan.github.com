@@ -1,16 +1,82 @@
+body{
+	color: white;
+	font-family: 微软雅黑;
+	background: url(../image/computer_background.jpg) fixed;
+    background-size: cover;
+}
+
 #body{
 	width: 860px;
-	margin: auto;
-	margin-top: 40px;
+	margin: 0 auto;
+	margin-top: 50px;
 	padding: 20px;
 }
 
-table{
-	border-collapse:collapse;
+.content{
+	background-color: white;
 	width: 860px;
+	height: 70px;
+	text-align: left;
+	border-radius: 15px;
+	padding-top: 30px;
+	margin-bottom: 30px;
+}
+
+#content_01{
+	margin-top: 100px;
+	background-color: rgba(244, 67, 54, 0.5);
+}
+
+#content_02{
+	background-color: rgba(48, 63, 159, 0.5);
+}
+
+#content_03{
+	background-color: rgba(56, 142, 60, 0.5);
+}
+
+#content_04{
+	background-color: rgba(245, 124, 0, 0.5);
+}
+
+#content_05{
+	background-color: rgba(194, 24, 91, 0.5);
+}
+
+#content_06{
+	background-color: rgba(25, 118, 210, 0.5);
+}
+
+.content ul{
+	list-style-type: none;
+	margin-left: 40px;
+}
+
+.content li{
+	float: left;
 	text-align: center;
 }
 
-td{
-	padding: 5px;
+#content_01 li{
+	margin-right: 60px;
+}
+
+#content_02 li{
+	margin-right: 60px;
+}
+
+#content_03 li{
+	margin-right: 30px;
+}
+
+._content{
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 15px;
+	width: 80px;
+	height: 30px;
+	padding: 10px 10px 0px 10px;
+}
+
+._content:hover{
+	background-color: rgba(255, 255, 255, 0.5);
 }
