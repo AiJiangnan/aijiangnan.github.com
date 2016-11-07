@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
     <link rel="icon" type="image/png" href="image/logo_icon.png">
+    <script src="javascript/menu.js"></script>
     <title>AiJiangnan - Website</title>
 </head>
 <body>
+    <div id="menu_item">
+        <div id="exit" onclick="menu_hidden('menu_item')">
+            
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="computer.html">Computer</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="">Others</a></li>
+        </ul>
+    </div>
     <div id="head">
         <h1>Ai Jiangnan</h1>
+        <div id="menu" onclick="menu_show('menu_item')">
+            
+        </div>
         <div style="float:left" id="about">
             <h1>About</h1> <hr size="1" width="30">
             <p>Colin Grist is a freelance designer and developer and for the past eight years he's worked for some of the UK's best digital agencies; producing award–winning work wherever he's been.</p>
@@ -67,7 +82,9 @@
                 <p>Hello world!</p>
             </div>
         </a></div>
-        
+        <div id="end">
+            <i>Made by J.N.AI</i>
+        </div>
     </div>
 </body>
 </html>

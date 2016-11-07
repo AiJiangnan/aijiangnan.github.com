@@ -8,6 +8,10 @@ a{
     text-decoration: none;
 }
 
+li a:hover{
+    text-decoration: underline;
+}
+
 .top_list{
     margin-left: 20px;
     margin-top: 10px;

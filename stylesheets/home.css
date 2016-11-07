@@ -23,6 +23,48 @@ body{
     width: 1200px;
 }
 
+#menu{
+    height: 25px;
+    width: 45px;
+    float: right;
+    margin-top: -50px;
+    background-image: url(../image/menu_02.png);
+}
+
+#menu:hover{
+    background-image: url(../image/menu_01.png);
+}
+
+#exit{
+    height: 25px;
+    width: 45px;
+    float: right;
+    margin: 80px 80px 0 0;
+    background-image: url(../image/menu_03.png);
+}
+
+#menu_item{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #efefef;
+    display: none;
+}
+
+#menu_item ul{
+    list-style-type: none;
+    position: relative;
+    top: 50%;
+    font-size: 25px;
+    margin-left: 30%;
+}
+
+#menu_item li{
+    float: left;
+    margin-right: 60px;
+}
+
 #about{
     margin-top: 50px;
     width: 600px;
@@ -37,10 +79,8 @@ body{
 }
 
 #knowledge{
-    /*background-color: #00ee00;*/
     margin: auto;
     width: 1200px;
-    height: 1000px;
 }
 
 .know{
@@ -80,6 +120,13 @@ body{
 
 .know:hover ._know{
     display: block;
+}
+
+#end{
+    height: 100px;
+    margin-top: 100px;
+    font-size: 15px;
+    text-align: right;
 }
 
 h1{
