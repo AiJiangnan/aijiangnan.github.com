@@ -1,15 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    color: #777777;
+    text-decoration: none;
+}
+
+body{
+    color: #777777;
+    font-family: 微软雅黑;
+}
+
 #head{
-    height: 600px;
-    font-family: 楷体;
-    text-align: center;
+    margin: auto;
+    margin-top: 80px;
+    width: 1200px;
+}
+
+#about{
+    margin-top: 50px;
+    width: 600px;
+    height: 400px;
+}
+
+#contact{
+    margin-top: 50px;
+    margin-left: 700px;
+    width: 500px;
+    height: 400px;
+}
+
+#knowledge{
+    margin: auto;
+    width: 1200px;
+}
+
+.know{
+    width: 560px;
+    height: 350px;
+    margin: 20px 0 20px 0;
+    background-size: 100% 100%;
+}
+
+#word{
+    float: left;
+    background-image: url(../image/word.jpg);
+}
+
+#computer{
+    margin-left: 600px;
+    background-image: url(../image/computer.jpg);
+}
+
+#math{
+    float: left;
+    background-image: url(../image/math.jpg);
+}
+
+#others{
+    margin: 40px 0 20px 600px;
+    background-image: url(../image/others.jpg);
+}
+
+.know ._know{
+    width: 360px;
+    height: 250px;
+    padding: 100px 100px 0 100px;
+    background-color: #efefef;
+    display: none;
+}
+
+.know:hover ._know{
+    display: block;
+}
+
+#end{
+    height: 100px;
+    margin-top: 100px;
+    font-size: 15px;
+    text-align: right;
 }
 
 h1{
-    font-size: 80px;
-    padding-top: 150px;
+    font-size: 25px;
+    padding-bottom: 20px;
 }
 
-h2{
-    font-family: Helvetica;
-    text-decoration: none;
+p{
+    margin: 20px 0 10px 0;
+}
+
+ul{
+    list-style-type: none;
+    margin: 10px 0 10px 0;
+}
+
+li{
+    margin: 4px 0px 4px 0px;
+}
+
+.con{
+    float: left;
+    margin-right: 80px;
 }

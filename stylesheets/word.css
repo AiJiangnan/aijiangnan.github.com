@@ -1,34 +1,141 @@
+body{
+    color: white;
+    background: url(../image/word_background.jpg) fixed;
+    background-size: cover; 
+}
+
+a{
+    color: white;
+}
+
+li a{
+    color: #777777;
+}
+
 h1{
-    font-size: 50px;
-    padding-top: 20px;
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: right;
 }
 
 h2{
-    font-size: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 15px;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 p{
-    font-size: 25px;
-    text-indent: 2em;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-top: 10px;
 }
 
 #contents{
-    font-family: 楷体;
-    margin: auto;
-    margin-top: 20px;
-    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-top: 1px;
+    width: 1200px;
 }
 
 #content{
     margin-top: 100px;
+    padding-top: 1px;
+    width: 1200px;
+    height: 800px;
+    border-radius: 15px;
 }
 
 .abstract{
-    margin-bottom: 100px;
-    padding: 20px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #e0e0e0;
+    width: 250px;
+    margin: 10px 10px 0 10px;
+    padding: 15px 15px 0 15px;
+    border-radius: 15px;
 }
+
+#article_001{
+    float: left;
+    height: 300px;
+    background-color: rgba(244, 67, 54, 0.5);
+}
+
+#article_002{
+    float: left;
+    height: 350px;
+    background-color: rgba(48, 63, 159, 0.5);
+}
+
+#article_003{
+    float: left;
+    height: 260px;
+    background-color: rgba(56, 142, 60, 0.5);
+}
+
+#article_004{
+    float: left;
+    height: 300px;
+    background-color: rgba(245, 124, 0, 0.5);
+}
+
+#article_005{
+    height: 280px;
+    margin-top: 340px;
+    background-color: rgba(194, 24, 91, 0.5);
+}
+
+#article_006{
+    height: 260px;
+    margin-top: -240px;
+    margin-left: 310px;
+    background-color: rgba(25, 118, 210, 0.5);
+}
+
+#article_007{
+    height: 280px;
+    margin-top: -370px;
+    margin-left: 610px;
+    background-color: rgba(104, 159, 56, 0.5);
+}
+
+#article_008{
+    height: 310px;
+    margin-top: -250px;
+    margin-left: 910px;
+    background-color: rgba(230, 74, 25, 0.5);
+}
+
+#article_009{
+    height: 260px;
+    margin-top: -20px;
+    background-color: rgba(175, 180, 43, 0.5);
+}
+
+#article_010{
+    height: 300px;
+    margin-top: -240px;
+    margin-left: 310px;
+    background-color: rgba(93, 64, 55, 0.5);
+}
+
+#article_011{
+    height: 300px;
+    margin-top: -390px;
+    margin-left: 610px;
+    background-color: rgba(123, 31, 162, 0.5);
+}
+
+#end{
+    height: 200px;
+    margin-top: 200px;
+    /*background-color: blue;*/
+}
+/*
+
+0, 151, 167
+251, 192, 45
+158, 158, 158
+81, 45, 168
+0, 121, 107
+255, 160, 0
+69, 90, 100
+*/
