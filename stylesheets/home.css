@@ -8,7 +8,7 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+li a:hover{
     text-decoration: underline;
 }
 
@@ -56,13 +56,30 @@ body{
 }
 
 #computer{
-    margin-left: 600px;  
+    margin-left: 600px;
     background-image: url(../image/computer.jpg);
 }
 
 #math{
     float: left;
     background-image: url(../image/math.jpg);
+}
+
+#others{
+    margin: 40px 0 20px 600px;
+    background-image: url(../image/others.jpg);
+}
+
+.know ._know{
+    width: 360px;
+    height: 250px;
+    padding: 100px 100px 0 100px;
+    background-color: #efefef;
+    display: none;
+}
+
+.know:hover ._know{
+    display: block;
 }
 
 h1{
