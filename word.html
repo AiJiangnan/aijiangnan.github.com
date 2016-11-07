@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/word.css">
-    <title>文字</title>
+    <script src="javascript/menu.js"></script>
+    <title>Word</title>
 </head>
 <body>
-    <div><ul class="top_list">
-            <li class="top_item"><a href="index.html">主页</a></li>
-            <li class="top_item"><a href="word.html">文字</a></li>
-            <li class="top_item"><a href="computer.html">计算机</a></li>
-            <li class="top_item"><a href="math.html">数学</a></li>
-    </ul></div>
+    <div id="menu_item">
+        <div id="exit" onclick="menu_hidden('menu_item')"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="word.html">Word</a></li>
+            <li><a href="computer.html">Computer</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="">Others</a></li>
+        </ul>
+    </div>
     <div id="contents">
-        <div id="name">
-            <h1>文字目录</h1>
-        </div>
+        <div id="menu" onclick="menu_show('menu_item')"></div>
         <div id="content">
-<!--这一部分是新增文章添加摘要的-->
+            <div id="article_001" class="abstract">
+                <h1>你的南</h1>
+            </div>
+        </div>
+
+
+
+        <!--<div id="content">
             <div class="abstract"><a href="word/article_003.html">
                 <h2>我的北，你的南</h2>
                 2015.09
@@ -74,8 +84,7 @@
                 2012.05
                 <p>在改革开放前的中国，跟所有的中国农民一样，我父亲出生在一个不为人知的普通农村家里，那时的贫穷困苦，是我们这辈人所享受不到的，真是羡慕。父亲之前的生活，跟广大劳动人民一样，靠着一亩三分地，日出而作，日落而息，养活着我们一家子。过了些日子，随着小平同志的改革开放，我爸一马当......</p>
             </a></div>  
-<!--这一部分是新增文章添加摘要的-->
-        </div>
+        </div>-->
     </div>
 </body>
 </html>

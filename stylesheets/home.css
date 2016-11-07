@@ -8,10 +8,6 @@ a{
     text-decoration: none;
 }
 
-li a:hover{
-    text-decoration: underline;
-}
-
 body{
     color: #777777;
     font-family: 微软雅黑;
@@ -21,48 +17,6 @@ body{
     margin: auto;
     margin-top: 80px;
     width: 1200px;
-}
-
-#menu{
-    height: 25px;
-    width: 45px;
-    float: right;
-    margin-top: -50px;
-    background-image: url(../image/menu_02.png);
-}
-
-#menu:hover{
-    background-image: url(../image/menu_01.png);
-}
-
-#exit{
-    height: 25px;
-    width: 45px;
-    float: right;
-    margin: 80px 80px 0 0;
-    background-image: url(../image/menu_03.png);
-}
-
-#menu_item{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    background-color: #efefef;
-    display: none;
-}
-
-#menu_item ul{
-    list-style-type: none;
-    position: relative;
-    top: 50%;
-    font-size: 25px;
-    margin-left: 30%;
-}
-
-#menu_item li{
-    float: left;
-    margin-right: 60px;
 }
 
 #about{
