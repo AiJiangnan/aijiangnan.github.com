@@ -5,6 +5,11 @@ body{
     background-size: cover;
 }
 
+.content a,.content a:hover{
+    color: white;
+    text-decoration: none;
+}
+
 #body{
 	width: 860px;
 	margin: 0 auto;
@@ -57,11 +62,7 @@ body{
 	text-align: center;
 }
 
-#content_01 li{
-	margin-right: 60px;
-}
-
-#content_02 li{
+#content_01 li,#content_02 li{
 	margin-right: 60px;
 }
 
@@ -69,7 +70,7 @@ body{
 	margin-right: 30px;
 }
 
-._content{
+.content div{
 	background-color: rgba(255, 255, 255, 0.25);
 	border-radius: 15px;
 	width: 80px;
@@ -77,6 +78,6 @@ body{
 	padding: 10px 10px 0px 10px;
 }
 
-._content:hover{
+.content div:hover{
 	background-color: rgba(255, 255, 255, 0.5);
 }
