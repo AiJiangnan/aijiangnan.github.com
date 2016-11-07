@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/computer.css">
+    <script src="javascript/menu.js"></script>
     <title>计算机</title>
 </head>
 <body>
-    <div><ul class="top_list">
+    <div id="menu_item">
+        <div id="exit" onclick="menu_hidden('menu_item')"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="word.html">Word</a></li>
+            <li><a href="computer.html">Computer</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="">Others</a></li>
+        </ul>
+    </div>
+    <!--<div><ul class="top_list">
             <li class="top_item"><a href="index.html">主页</a></li>
             <li class="top_item"><a href="word.html">文字</a></li>
             <li class="top_item"><a href="computer.html">计算机</a></li>
             <li class="top_item"><a href="math.html">数学</a></li>
-    </ul></div>
+    </ul></div>-->
     <div id="body">
+        <div id="menu" onclick="menu_show('menu_item')"></div>
         <table border="1">
             <tr>
                 <td rowspan="18">嵌入式技术知识</td><td rowspan="8">计算机技术基础</td><td rowspan="4">编程语言</td><td>汇编</td>
