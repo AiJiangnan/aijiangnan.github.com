@@ -18,10 +18,8 @@ body{
 }
 
 .content{
-	background-color: white;
 	width: 860px;
 	height: 70px;
-	text-align: left;
 	border-radius: 15px;
 	padding-top: 30px;
 	margin-bottom: 30px;
@@ -62,12 +60,24 @@ body{
 	text-align: center;
 }
 
-#content_01 li,#content_02 li{
+#content_01 li{
+	margin-right: 20px;
+}
+
+#content_02 li,#content_04 li,#content_05 li{
 	margin-right: 60px;
 }
 
 #content_03 li{
-	margin-right: 30px;
+	margin-right: 35px;
+}
+
+#content_01 div{
+	width: 120px;
+}
+
+#content_04 div{
+	width: 180px;
 }
 
 .content div{
