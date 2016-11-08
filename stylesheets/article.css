@@ -1,28 +1,24 @@
 #article{
     font-family: 楷体;
     margin: 0 auto;
-    margin-top: 20px;
     width: 800px;
     padding: 20px;
     border-style: solid;
-    border-width: 0px 2px 0px 2px;
+    border-width: 0px 5px;
     border-color: #e0e0e0;
 }
 
-#name{
+h1,h2{
     text-align: center;
 }
 
-.subname{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+h2{
+    font-size: 18px;
 }
 
 p{
-    padding-top: 10px;
     font-size: 23px;
     text-indent: 2em;
-    letter-spacing: 5px;
-    line-height: 30px;
+    letter-spacing: 3px;
+    line-height: 28px;
 }

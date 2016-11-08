@@ -53,6 +53,10 @@ p{
     border-radius: 15px;
 }
 
+.abstract:hover{
+    border-radius: 45px;
+}
+
 #article_001{
     float: left;
     height: 300px;
