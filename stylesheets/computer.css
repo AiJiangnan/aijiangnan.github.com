@@ -25,29 +25,8 @@ body{
 	margin-bottom: 30px;
 }
 
-#content_01{
+#content_1{
 	margin-top: 100px;
-	background-color: rgba(244, 67, 54, 0.5);
-}
-
-#content_02{
-	background-color: rgba(48, 63, 159, 0.5);
-}
-
-#content_03{
-	background-color: rgba(56, 142, 60, 0.5);
-}
-
-#content_04{
-	background-color: rgba(245, 124, 0, 0.5);
-}
-
-#content_05{
-	background-color: rgba(194, 24, 91, 0.5);
-}
-
-#content_06{
-	background-color: rgba(25, 118, 210, 0.5);
 }
 
 .content ul{
@@ -60,23 +39,23 @@ body{
 	text-align: center;
 }
 
-#content_01 li{
+#content_1 li{
 	margin-right: 20px;
 }
 
-#content_02 li,#content_04 li,#content_05 li{
+#content_2 li,#content_4 li,#content_5 li{
 	margin-right: 60px;
 }
 
-#content_03 li{
+#content_3 li{
 	margin-right: 35px;
 }
 
-#content_01 div{
+#content_1 div{
 	width: 120px;
 }
 
-#content_04 div{
+#content_4 div{
 	width: 180px;
 }
 

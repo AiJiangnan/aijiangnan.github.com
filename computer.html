@@ -20,7 +20,7 @@
     </div>
     <div id="body">
         <div id="menu" onclick="menu_show('menu_item')"></div>
-        <div id="content_01" class="content">
+        <div id="content_1" class="content">
             <ul>
                 <li><div>计算机技术基础</div></li>
                 <li><div>计算机组成原理</div></li>
@@ -29,7 +29,7 @@
                 <li><div>数字信号处理</div></li>
             </ul>
         </div>
-        <div id="content_02" class="content">
+        <div id="content_2" class="content">
             <ul>
                 <li><div>编程语言</div></li>
                 <li><div>汇编</div></li>
@@ -38,7 +38,7 @@
                 <li><div><a target="_blank" href="computer/java.html">Java</a></div></li>
             </ul>
         </div>
-        <div id="content_03" class="content">
+        <div id="content_3" class="content">
             <ul>
                 <li><div>系统硬件层</div></li>
                 <li><div>电路</div></li>
@@ -48,14 +48,14 @@
                 <li><div>PCB工艺</div></li>
             </ul>
         </div>
-        <div id="content_04" class="content">
+        <div id="content_4" class="content">
             <ul>
                 <li><div>硬件抽象层</div></li>
                 <li><div>通用设备接口及协议</div></li>
                 <li><div>硬件设备相关</div></li>
             </ul>
         </div>
-        <div id="content_05" class="content">
+        <div id="content_5" class="content">
             <ul>
                 <li><div>系统软件层</div></li>
                 <li><div>文件系统</div></li>
@@ -65,5 +65,17 @@
             </ul>
         </div>
     </div>
+    <script type="text/javascript">
+        var color = new Array(
+            "rgba(244, 67, 54, 0.5)",
+            "rgba(48, 63, 159, 0.5)",
+            "rgba(56, 142, 60, 0.5)",
+            "rgba(245, 124, 0, 0.5)",
+            "rgba(194, 24, 91, 0.5)"
+        )
+        for(i=1;i<6;i++){
+            document.getElementById('content_'+i).style.backgroundColor=color[i-1];
+        }
+    </script>
 </body>
 </html>
