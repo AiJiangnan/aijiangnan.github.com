@@ -2,10 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheets/public.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
     <link rel="icon" type="image/png" href="image/logo_icon.png">
     <script src="javascript/menu.js"></script>
+    <script src="javascript/PC_mobile.js"></script>
+    <script type="text/javascript">
+        if(isPC()){
+            document.write('<link rel="stylesheet" href="stylesheets/public.css">');
+            document.write('<link rel="stylesheet" href="stylesheets/home.css">');
+        }else{
+            document.write('<link rel="stylesheet" href="stylesheets_mobile/public.css">');
+            document.write('<link rel="stylesheet" href="stylesheets_mobile/home.css">');
+        }
+    </script>
     <style type="text/css">
         #menu{
             margin-top: -50px;

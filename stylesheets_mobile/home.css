@@ -10,25 +10,23 @@ body{
 
 #head{
     margin: 80px auto;
-    width: 1200px;
+    width: 600px;
 }
 
 #about{
     margin-top: 50px;
     width: 600px;
-    height: 400px;
+    height: 300px;
 }
 
 #contact{
-    margin-top: 50px;
-    margin-left: 700px;
     width: 500px;
     height: 400px;
 }
 
 #knowledge{
-    margin: auto;
-    width: 1200px;
+    margin: 200px auto;
+    width: 600px;
 }
 
 .know{
@@ -39,22 +37,18 @@ body{
 }
 
 #word{
-    float: left;
     background-image: url(../image/word.jpg);
 }
 
 #computer{
-    margin-left: 600px;
     background-image: url(../image/computer.jpg);
 }
 
 #math{
-    float: left;
     background-image: url(../image/math.jpg);
 }
 
 #others{
-    margin: 40px 0 20px 600px;
     background-image: url(../image/others.jpg);
 }
 
