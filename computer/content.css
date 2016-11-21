@@ -25,13 +25,3 @@ table{
 ol{
 	margin: 0;
 }
-
-textarea{
-	margin: 5px 0px 5px 0px;
-	margin-left: 2em;
-	padding: 5px;
-	width: 600px;
-	resize: none;
-	font-family: 微软雅黑;
-	color: black;
-}

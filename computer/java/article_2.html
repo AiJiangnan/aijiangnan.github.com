@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../content.css">
+	<script src="../../javascript/code.js"></script>
 </head>
 <body>
 	<div id="body">
@@ -63,11 +64,14 @@
 			<ol>
 				<li>从<a href="https://www.oracle.com/downloads/index.html" target="_black">www.oracle.com</a>官网免费下载JDK安装程序，下载好后安装，Windows系统下一般安装完成后会自动配置环境变量，如果没有自行配置。</li>
 				<li>Windows和Linux下配置JDK环境变量：Windows下右击<b>我的电脑->属性->高级->环境变量</b>，在这里设置Java的开发环境变量，在<b>系统变量</b>中新建JAVA_HOME变量，变量值填写JDK的安装目录(例：D:\Java\jdk1.7.0)。然后找到Path变量并编辑，在变量值后添加%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;，变量值之间用 ; 隔开。最后新建CLASSPATH变量，变量值填写.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）；Linux下在"/etc/.bash_profile"文件下的环境变量设置，在后追加代码：</li>
-				<textarea rows="4" readonly="readonly">
-1	JAVA_HOME=/opt/jdk1.7.0
-2	CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
-3	PATH=$PATH:$JAVA_HOME/bin:.
-4	export JAVA_HOME CLASSPATH PATH</textarea>
+				<textarea id="code_1" hidden>
+JAVA_HOME=/opt/jdk1.7.0
+CLASSPATH=.:$JAVA_HOME/lib/toolsjar:$JAVA_HOME/lib/dt.jar
+PATH=$PATH:$JAVA_HOME/bin:.
+export JAVA_HOME CLASSPATH PATH</textarea>
+				<script type="text/javascript">
+					code_color('code_1');
+				</script>
 				<li>检验是否安装成功，在Windows下的cmd或者Linux的终端下输入<u>java -version</u>若显示版本信息，则说明安装和配置成功。</li>
 			</ol>
 		<h2 id="P2_2">JRE</h2>
@@ -82,13 +86,16 @@
 			<p>Eclipse的设计思想是：一切皆插件。Eclipse核心很小，其它所有功能都以插件的形式附加于Eclipse核心之上。Eclipse基本内核包括：图形API(SWT/Jface)，Java开发环境插件(JDT)，插件开发环境(PDE)等。</p>
 		<h2 id="P2_4">第一个Java程序</h2>
 			<p>用记事本或者Vim等文本编辑软件新建文件Hello.java写下下面代码：</p>
-			<textarea rows="6" readonly="readonly">
-1	/***Hello world***/
-2	public class Hello{
-3		public static void main(String[] args){
-4			System.out.println("Hello world!");
-5		}
-6	}</textarea>
+			<textarea id="code_2" hidden>
+/***Hello world***/
+public class Hello{
+	public static void main(String[] args){
+		System.out.println("Hello world!");
+	}
+}</textarea>
+			<div style="margin-left:2em;"><script type="text/javascript">
+					code_color('code_2');
+			</script></div>
 			<p>然后在文件所在的地方打开<b>命令提示符</b>(Windows)或者<b>终端命令窗口</b>(Linux)，输入javac Hello.java进行编译，编译完后会在此目录下生成一个Hello.class文件。</p>
 			<p>运行输入命令java Hello，则会在命令台窗口输出Hello world!</p>
 		<br>
