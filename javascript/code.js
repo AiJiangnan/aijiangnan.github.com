@@ -17,7 +17,7 @@ function code_color(id){
 	var str2 = str1.split('\n');
 	document.write('<table bgcolor=#e0e0e0 border="1" rules="cols">');
 	for(i=1;i<(str2.length+1);i++){
-		document.write('<tr><td width=30 align="center"><font color=gray>'+i+'</font></td><td style="padding:0px 12px;font-size:18px;"><code>'+str2[i-1]+'</code></td></tr>');
+		document.write('<tr><td width=30 align="center"><font color=gray>'+i+'</font></td><td width=600 style="padding:0px 12px;font-size:18px;"><code>'+str2[i-1]+'</code></td></tr>');
 	}
 	document.write('</table>');
 }

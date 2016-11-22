@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
+    <script src="javascript/menu.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     <title>数学</title>
 </head>
 <body>
-    <div><ul class="top_list">
-            <li class="top_item"><a href="index.html">主页</a></li>
-            <li class="top_item"><a href="word.html">文字</a></li>
-            <li class="top_item"><a href="computer.html">计算机</a></li>
-            <li class="top_item"><a href="math.html">数学</a></li>
-    </ul></div>
-    
+    <div id="menu_item">
+        <div id="exit" onclick="menu_hidden('menu_item')"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="word.html">Word</a></li>
+            <li><a href="computer.html">Computer</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="">Others</a></li>
+        </ul>
+    </div>
+    <div id="body">
+        <div id="menu" onclick="menu_show('menu_item')"></div>
+        \[
+        \begin{array}{lll}
+        \dot{x} = \sigma(y-x) \\ 
+        \dot{y} = \rho x-y-xz \\
+        \dot{z} = -\beta z+xy
+        \end{array}
+        \]
+    </div>
 </body>
 </html>
