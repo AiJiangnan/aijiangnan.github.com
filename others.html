@@ -36,7 +36,7 @@
                 var x=xmlDoc.getElementsByTagName("ARTICLE");
                 for(i=0;i<x.length;i++){
                     document.write('<div id="article_'+(i+1)+'"class="content">');
-                    document.write('<a href="word/article_'+(i+1)+'.html" target="_blank">');
+                    document.write('<a href="others/article_'+(i+1)+'.html" target="_blank">');
                     document.write("<h1>"+x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"</h1>");
                     document.write("<h2>"+x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue+'</h2><hr size="1" color="white">');
                     document.write("<p>"+x[i].getElementsByTagName("ABSTRACT")[0].childNodes[0].nodeValue+"</p>");
