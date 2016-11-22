@@ -20,6 +20,7 @@ p{
 
 table{
 	border-collapse: collapse;
+	word-wrap: break-word;
 }
 
 ol{
