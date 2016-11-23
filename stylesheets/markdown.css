@@ -1,0 +1,25 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	font-size: 16px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+blockquote {
+	border-left: #eee solid 5px;
+	padding-left: 20px;
+}
+
+pre{
+	background-color: #eee;
+}
+
+table,th,td
+{
+	border: 1px solid black;
+	padding: 3px;
+}
+
+table{
+	border-collapse: collapse;
+}
