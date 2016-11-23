@@ -9,9 +9,13 @@ body{
 	padding: 0 20px;
 }
 
-.menu {
+.menu{
 	position: absolute;
 	z-index: 2;
+}
+
+.menu a{
+	color: black;
 }
 
 .menu ul {
@@ -71,6 +75,7 @@ iframe{
 	background-color: rgba(200, 200, 200, 0.1);
 	width: 800px;
 	border:0px;
+	padding: 20px;
 	position: fixed;
 	height: 100%;
 	z-index: 1;

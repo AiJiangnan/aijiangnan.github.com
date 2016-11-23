@@ -63,7 +63,14 @@
 				</ul>
 			</div>
 		</div>
-		<iframe name="myife"></iframe>
+		<iframe name="myife" src="English_grammar/article_1_0.html"></iframe>
 	</div>
+	<script type="text/javascript">
+		var c = document.getElementsByClassName('c');
+		for(i=0;i<1;i++){//c.length;i++){
+			c[i].href = "English_grammar/article_1_"+(i+1)+".html";
+			c[i].target = "myife";
+		}
+	</script>
 </body>
 </html>
