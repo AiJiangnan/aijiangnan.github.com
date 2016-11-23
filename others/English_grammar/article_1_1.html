@@ -2,8 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../../stylesheets/markdown.css">
+	<script src="../../javascript/markdown.js"></script>
 </head>
-<body>
-	hello world.
+<body onload="toHtml('con','md')">
+	<textarea id="con" hidden>
+# Hello world.
+	</textarea>
+	<div id="md"></div>
 </body>
 </html>
