@@ -16,6 +16,8 @@ blockquote p{
 
 pre{
 	background-color: #eee;
+	padding: 10px;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 table,th,td
