@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="English_grammar/main_page.css">
+	<title>英语语法</title>
+</head>
+<body>
+	<div id="body">
+		<div id="head">
+			<div class="menu">
+				<ul>
+					<li><a>句子成分</a>
+						<ul>
+							<li><a class="c">主语</a></li>
+							<li><a class="c">谓语</a></li>
+							<li><a class="c">宾语</a></li>
+							<li><a class="c">宾语补足语</a></li>
+							<li><a class="c">定语</a></li>
+							<li><a class="c">状语</a></li>
+						</ul>
+					</li>
+					<li><a>句子结构</a>
+						<ul>
+							<li><a class="c">比较结构</a></li>
+							<li><a class="c">强调结构</a></li>
+							<li><a class="c">否定结构</a></li>
+							<li><a class="c">并列结构</a></li>
+							<li><a class="c">平行与一致结构</a></li>
+							<li><a class="c">倒装结构</a></li>
+							<li><a class="c">省略结构</a></li>
+						</ul>
+					</li>
+					<li><a>从句分析</a>
+						<ul>
+							<li><a class="c">句子的类型</a></li>
+							<li><a class="c">并列句</a></li>
+							<li><a class="c">宾语从句</a></li>
+							<li><a class="c">定语从句</a></li>
+							<li><a class="c">状语从句</a></li>
+						</ul>
+					</li>
+					<li><a>词法分析</a>
+						<ul>
+							<li><a class="c">名词</a></li>
+							<li><a class="c">代词</a></li>
+							<li><a class="c">数词</a></li>
+							<li><a class="c">动词及动词短语</a></li>
+							<li><a class="c">冠词</a></li>
+							<li><a class="c">形容词</a></li>
+							<li><a class="c">副词</a></li>
+							<li><a class="c">介词</a></li>
+							<li><a class="c">连词</a></li>
+							<li><a class="c">感叹词</a></li>
+						</ul>
+					</li>
+					<li><a>构词法</a>
+						<ul>
+							<li><a class="c">？</a></li>
+							<li><a class="c">？</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<iframe name="myife" src="English_grammar/article_1_0.html"></iframe>
+	</div>
+	<script type="text/javascript">
+		var c = document.getElementsByClassName('c');
+		for(i=0;i<1;i++){//c.length;i++){
+			c[i].href = "English_grammar/article_1_"+(i+1)+".html";
+			c[i].target = "myife";
+		}
+	</script>
+</body>
+</html>

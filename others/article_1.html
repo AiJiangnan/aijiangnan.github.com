@@ -2,75 +2,291 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="English_grammar/main_page.css">
-	<title>英语语法</title>
-</head>
-<body>
-	<div id="body">
-		<div id="head">
-			<div class="menu">
-				<ul>
-					<li><a>句子成分</a>
-						<ul>
-							<li><a class="c">主语</a></li>
-							<li><a class="c">谓语</a></li>
-							<li><a class="c">宾语</a></li>
-							<li><a class="c">宾语补足语</a></li>
-							<li><a class="c">定语</a></li>
-							<li><a class="c">状语</a></li>
-						</ul>
-					</li>
-					<li><a>句子结构</a>
-						<ul>
-							<li><a class="c">比较结构</a></li>
-							<li><a class="c">强调结构</a></li>
-							<li><a class="c">否定结构</a></li>
-							<li><a class="c">并列结构</a></li>
-							<li><a class="c">平行与一致结构</a></li>
-							<li><a class="c">倒装结构</a></li>
-							<li><a class="c">省略结构</a></li>
-						</ul>
-					</li>
-					<li><a>从句分析</a>
-						<ul>
-							<li><a class="c">句子的类型</a></li>
-							<li><a class="c">并列句</a></li>
-							<li><a class="c">宾语从句</a></li>
-							<li><a class="c">定语从句</a></li>
-							<li><a class="c">状语从句</a></li>
-						</ul>
-					</li>
-					<li><a>词法分析</a>
-						<ul>
-							<li><a class="c">名词</a></li>
-							<li><a class="c">代词</a></li>
-							<li><a class="c">数词</a></li>
-							<li><a class="c">动词及动词短语</a></li>
-							<li><a class="c">冠词</a></li>
-							<li><a class="c">形容词</a></li>
-							<li><a class="c">副词</a></li>
-							<li><a class="c">介词</a></li>
-							<li><a class="c">连词</a></li>
-							<li><a class="c">感叹词</a></li>
-						</ul>
-					</li>
-					<li><a>构词法</a>
-						<ul>
-							<li><a class="c">？</a></li>
-							<li><a class="c">？</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<iframe name="myife" src="English_grammar/article_1_0.html"></iframe>
-	</div>
-	<script type="text/javascript">
-		var c = document.getElementsByClassName('c');
-		for(i=0;i<1;i++){//c.length;i++){
-			c[i].href = "English_grammar/article_1_"+(i+1)+".html";
-			c[i].target = "myife";
-		}
+	<link rel="stylesheet" href="../stylesheets/markdown.css">
+	<script src="../javascript/markdown.js"></script>
+	<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
 	</script>
+	<title>Markdown</title>
+</head>
+<body onload="toHtml('con','md')">
+	<textarea id="con" hidden>
+Markdown
+===
+Markdown是一种可以使用普通文本编辑器编写的标记语言，通过类似HTML的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能(如表格、脚注、内嵌HTML等等)，这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc;要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在换行等细节上也有改动。
+# 基本简介[^\[1\] Markdown语法说明(简体中文版)，http://wowubuntu.com/markdown/]
+Markdown 是一种轻量级的标记语言，由John Gruber和Aaron Swartz创建，使其成为可读性最大并可再发行的可输入输出的格式。这种语言创建灵感来自于已经存在的带标记的电子邮件文本。Markdown 允许 HTML 语法，所以使用者如果需要可以直接用 HTML来表示是可以的。Markdown最初由Gruber应用在Perl语言中，但它已经有多种编程语言应用了。它是开源项目，并以BSD-style许可证的许可方式以插件形式或内容管理系统形式发布。
+# 基本语法
+## 标题
+标题有两种语法，第一种是利用` = `（最高级标题）和` - `（第二级标题）,任何数量的` = `和` - `都可以有效果。
+```
+一级标题
+===
+二级标题
+---
+```
+第二种是在行首插入 1 到 6 个` # `，对应标题1到6级。
+```
+# 一级标题
+## 二级标题
+### 三级标题
+```
+## 引用
+如果你需要引用一小段别处的句子，那么就要用引用的格式，在行首插入` > `。
+```
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> > 这是嵌套引用
+>
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
+> This is the first level of quoting.
+```
+下面是引用，可以嵌套引用。
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> > 这是嵌套引用
+>
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
+> This is the first level of quoting.
+
+引用可以使用别的Markdown语法
+> ## 这是一个标题
+> 
+> 1. 这是第一行列表项。
+> 2. 这是第二行列表项。
+
+强制换行可以在行末插入两个空格或者插入一空行。
+
+## 列表
+无序列表用` + `、` - `或者` * `来标记。
+
+```
+* Red
+* Green
+* Blue
+
++ Red
++ Green
++ Blue
+
+- Red
+- Green
+- Blue
+```
+输出的格式是：
+* Red
+* Green
+* Blue
+
+有序列表则使用数字接着一个英文句点：
+
+```
+1. Bird
+2. McHale
+3. Parish
+```
+
+输出的格式是：
+
+1. Bird
+2. McHale
+3. Parish
+
+列表内的段落格式。
+
+```
+1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+```
+
+输出的格式是：
+
+1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+
+嵌入列表,在子级列表行首添加两个空格。
+
+```
+* red
+  + black
+  + white
+* blue
+* green
+```
+输出结果：
+* red
+  + black
+  + white
+* blue
+* green
+
+## 脚注[^\[2\] Markdown，360百科，http://baike.so.com/doc/6949586-7171987.html]
+
+实现代码如下：
+
+```
+脚注[^\[1\] Markdown，360百科，http://baike.so.com/doc/6949586-7171987.html]
+```
+实现格式点击标号跳转到脚注查看。
+
+## 分隔线
+三个以上的星号、减号、底线来建立一个分隔线。
+
+这中间有分隔线。
+***
+这中间有分隔线。
+
+## 
+
+## 强调
+斜体、加粗、斜体加粗、删除线。
+
+```
+*hello world*
+
+_hello world_
+
+**hello world**
+
+__hello world__
+
+***hello world***
+
+___hello world___
+
+~~hello world~~
+
+```
+
+*hello world*
+
+_hello world_
+
+**hello world**
+
+__hello world__
+
+***hello world***
+
+___hello world___
+
+~~hello world~~
+
+## 链接与图片
+
+```
+[Ai Jiangnan](http://aijiangnan.site/)
+![image](http://图片地址)
+```
+输出结果为：
+
+[Ai Jiangnan](http://aijiangnan.site/)
+
+输出图片为：
+
+![image](https://drops.azureedge.net/drops/previews/OJgb.preview_small.png?rscd=&rsct=binary&se=2016-11-25T06%3A37%3A32Z&sig=T4%2F9Uc2vyCBWiq10J%2FDUCRlddKZz3KUkUtZ8yoMArWA%3D&sp=r&sr=b&st=2016-11-25T05%3A37%3A32Z&sv=2013-08-15)
+
+## 表格
+通过以下方法插入表格，通过` : `来设置左对齐、居中或是右对齐。
+
+```
+
+header 1 | header 2 | header 3
+:--------|:--------:|--------:
+row 1 col 1 | row 1 col 2| row 1 col 3
+row 2 col 1 | row 2 col 2| row 2 col 3
+
+```
+输出表格为：
+
+header 1 | header 2 | header 3
+:--------|:--------:|--------:
+row 1 col 1 | row 1 col 2| row 1 col 3
+row 2 col 1 | row 2 col 2| row 2 col 3
+
+
+## 代码
+1. 代码区块只要简单地缩进 4 个空格或是 1 个制表符就可以
+
+```
+普通段落
+
+    代码区块
+```
+输出格式为：
+
+普通段落
+
+    代码区块
+
+2. 如果要标记一小段行内代码，你可以用反引号把它包起来 ` ，例如：
+
+```
+Use the `printf()` function.
+```
+
+输出为：
+Use the `printf()` function.
+
+如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：
+
+```
+``There is a literal backtick (`) here.``
+```
+输出为：
+``There is a literal backtick (`) here.``
+
+常用三个引号插入代码段：
+```
+|```
+void main(){
+    return 0
+}
+|```
+```
+输出为：  
+```
+void main(){
+    return 0
+}
+```
+
+## 数学公式
+利用LaTex[^这是一款排版软件，支持非常漂亮的数学公式]语法输入数学公式。
+
+```
+$$ x^2+y^2=z^2 $$
+```
+
+输出的格式是：
+
+$$ x^2+y^2=z^2 $$
+
+
+
+__参考文献__
+	</textarea>
+	<div id="md" style="width:800px;margin:0 auto;"></div>
 </body>
 </html>
