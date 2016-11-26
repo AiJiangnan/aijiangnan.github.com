@@ -16,14 +16,15 @@
 </head>
 <body>
 	<div id="head">
-		<input type="radio" name="showPreference" value="html" onclick="choice()"><label><b>HTML</b></label>
-        <input type="radio" name="showPreference" value="preview" onclick="choice()" checked><label><b>Preview</b></label>
+		<input type="radio" name="showPreference" value="html" onclick="choice()"><label title="显示HTML代码"><b>HTML</b></label>
+        <input type="radio" name="showPreference" value="preview" onclick="choice()"><label title="显示Markdown预览"><b>Preview</b></label>
 	</div>
 	<div id="menu">
 		
 	</div>
 	<div id="left">
-		<textarea id="text"></textarea>
+		<textarea id="text">
+Write your Markdown here...</textarea>
 	</div>
 	<div id="right">
 		<script type="text/javascript">
