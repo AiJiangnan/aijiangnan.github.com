@@ -28,8 +28,6 @@ body{
 #right{
 	width: 48%;
 	padding: 0 10px;
-	position: fixed;
-	margin-left: 50%;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
