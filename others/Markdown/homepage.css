@@ -1,0 +1,44 @@
+body{
+	font-family: Microsoft Yahei;
+	margin: 0;
+}
+
+#head{
+	height: 25px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+#menu{
+	background-color: #e8e8e8;
+	height: 25px;
+}
+
+#left,#right{
+	border: 2px solid #e8e8e8;
+	float: left;
+	height: 580px;
+}
+
+#left{
+	width: 48%;
+	margin-left: 10px;
+}
+
+#right{
+	width: 48%;
+	padding: 0 10px;
+	position: fixed;
+	margin-left: 50%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+textarea{
+	font-family: Microsoft Yahei;
+	font-size: 1em;
+	width: 99%;
+	height: 99%;
+	border: none;
+	resize: none;
+}
