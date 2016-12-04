@@ -13,6 +13,10 @@ h2{
 	font-size: 1.5em;
 }
 
+h3{
+	margin: 3px 0px 3px 0px;
+}
+
 p{
 	margin: 3px 0px 3px 0px;
 	text-indent: 2em;

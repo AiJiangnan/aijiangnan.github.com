@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../content.css">
+	<link rel="stylesheet" href="../../stylesheets/prism.css">
+	<script src="../../javascript/prism.js"></script>
+</head>
+<body>
+	<h1>C语言数据类型</h1>
+	<table border="1" width="80%">
+		<tr>
+			<td rowspan="11">C语言数据类型</td><td rowspan="6">基本类型</td><td rowspan="2">整型</td><td>短整型（short int）</td>
+		</tr>
+		<tr>
+			<td>长整型（long int）</td>
+		</tr>
+		<tr>
+			<td colspan="2">字符型（char）</td>
+		</tr>
+		<tr>
+			<td rowspan="2">实型（浮点型）</td><td>单精度（float）</td>
+		</tr>
+		<tr>
+			<td>双精度（double）</td>
+		</tr>
+		<tr>
+			<td colspan="2">枚举类型（enum）</td>
+		</tr>
+		<tr>
+			<td rowspan="3">构造类型</td><td colspan="2">数组类型</td>
+		</tr>
+		<tr>
+			<td colspan="2">结构体类型（struct）</td>
+		</tr>
+		<tr>
+			<td colspan="2">共用体类型（union）</td>
+		</tr>
+		<tr>
+			<td colspan="3">指针类型</td>
+		</tr>
+		<tr>
+			<td colspan="3">空类型（void）</td>
+		</tr>
+	</table>
+	<h2>C语言标识符</h2>
+	<p>C语言中标识符是用来标识变量名、符号常量名、函数名、数组名、类型名等程序对象的有效字符序列。简单的说，标识符就是一个名字。</p>
+	<ol>
+		<li>标识符的规定</li>
+		<ol type="a">
+			<li>标识符只能由英文字母(A~Z,a~z)、数字(0~9)和下划线三种字符组成，且第一个字符必须为字母或下划线。</li>
+			<li>大小写字符代表不同标识符。一般对变量名命名用小写，符号常量命名用大写。</li>
+			<li>不能使用C语言关键字作为用户自定义标识符。</li>
+		</ol>
+		<li>标识符的分类</li>
+		<ol type="a">
+			<li>关键字</li>
+			<li>预定义标识符</li>
+			<li>用户自定义标识符</li>
+		</ol>
+	</ol>
+	<h2>常量</h2>
+	<p>常量又称常数，是指在程序运行中，其值不能被改变的量。常用的有：整型常量、实型常量、字符常量、字符串常量和符号常量。</p>
+	<h3>整型常量</h3>
+	<p>整型常量就是整常数，是由一个或多个数字组成，可以有正、负号，但不能有小数点。在C语言中，使用的整常数有八进制、十六进制和十进制三种。此外，整型常量还有整型、长整型和无符号之分。</p>
+	<ol>
+		<li>整型常量的前缀</li>
+		<ol type="a">
+			<li>十进制整常数。十进制整常数没有前缀。其数码取值为0~9。合法的十进制整常数：<code class="language-text">237、-568、65535、1627</code>。</li>
+			<li>八进制整常数。八进制整常数必须以0开头，数码取值为0~7，八进制数通常是无符号型。合法的八进制数：<code class="language-text">015、0101、01777</code>。</li>
+			<li>十六进制整常数。十六进制整常数的前缀为0X或0x，其数码取值为0~9，A~F或a~f，合法的十六进制整常数：<code class="language-text">0XA1、0XFFFE</code>。</li>
+		</ol>
+		<li>整型常数的后缀</li>
+		<p>在16位字长的机器上，基本整型的长度为16位，因此表示的数的范围是有限定的。如果使用的数超过了范围，就必须用长整型来表示。长整型数是用后缀“L”和“l”来表示的。例如：<code class="language-text">158L、35800L</code>。长整数158L和基本整常数158在数值上并无区别。但对158L，因为是长整型量，C编译系统为它分配4个字节存储空间。而对158，因为是基本整型，只分配2个字节的存储空间。</p>
+		<p>无符号数也用后缀表示，整型常数的无符号数的后缀为“U”或“u”。例如：<code class="language-text">358u、0x38Au、235Lu</code>。</p>
+	</ol>
+	<p>前缀和后缀可以同时使用以表示各种类型的数。</p>
+	<p>三种进制表示方法的转换：</p>
+	<pre><code class="language-c line-numbers">#include"stdio.h"
+void main(){
+	int x = 1246, y = 01246, z = 0x1246;
+	printf("%d,%d,%d\n", x, y, z);
+	printf("%o,%o,%o\n", x, y, z);
+	printf("%x,%x,%x\n", x, y, z);
+}</code></pre>
+	<p>运行输出结果为：</p>
+	<pre><code class="language-text">1246,678,4678
+2336,1246,11106
+4de,2a6,1246</code></pre>
+	<h3>实型常量</h3>
+	<p>在C语言中，把带小数的数值称为实数或浮点数。C语言实型常量只使用十进制数。有以下两种形式：</p>
+	<ol>
+		<li>十进制小数形式</li>
+		<p>它是由正负号、整型部分、小数点、小数部分组成，如：<code class="language-text">3.14159, -7.2, 8.9</code>等都是十进制小数形式。</p>
+		<li>指数形式</li>
+		<p>它是由正负号、整型部分、小数点、小数部分和字母E或e后面带正负号的整数组成。如：十进制数180000.0=1.8×10<sup>5</sup>用指数法可以表示1.8e5，其中：1.8称为尾数，5称为指数。0.00123用指数法表示为1.23E-3。</p>
+		<p><b>注意：e 前 e 后都有数，e 后必须为整数。</b></p>
+	</ol>
+	<h3>字符型常量</h3>
+	<p>字符型常量是由一对单引号括起来的单个字符，在内存中占1个字符。例如：<code class="language-text">'A', 'b', '2', '%', ';'</code>等都是有效的字符型常量。注意：</p>
+	<ul>
+		<li>单引号只是作为定界符使用，并不是字符型常量的组成部分。</li>
+		<li>单引号内的字符不可以上单引号或是反斜杠。</li>
+		<li>一个字符型常量的值是该字符集中对应的ASCII编码值。</li>
+		<li></li>
+	</ul>
+	<h3>符号常量</h3>
+	<br><br>
+</body>
+</html>
