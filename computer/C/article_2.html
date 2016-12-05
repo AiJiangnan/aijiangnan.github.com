@@ -43,7 +43,7 @@
 			<td colspan="3">空类型（void）</td>
 		</tr>
 	</table>
-	<h2>C语言标识符</h2>
+	<h2 id="P2_1">C语言标识符</h2>
 	<p>C语言中标识符是用来标识变量名、符号常量名、函数名、数组名、类型名等程序对象的有效字符序列。简单的说，标识符就是一个名字。</p>
 	<ol>
 		<li>标识符的规定</li>
@@ -59,7 +59,7 @@
 			<li>用户自定义标识符</li>
 		</ol>
 	</ol>
-	<h2>常量</h2>
+	<h2 id="P2_2">常量</h2>
 	<p>常量又称常数，是指在程序运行中，其值不能被改变的量。常用的有：整型常量、实型常量、字符常量、字符串常量和符号常量。</p>
 	<h3>整型常量</h3>
 	<p>整型常量就是整常数，是由一个或多个数字组成，可以有正、负号，但不能有小数点。在C语言中，使用的整常数有八进制、十六进制和十进制三种。此外，整型常量还有整型、长整型和无符号之分。</p>
@@ -102,9 +102,49 @@ void main(){
 		<li>单引号只是作为定界符使用，并不是字符型常量的组成部分。</li>
 		<li>单引号内的字符不可以上单引号或是反斜杠。</li>
 		<li>一个字符型常量的值是该字符集中对应的ASCII编码值。</li>
-		<li></li>
+		<li>字符常量在机器内以整数常量的形式存放，因此字符常量与整型常量等价。</li>
 	</ul>
+	<table border="1" width="600">
+	<caption><b>C语言中常用的转义字符常量</b></caption>
+	<tr>
+		<th>字符形式</th><th>表示含义</th><th>字符形式</th><th>表示含义</th>
+	</tr>
+	<tr>
+		<td align="center">\n</td><td>回车换行</td><td align="center">\\</td><td>反斜杠字符\</td>
+	</tr>
+	<tr>
+		<td align="center">\t</td><td>水平制表符</td><td align="center">\'</td><td>单引号</td>
+	</tr>
+	<tr>
+		<td align="center">\v</td><td>垂直制表符</td><td align="center">\"</td><td>双引号</td>
+	</tr>
+	<tr>
+		<td align="center">\r</td><td>回车符</td><td align="center">\ddd</td><td>三位八进制数代表一个字符</td>
+	</tr>
+	<tr>
+		<td align="center">\f</td><td>换页符</td><td align="center">\xhh</td><td>两位十六进制数代表一个字符</td>
+	</tr>
+	<tr>
+		<td align="center">\b</td><td>退格符</td><td align="center">\0</td><td>空值，其ASCII码值为0</td>
+	</tr>
+	</table>
 	<h3>符号常量</h3>
+	<p>用一个特定的符号来代替一个常量或字符串，这个符号称为符号常量。符号常量一般用大写字母表示，以便与其他标识符相区别。符号常量的一般定义形式：</p>
+	<pre><code class="language-c">#define 符号常量 常量(或“字符串”)</code></pre>
+	<p>预处理命令<code class="language-c">#define</code>又称宏定义。一个<code class="language-c">#define</code>命令只能定义一个符号常量。因为它不是语句，所以结尾不用加分号。</p>
+	<p>符号常量的使用：</p>
+	<pre><code class="language-c line-numbers">#include"stdio.h"
+#define PRICE 30
+void main(){
+	int num, total;
+	num = 10;
+	total = num*PRICE;
+	printf("total=%d", total);
+}</code></pre>
+	<p>在上面例子中，PRICE是一个符号常量，它的值是30，因此程序中</p>
+	<code class="language-c">total = num*PRICE;</code>
+	<p>语句在编译时PRICE的值将被30代替。符号常量具有增强程序的通用性和可维护性的优点。如果一个程序中有多处使用同一个常量，这时可把该常量定义为一个符号常量。若需要修改该常量时，则只需要在定义处修改即可。可以做到一改全改，避免出现修改不完全或遗漏等错误。</p>
+	<h2 id="P2_3">变量</h2>
 	<br><br>
 </body>
 </html>
