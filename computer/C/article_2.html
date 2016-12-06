@@ -145,6 +145,67 @@ void main(){
 	<code class="language-c">total = num*PRICE;</code>
 	<p>语句在编译时PRICE的值将被30代替。符号常量具有增强程序的通用性和可维护性的优点。如果一个程序中有多处使用同一个常量，这时可把该常量定义为一个符号常量。若需要修改该常量时，则只需要在定义处修改即可。可以做到一改全改，避免出现修改不完全或遗漏等错误。</p>
 	<h2 id="P2_3">变量</h2>
+	<h3>变量的分类</h3>
+	<p>变量是指在程序运行期间其值可以发生变化的量。一个变量在内存中占据一定的存储单元，在程序中从变量中取值，实际上是通过变量名找到相应的内存地址，从其存储单元中读取数据。在定义变量的同时要说明该变量的类型，系统编译时根据变量及其类型为它分配相应数量的存储空间。</p>
+	<table border="1" width="500">
+	<caption><b>C语言中的变量类型</b></caption>
+	<tr>
+		<td rowspan="4">变量</td><td rowspan="3">普通变量</td><td>整型变量（int）</td>
+	</tr>
+	<tr>
+		<td>实型变量（float和double）</td>
+	</tr>
+	<tr>
+		<td>字符型变量（char）</td>
+	</tr>
+	<tr>
+		<td>地址变量</td><td>指针变量</td>
+	</tr>
+	</table>
+	<p>变量名的命名规则与标识符定义规则相同。存放变量的内存地址，又为变量的指针。无论使用哪一种类型变量，都要“先定义，后使用”。</p>
+	<h3>整型变量</h3>
+	<p>整型变量是用来存放整型数据（即不带小数点的数）的变量。</p>
+	<table border="1" width="600">
+	<caption><b>各类整型量所占内存字节数及其表示范围</b></caption>
+	<tr>
+		<th>类型的说明符</th><th>数的范围</th><th>字节数</th>
+	</tr>
+	<tr>
+		<td>int</td><td>-32768~32767，即-2<sup>15</sup>~(2<sup>15</sup>-1)</td><td align="center">2</td>
+	</tr>
+	<tr>
+		<td>unsigned int</td><td>0~65535，即0~(2<sup>16</sup>-1)</td><td align="center">2</td>
+	</tr>
+	<tr>
+		<td>short int</td><td>-32768~32767，即-2<sup>15</sup>~(2<sup>15</sup>-1)</td><td align="center">2</td>
+	</tr>
+	<tr>
+		<td>unsigned short</td><td>0~65535，即0~(2<sup>16</sup>-1)</td><td align="center">2</td>
+	</tr>
+	<tr>
+		<td>long int</td><td>-2147483648~2147483647，即-2<sup>31</sup>~(2<sup>31</sup>-1)</td><td align="center">4</td>
+	</tr>
+	<tr>
+		<td>unsigned long</td><td>0~4294967295，即0~(2<sup>32</sup>-1)</td><td align="center">4</td>
+	</tr>
+	</table>
+	<p>在不同的编译环境中，数据变量所占字符节数可能不一样，例如：在VC++6.0中int型变量占4个字节，而在Turbo C中int型变量占4个字节。</p>
+	<p>下面说明一下各种类型是内存当中的表示：</p>
+	<img src="../../image/C语言数据类型解析.png">
+	<p>其他类型同理可以得出取值范围。</p>
+	<p>整型数据的溢出：</p>
+	<pre><code class="language-c line-numbers">#include"stdio.h"
+void main(){
+	short a, b;
+	a = 32767;
+	b = a + 1;
+	printf("%d,%d", a, b);
+	getchar();
+}</code></pre>
+	<p>输出结果为：</p>
+	<pre><code class="language-text">32767,-32768</code></pre>
+	<p>自己思考为什么 32767 + 1 会得出 -32768 的结果呢？</p>
+	<h3>实型变量</h3>
 	<br><br>
 </body>
 </html>
