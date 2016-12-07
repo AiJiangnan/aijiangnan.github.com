@@ -145,7 +145,6 @@ void main(){
 	<code class="language-c">total = num*PRICE;</code>
 	<p>语句在编译时PRICE的值将被30代替。符号常量具有增强程序的通用性和可维护性的优点。如果一个程序中有多处使用同一个常量，这时可把该常量定义为一个符号常量。若需要修改该常量时，则只需要在定义处修改即可。可以做到一改全改，避免出现修改不完全或遗漏等错误。</p>
 	<h2 id="P2_3">变量</h2>
-	<h3>变量的分类</h3>
 	<p>变量是指在程序运行期间其值可以发生变化的量。一个变量在内存中占据一定的存储单元，在程序中从变量中取值，实际上是通过变量名找到相应的内存地址，从其存储单元中读取数据。在定义变量的同时要说明该变量的类型，系统编译时根据变量及其类型为它分配相应数量的存储空间。</p>
 	<table border="1" width="500">
 	<caption><b>C语言中的变量类型</b></caption>
@@ -191,7 +190,7 @@ void main(){
 	</table>
 	<p>在不同的编译环境中，数据变量所占字符节数可能不一样，例如：在VC++6.0中int型变量占4个字节，而在Turbo C中int型变量占4个字节。</p>
 	<p>下面说明一下各种类型是内存当中的表示：</p>
-	<img src="../../image/C语言数据类型解析.png">
+	<img src="../../image/C_language/C语言数据类型解析.png">
 	<p>其他类型同理可以得出取值范围。</p>
 	<p>整型数据的溢出：</p>
 	<pre><code class="language-c line-numbers">#include"stdio.h"
@@ -206,6 +205,88 @@ void main(){
 	<pre><code class="language-text">32767,-32768</code></pre>
 	<p>自己思考为什么 32767 + 1 会得出 -32768 的结果呢？</p>
 	<h3>实型变量</h3>
+	<p>实型变量又浮点型变量，在计算机中，实数一律是以指数形式存放的，而不是小数的形式。实型数据一般占4个字节（32位）内存空间，按指数形式存储。例如，实数3.14159在内存中的存放形式如下：</p>
+	<img src="../../image/C_language/C语言浮点型数据类型.png">
+	<p>小数部分占的位（bit）数愈多，数的有效数字愈多，精度俞高。指数部分的位数愈多，则能表示的数值范围愈大。</p>
+	<table border="1" width="600" style="text-align:center">
+	<caption><b>实型变量定义的类型说明符、位数、有效数字和所能表示的数值范围</b></caption>
+	<tr>
+		<th>类型说明答符</th><th>位数（字节数）</th><th>有效数字</th><th>数的范围</th>
+	</tr>
+	<tr>
+		<td>float</td><td>32(4)</td><td>6~7</td><td>10<sup>-37</sup>~10<sup>38</sup></td>
+	</tr>
+	<tr>
+		<td>double</td><td>64(8)</td><td>15~16</td><td>10<sup>-307</sup>~10<sup>308</sup></td>
+	</tr>
+	<tr>
+		<td>long double</td><td>128(16)</td><td>18~19</td><td>10<sup>-4931</sup>~10<sup>4932</sup></td>
+	</tr>
+	</table>
+	<p>实型数据的舍入误差：</p>
+	<pre><code class="language-c line-numbers">#include"stdio.h"
+void main()
+{
+	float a;
+	double b;
+	a = 33333.33333;
+	b = 33333.33333333333333;
+	printf("%f\n%f\n",a,b);
+}</code></pre>
+	<p>输出结果为：</p>
+	<pre><code class="language-text">33333.332031
+33333.333333</code></pre>
+	<p>因为 a 是单精度浮点型，有效数字只有七位，而整数已占五位，故小数点后第三位起均为无效数字。而 b 是双精度型，有效位为十六位。可编译环境规定小数后最多保留六位，其余部分四舍五入。</p>
+	<h3>字符型变量</h3>
+	<p>字符变量用来存储字符常量，即单个字符。字符变量的类型说明符是 char 。每个字符变量分配一个字节的内存空间，因此只能存放一个字符。我们可以把字符型变量当作一个字节的整型变量使用。</p>
+	<p>将一个整数赋值给一个字符变量：</p>
+	<pre><code class="language-c line-numbers">#include"stdio.h"
+void main()
+{
+	char a, b;
+	a = 120;
+	b = 121;
+	printf("%c,%c\n",a,b);
+	printf("%d,%d\n",a,b);
+}</code></pre>
+	<p>输出结果为：</p>
+	<pre><code class="language-text">x,y
+120,121</code></pre>
+	<h3>变量的初始化</h3>
+	<p>在程序中常常需要对变量赋初值。C语言程序中可有多种方法为变量提供初值。在变量定义的同时给变量赋以初值的方法，称为变量的初始化。</p>
+	<h2 id="P2_4">不同类型数据的相互转换</h2>
+	<p>在C语言中，允许不同类型的数据进行运算。变量的数据类型是可以转换的。转换的方法有两种：<b>自动转换</b>和<b>强制转换</b>。自动转换发生在不同数据类型的数据进行运算时，由编译系统自动完成。</p>
+	<ol>
+		<li>自动转换就遵循的规则</li>
+		<ul>
+			<li>若参与运算量的类型不同，则先转换成同一类型，然后再进行运算。</li>
+			<li>转换按数据长度增加的方向进行，以保证精度不降低。</li>
+			<li>所有的浮点运算都是以双精度进行的。</li>
+			<li>char 型和 short 型参与运算时必先转换成 int 型。</li>
+		</ul>
+		<p>在赋值运算中，赋值号两边量的数据类型不同时，赋值右边量的类型转换为左边量的类型。如果右边量的数据类型长度比左边长时，将丢失一部分数据，这样会造成数据误差。</p>
+		<pre><code class="language-c line-numbers">#include"stdio.h"
+void main()
+{
+	float pi = 3.14159;
+	int s, r = 5;
+	s = r*r*pi;
+	printf("s=%d\n",s);
+}</code></pre>
+		<p>输出结果为：</p>
+		<pre><code class="language-text">s=78</code></pre>
+		<li>强制类型转换</li>
+		<p>强制类型转换是通过类型转换运算来实现的。其一般形式为：</p>
+		<pre><code class="language-text">（类型说明符） （表达式）</code></pre>
+		<p>其功能是把表达式的运算结果强制转换成类型说明符所表示的类型。</p>
+		<pre><code class="language-c line-numbers">#include"stdio.h"
+void main(){
+        float f = 5.75;
+        printf("(int)f=%d,f=%f\n",(int)f,f);
+}</code></pre>
+		<p>运行结果为：</p>
+		<pre><code class="language-text">(int)f=5,f=5.750000</code></pre>
+	</ol>
 	<br><br>
 </body>
 </html>
