@@ -58,6 +58,39 @@ section{
     /*margin: 10px 0;*/
 }
 
+.content_0{
+    width: 900px;
+    height: inherit;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.content_0 a{
+    color: black;
+}
+
+.content_0 section{
+    width: 400px;
+    height: 300px;
+    /*padding: 1px;*/
+    margin-top: 200px;
+}
+
+.content_0 .content_left{
+    font-family: 'Microsoft Yahei', 微软雅黑;
+    float: left;
+}
+
+.content_0 .content_right{
+    background: orange;
+    float: left;
+    margin-left: 20px;
+}
+
+.content_left h1{
+    color: orange;
+}
+
 #word{
     background: #fff;
 }
@@ -67,11 +100,29 @@ section{
 }
 
 #math{
-    background: #ddd;
+    background: #fff;
 }
 
 #others{
-    background: #ccc;
+    background: #eee;
+}
+
+#word .content_right{
+    background: url('../image/word.jpg');
+    background-size: cover;
+}
+
+#computer .content_right{
+    background: url('../image/computer.jpg');
+    background-size: cover;
+}
+
+#math .content_right{
+    background: url('../image/math.jpg');
+    background-size: cover;
+}
+
+#others .content_right{
 }
 
 
@@ -87,7 +138,7 @@ footer p,footer h3{
 }
 
 footer #contact{
-    font-family: 微软雅黑;
+    font-family: 'Microsoft Yahei', 微软雅黑;
     float: right;
     margin: 20px 300px 0 0;
 }
@@ -142,110 +193,3 @@ footer #copy p{
 #menu a:hover{
     text-decoration: underline;
 }
-
-
-/**{
-    margin: 0px;
-    padding: 0px;
-}
-
-body{
-    color: #777777;
-    font-family: 微软雅黑;
-}
-
-#head{
-    margin: 80px auto;
-    width: 1200px;
-}
-
-#about{
-    margin-top: 50px;
-    width: 600px;
-    height: 400px;
-}
-
-#contact{
-    margin-top: 50px;
-    margin-left: 700px;
-    width: 500px;
-    height: 400px;
-}
-
-#knowledge{
-    margin: auto;
-    width: 1200px;
-}
-
-.know{
-    width: 560px;
-    height: 350px;
-    margin: 20px 0 20px 0;
-    background-size: 100% 100%;
-}
-
-#word{
-    float: left;
-    background-image: url(../image/word.jpg);
-}
-
-#computer{
-    margin-left: 600px;
-    background-image: url(../image/computer.jpg);
-}
-
-#math{
-    float: left;
-    background-image: url(../image/math.jpg);
-}
-
-#others{
-    margin: 40px 0 20px 600px;
-    background-image: url(../image/others.jpg);
-}
-
-.know ._know{
-    width: 360px;
-    height: 250px;
-    padding: 100px 100px 0 100px;
-    background-color: #efefef;
-    opacity:0;
-    transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -webkit-transition: opacity 1s;
-    -o-transition: opacity 1s;
-}
-
-.know:hover ._know{
-    opacity:1;
-}
-
-#end{
-    height: 100px;
-    margin-top: 100px;
-    font-size: 15px;
-    text-align: right;
-}
-
-h1{
-    font-size: 25px;
-    padding-bottom: 20px;
-}
-
-p{
-    margin: 20px 0 10px 0;
-}
-
-ul{
-    list-style-type: none;
-    margin: 10px 0 10px 0;
-}
-
-li{
-    margin: 4px 0px 4px 0px;
-}
-
-.con{
-    float: left;
-    margin-right: 80px;
-}*/
