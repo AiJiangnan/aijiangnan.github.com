@@ -1,4 +1,150 @@
-*{
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+/*-----Header-----*/
+nav{
+    height: 40px;
+    background: black;
+    position: fixed;
+    width: 100%;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+nav svg{
+    vertical-align: middle;
+    padding: 10px 10px;
+    float: right;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 20px;
+    letter-spacing: 1px;
+}
+
+#banner{
+    height: 650px;
+    background: url('../image/home_background.jpg') fixed;
+    background-size: cover;
+    padding: 1px;
+}
+
+#inner{
+    color: white;
+    font-family: 黑体;
+    width: 300px;
+    margin: 400px 0 0 80px;
+    text-align: center;
+}
+
+#inner hr{
+    background: white;
+    border: 0;
+    height: 3px;
+    width: 100%;
+}
+
+/*-----Body-----*/
+section{
+    /*background: rgb(44, 166, 203);*/
+    height: 650px;
+    /*margin: 10px 0;*/
+}
+
+#word{
+    background: #fff;
+}
+
+#computer{
+    background: #eee;
+}
+
+#math{
+    background: #ddd;
+}
+
+#others{
+    background: #ccc;
+}
+
+
+/*-----Footer-----*/
+footer{
+    height: 200px;
+    background: black;
+    padding: 1px;
+}
+
+footer p,footer h3{
+    margin: 0;
+}
+
+footer #contact{
+    font-family: 微软雅黑;
+    float: right;
+    margin: 20px 300px 0 0;
+}
+
+footer h3{
+    color: orange;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+footer a,footer p{
+    color: #b2b2b2;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer #copy p{
+    font-size: 18px;
+    color: #ccc;
+    margin: 180px auto 0 auto;
+    text-align: center;
+}
+
+/*-----Menu-----*/
+#menu{
+    background: rgba(3, 3, 3, 0.7);
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#menu ul{
+    list-style-type: none;
+}
+
+#menu a{
+    font-family: 黑体;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#menu a:hover{
+    text-decoration: underline;
+}
+
+
+/**{
     margin: 0px;
     padding: 0px;
 }
@@ -102,4 +248,4 @@ li{
 .con{
     float: left;
     margin-right: 80px;
-}
+}*/

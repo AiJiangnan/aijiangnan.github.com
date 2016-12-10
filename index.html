@@ -3,26 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="image/logo_icon.png">
-    <script src="javascript/menu.js"></script>
-    <script src="javascript/PC_mobile.js"></script>
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/home.css">
+    <title>AiJiangnan - Website</title>
     <script type="text/javascript">
-        if(isPC()){
-            document.write('<link rel="stylesheet" href="stylesheets/public.css">');
-            document.write('<link rel="stylesheet" href="stylesheets/home.css">');
-        }else{
-            document.write('<link rel="stylesheet" href="stylesheets_mobile/public.css">');
-            document.write('<link rel="stylesheet" href="stylesheets_mobile/home.css">');
+        // 菜单
+        var i = 0;
+        var speed = 50;
+        function showMenu(){
+            var menu = document.getElementById('menu');
+            menu.style.visibility = 'initial';
+            if(i<1){
+                menu.style.opacity = i;
+                i+=0.1;
+                setTimeout('showMenu()',speed);
+            }
+        }
+        function hiddenMenu(){
+            var menu = document.getElementById('menu');
+            if(i>=0){
+                menu.style.opacity = i;
+                i-=0.1;
+                setTimeout('hiddenMenu()',speed);
+            }
+            if(i>=0&&i<=0.1){
+                menu.style.visibility = 'hidden';
+            }
         }
     </script>
-    <style type="text/css">
-        #menu{
-            margin-top: -50px;
-        }
-    </style>
-    <title>AiJiangnan - Website</title>
 </head>
 <body>
-    <div id="menu_item">
+    <!--Header-->
+    <header>
+        <nav id="top">
+            <a class="logo" href="./index.html">一品江南</a>
+            <a onclick="showMenu()"><svg width="40" height="25">
+                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
+            </svg></a>
+        </nav>
+        <div id="banner" onclick="hiddenMenu()">
+            <div id="inner">
+                <hr>
+                <h1>艾江南</h1>
+                <p>No pain, no gain.</p>
+                <hr>
+                <p>更多</p>
+                <svg width="10" height="30">
+                    <circle cx="5" cy="4" r="2" fill="white"/>
+                    <circle cx="5" cy="12" r="2" fill="white"/>
+                    <circle cx="5" cy="20" r="2" fill="white"/>
+            </svg></a>
+            </div>
+        </div>
+    </header>
+    <!--Body-->
+    <div id="content" onclick="hiddenMenu()">
+        <section id="word">
+            <!--<img src="./image/word.jpg" alt="Word" height="400">-->
+        </section>
+        <section id="computer"></section>
+        <section id="math"></section>
+        <section id="others"></section>
+    </div>
+    <!--Footer-->
+    <footer>
+        <div id="contact">
+            <h3>Email:</h3>
+            <p><a href="mailto:ajn1995@outlook.com">ajn1995@outlook.com</a></p>
+            <h3>QQ & We_Chat:</h3>
+            <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=904629998&site=qq&menu=yes">904629998</a></p>
+            <h3>Phone:</h3>
+            <p>159 3263 4609</p>
+        </div>
+        <div id="copy">
+            <p>&copy; Ai Jiangnan 2016</p>
+        </div>
+    </footer>
+    <div id="menu">
+        <ul>
+            <li><a href="">Word</a></li>
+            <li><a href="">Computer</li>
+            <li><a href="">Math</a></li>
+            <li><a href="">Others</a></li>
+        </ul>
+    </div>
+
+
+
+    <!--<div id="menu_item">
         <div id="exit" onclick="menu_hidden('menu_item')"></div>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -96,6 +166,6 @@
         <div id="end">
             <i>Made by J.N.AI</i>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
