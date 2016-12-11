@@ -19,9 +19,9 @@
                 hiddenMenu();
                 flag = 0;
             }
-            know_menu(0);
         }
         function know_menu(num){
+            menu();
             var home = document.getElementsByClassName('menu');
             for(j=0;j<home.length;j++){
                 home[j].style.display = 'none';
@@ -40,7 +40,7 @@
 <body>
     <header>
         <nav id="top">
-            <svg onclick="menu()" width="40" height="25">
+            <svg onclick="know_menu(0)" width="40" height="25">
                 <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
