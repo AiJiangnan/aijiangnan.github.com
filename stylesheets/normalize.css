@@ -24,8 +24,9 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 
-body {
+html,body {
   margin: 0;
+  height: 100%;
 }
 
 /**
@@ -525,11 +526,11 @@ nav svg{
 /*-----Content-----*/
 .content{
     width: 700px;
-    height: 600px;
+    height: 93%;
     margin: 0 auto;
 }
 
 .content iframe{
     width: inherit;
-    height: inherit;
+    height: 100%;
 }
