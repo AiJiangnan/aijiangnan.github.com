@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CATALOG>
+  <ARTICLE>
+    <ID>1</ID>
+    <NAME>C</NAME>
+	<TITLE>C语言简介</TITLE>
+	<LINK>0</LINK>
+	<TITLE>C语言数据类型</TITLE>
+	<LINK>0</LINK>
+	<TITLE>C语言数据类型</TITLE>
+	<LINK>0</LINK>
+  </ARTICLE>
+  <ARTICLE>
+    <ID>2</ID>
+    <NAME>Java</NAME>
+	<TITLE>22C语言简介</TITLE>
+	<LINK>0</LINK>
+	<TITLE>22C语言数据类型</TITLE>
+	<LINK>0</LINK>
+	<TITLE>22C语言数据类型</TITLE>
+	<LINK>0</LINK>
+  </ARTICLE>
+</CATALOG>
+
+<!--<script type="text/javascript">
+                <li><div>计算机技术基础</div></li>
+                <li><div>计算机组成原理</div></li>
+                <li><div>数据库</a></div></li>
+                <li><div>数据结构和算法</div></li>
+                <li><div>数字信号处理</div></li>
+
+                <li><div>编程语言</a></div></li>
+                <li><div>汇编</div></li>
+                <li><div>C语言</a></div></li>
+                <li><div>C++</div></li>
+                <li><div>Java</a></div></li>
+
+                <li><div>系统硬件层</div></li>
+                <li><div>电路</div></li>
+                <li><div>模拟电路</div></li>
+                <li><div>数字电路</div></li>
+                <li><div>嵌入式芯片</div></li>
+                <li><div>PCB工艺</div></li>
+
+                <li><div>硬件抽象层</div></li>
+                <li><div>通用设备接口及协议</div></li>
+                <li><div>硬件设备相关</div></li>
+
+                <li><div>系统软件层</div></li>
+                <li><div>文件系统</div></li>
+                <li><div>GUI</div></li>
+                <li><div>操作系统</div></li>
+                <li><div>应用程序</div></li>
+
+                <li><div>办公软件</div></li>
+                <li><div>Word</div></li>
+                <li><div>Excel</div></li>
+                <li><div>PPT</div></li>
+                <li><div>LaTex</div></li>
+    </script>-->

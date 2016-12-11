@@ -1,76 +1,63 @@
-body{
-	color: white;
-	font-family: 微软雅黑;
-	background: url(../image/computer_background.jpg) fixed;
-    background-size: cover;
+/*-----Header-----*/
+nav{
+    height: 40px;
+    background: black;
+    width: 100%;
 }
 
-.content a,.content a:hover{
+nav a{
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+	font-size: 20px;
+    font-weight: 900;
+    margin-left: 20px;
+    letter-spacing: 1px;
+	cursor: pointer;
+}
+
+nav svg{
+    vertical-align: middle;
+    padding: 10px 10px;
+	cursor: pointer;
+}
+
+/*-----Content-----*/
+#content{
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#content iframe{
+    width: inherit;
+    height: inherit;
+}
+
+/*-----Menu-----*/
+#menu{
+    background: rgba(3, 3, 3, 0.7);
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    opacity: 0;
+    display: none;
+}
+
+#menu ul{
+    list-style-type: none;
+    padding: 20px;
+}
+
+#menu a{
+    font-family: 黑体;
+    font-size: 20px;
     color: white;
     text-decoration: none;
 }
 
-#body{
-	width: 860px;
-	margin: 0 auto;
-	margin-top: 50px;
-	padding: 20px;
-}
-
-.content{
-	width: 860px;
-	height: 70px;
-	border-radius: 15px;
-	padding-top: 30px;
-	margin-bottom: 30px;
-}
-
-#content_1{
-	margin-top: 100px;
-}
-
-.content ul{
-	list-style-type: none;
-	margin-left: 40px;
-}
-
-.content li{
-	float: left;
-	text-align: center;
-}
-
-#content_1 li{
-	margin-right: 20px;
-}
-
-#content_2 li,#content_4 li,#content_5 li,#content_6 li{
-	margin-right: 60px;
-}
-
-#content_3 li{
-	margin-right: 35px;
-}
-
-#content_1 div{
-	width: 120px;
-}
-
-#content_4 div{
-	width: 180px;
-}
-
-.content div{
-	background-color: rgba(255, 255, 255, 0.25);
-	border-radius: 15px;
-	width: 80px;
-	height: 30px;
-	padding: 10px 10px 0px 10px;
-	transition: background-color 0.5s;
-    -moz-transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-    -o-transition: background-color 0.5s;
-}
-
-.content div:hover{
-	background-color: rgba(255, 255, 255, 0.5);
+#menu a:hover{
+    text-decoration: underline;
 }

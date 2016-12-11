@@ -2,91 +2,105 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/computer.css">
-    <script src="javascript/menu.js"></script>
+    <!--<script src="javascript/baidutongji.js"></script>-->
     <title>Computer</title>
-</head>
-<body>
-    <div id="menu_item">
-        <div id="exit" onclick="menu_hidden('menu_item')"></div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="word.html">Word</a></li>
-            <li><a href="computer.html">Computer</a></li>
-            <li><a href="math.html">Math</a></li>
-            <li><a href="">Others</a></li>
-        </ul>
-    </div>
-    <div id="body">
-        <div id="menu" onclick="menu_show('menu_item')"></div>
-        <div id="content_1" class="content">
-            <ul>
-                <li><div>计算机技术基础</div></li>
-                <li><div>计算机组成原理</div></li>
-                <li><div><a target="_blank" href="computer/database.html">数据库</a></div></li>
-                <li><div>数据结构和算法</div></li>
-                <li><div>数字信号处理</div></li>
-            </ul>
-        </div>
-        <div id="content_2" class="content">
-            <ul>
-                <li><div><a target="_blank" href="computer/programminglang.html">编程语言</a></div></li>
-                <li><div>汇编</div></li>
-                <li><div><a target="_blank" href="computer/c.html">C语言</a></div></li>
-                <li><div>C++</div></li>
-                <li><div><a target="_blank" href="computer/java.html">Java</a></div></li>
-            </ul>
-        </div>
-        <div id="content_3" class="content">
-            <ul>
-                <li><div>系统硬件层</div></li>
-                <li><div>电路</div></li>
-                <li><div>模拟电路</div></li>
-                <li><div>数字电路</div></li>
-                <li><div>嵌入式芯片</div></li>
-                <li><div>PCB工艺</div></li>
-            </ul>
-        </div>
-        <div id="content_4" class="content">
-            <ul>
-                <li><div>硬件抽象层</div></li>
-                <li><div>通用设备接口及协议</div></li>
-                <li><div>硬件设备相关</div></li>
-            </ul>
-        </div>
-        <div id="content_5" class="content">
-            <ul>
-                <li><div>系统软件层</div></li>
-                <li><div>文件系统</div></li>
-                <li><div>GUI</div></li>
-                <li><div>操作系统</div></li>
-                <li><div>应用程序</div></li>
-            </ul>
-        </div>
-        <div id="content_6" class="content">
-            <ul>
-                <li><div>办公软件</div></li>
-                <li><div>Word</div></li>
-                <li><div>Excel</div></li>
-                <li><div>PPT</div></li>
-                <li><div>LaTex</div></li>
-            </ul>
-        </div>
-    </div>
     <script type="text/javascript">
-        var ele = document.getElementsByClassName('content');
-        var color = new Array(
-            "rgba(244, 67, 54, 0.5)",
-            "rgba(48, 63, 159, 0.5)",
-            "rgba(56, 142, 60, 0.5)",
-            "rgba(245, 124, 0, 0.5)",
-            "rgba(194, 24, 91, 0.5)",
-            "rgba(25, 118, 210, 0.5)"
-        )
-        for(i=0;i<ele.length;i++){
-            ele[i].style.backgroundColor=color[i];
+        if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }else{// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET","XML/computer.xml",false);
+        xmlhttp.send();
+        xmlDoc=xmlhttp.responseXML;
+        // 菜单
+        var i = 0;
+        var flag = 0;
+        var speed = 50;
+        function showMenu(){
+            var menu = document.getElementById('menu');
+            menu.style.display = 'block';
+            menu.style.position = 'fixed';
+            if(i<1){
+                menu.style.opacity = i;
+                i+=0.1;
+                setTimeout('showMenu()',speed);
+            }
+        }
+        function hiddenMenu(){
+            var menu = document.getElementById('menu');
+            if(i>=0){
+                menu.style.opacity = i;
+                i-=0.1;
+                setTimeout('hiddenMenu()',speed);
+            }
+            if(i>=0&&i<=0.1){
+                menu.style.display = 'none';
+                menu.style.position = 'absolute';
+            }
+        }
+        function menu(){
+            if(flag==0){
+                showMenu();
+                flag = 1;
+            }else{
+                hiddenMenu();
+                flag = 0;
+            }
+            know_menu(0);
+        }
+        function know_menu(num){
+            var home = document.getElementsByClassName('menu');
+            for(j=0;j<home.length;j++){
+                home[j].style.display = 'none';
+            }
+            home[num].style.display = 'block';
+        }
+        //XML database
+        function readXML(num){
+            var x=xmlDoc.getElementsByTagName("ARTICLE")[num];
+            for(k=0;k<x.getElementsByTagName("TITLE").length;k++){
+                document.write('<li><a href="'+x.getElementsByTagName("LINK")[k].childNodes[0].nodeValue+'" target="myifr">'+x.getElementsByTagName("TITLE")[k].childNodes[0].nodeValue+'</a></li>');
+            }
         }
     </script>
+</head>
+<body>
+    <header>
+        <nav id="top">
+            <svg onclick="menu()" width="40" height="25">
+                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
+            </svg>
+            <a class="logo" href="./index.html">一品江南</a>
+            <a onclick="know_menu(1)">C语言</a>
+            <a onclick="know_menu(2)">Java</a>
+        </nav>
+    </header>
+    <div id="content">
+        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F50755FFB0A4A4FCABABE5876907226BE%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3D93a7879514e7a39c36968c8ffdbf9803" frameborder="0"></iframe>
+    </div>
+    <div id="menu">
+        <ul class="menu" style="display: none;">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./word.html">Word</a></li>
+            <li><a href="./computer.html">Computer</li>
+            <li><a href="./math.html">Math</a></li>
+            <li><a href="./others.html">Others</a></li>
+        </ul>
+        <ul class="menu" style="display: none;">
+            <script type="text/javascript">
+                readXML(0);
+            </script>
+        </ul>
+        <ul class="menu" style="display: none;">
+            <script type="text/javascript">
+                readXML(1);
+            </script>
+        </ul>
+    </div>
 </body>
 </html>

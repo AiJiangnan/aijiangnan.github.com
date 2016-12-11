@@ -1,12 +1,7 @@
-::-webkit-scrollbar{
-    width: 0px;
-}
-
 /*-----Header-----*/
 nav{
     height: 40px;
     background: black;
-    /*position: fixed;*/
     width: 100%;
 }
 
@@ -19,7 +14,6 @@ nav a{
 nav svg{
     vertical-align: middle;
     padding: 10px 10px;
-    /*float: right;*/
 }
 
 .logo{
@@ -63,6 +57,7 @@ nav svg{
     font-size: 20px;
     color: white;
     text-decoration: none;
+    
 }
 
 #menu a:hover{
