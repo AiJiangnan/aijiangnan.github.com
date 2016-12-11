@@ -17,6 +17,7 @@
         xmlDoc=xmlhttp.responseXML;
         // 菜单
         var i = 0;
+        var flag = 0;
         var speed = 50;
         function showMenu(){
             var menu = document.getElementById('menu');
@@ -40,12 +41,21 @@
                 menu.style.position = 'absolute';
             }
         }
+        function menu(){
+            if(flag==0){
+                showMenu();
+                flag = 1;
+            }else{
+                hiddenMenu();
+                flag = 0;
+            }
+        }
     </script>
 </head>
 <body>
     <header>
         <nav id="top">
-            <a onclick="showMenu()"><svg width="40" height="25">
+            <a onclick="menu()"><svg width="40" height="25">
                 <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
@@ -53,7 +63,7 @@
             <a class="logo" href="./index.html">一品江南</a>
         </nav>
     </header>
-    <div id="content"  onclick="hiddenMenu()">
+    <div id="content">
         <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F9392F61485D94C9BB5412DE99C25690C%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3Da5d7ea5b632756688fd4a014ae128af6" frameborder="0"></iframe>
     </div>
     <div id="menu">
