@@ -3,44 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
-    <link rel="stylesheet" href="stylesheets/word.css">
-    <!--<script src="javascript/baidutongji.js"></script>-->
+    <script src="javascript/baidutongji.js"></script>
     <title>Word</title>
     <script type="text/javascript">
-        if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-        }else{// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.open("GET","XML/word.xml",false);
-        xmlhttp.send();
-        xmlDoc=xmlhttp.responseXML;
+        XMLPath('XML/word.xml');
         // 菜单
         var i = 0;
         var flag = 0;
         var speed = 50;
-        function showMenu(){
-            var menu = document.getElementById('menu');
-            menu.style.display = 'block';
-            menu.style.position = 'fixed';
-            if(i<1){
-                menu.style.opacity = i;
-                i+=0.1;
-                setTimeout('showMenu()',speed);
-            }
-        }
-        function hiddenMenu(){
-            var menu = document.getElementById('menu');
-            if(i>=0){
-                menu.style.opacity = i;
-                i-=0.1;
-                setTimeout('hiddenMenu()',speed);
-            }
-            if(i>=0&&i<=0.1){
-                menu.style.display = 'none';
-                menu.style.position = 'absolute';
-            }
-        }
         function menu(){
             if(flag==0){
                 showMenu();
@@ -63,10 +33,10 @@
             <a class="logo" href="./index.html">一品江南</a>
         </nav>
     </header>
-    <div id="content">
+    <div class="content">
         <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F9392F61485D94C9BB5412DE99C25690C%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3Da5d7ea5b632756688fd4a014ae128af6" frameborder="0"></iframe>
     </div>
-    <div id="menu">
+    <div id="menu" style="left:0">
         <ul>
             <script type="text/javascript">
                 var x=xmlDoc.getElementsByTagName("ARTICLE");

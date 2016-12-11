@@ -1,28 +1,10 @@
 /*-----Header-----*/
 nav{
-    height: 40px;
-    background: black;
     position: fixed;
-    width: 100%;
-}
-
-nav a{
-    color: white;
-    text-decoration: none;
-    line-height: 40px;
 }
 
 nav svg{
-    vertical-align: middle;
-    padding: 10px 10px;
     float: right;
-}
-
-.logo{
-    font-size: 20px;
-    font-weight: 900;
-    margin-left: 20px;
-    letter-spacing: 1px;
 }
 
 #banner{
@@ -49,9 +31,7 @@ nav svg{
 
 /*-----Body-----*/
 section{
-    /*background: rgb(44, 166, 203);*/
     height: 650px;
-    /*margin: 10px 0;*/
 }
 
 .content_0{
@@ -68,7 +48,6 @@ section{
 .content_0 section{
     width: 400px;
     height: 300px;
-    /*padding: 1px;*/
     margin-top: 200px;
 }
 
@@ -168,31 +147,4 @@ footer #copy p{
     color: #ccc;
     margin: 180px auto 0 auto;
     text-align: center;
-}
-
-/*-----Menu-----*/
-#menu{
-    background: rgba(3, 3, 3, 0.7);
-    width: 300px;
-    height: 100%;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    opacity: 0;
-    display: none;
-}
-
-#menu ul{
-    list-style-type: none;
-}
-
-#menu a{
-    font-family: 黑体;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-#menu a:hover{
-    text-decoration: underline;
 }

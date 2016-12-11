@@ -5,34 +5,12 @@
     <link rel="icon" type="image/png" href="image/logo_icon.png">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/home.css">
-    <!--<script src="javascript/baidutongji.js"></script>-->
+    <script src="javascript/baidutongji.js"></script>
     <title>AiJiangnan - Website</title>
     <script type="text/javascript">
         // 菜单
         var i = 0;
         var speed = 50;
-        function showMenu(){
-            var menu = document.getElementById('menu');
-            menu.style.display = 'block';
-            menu.style.position = 'fixed';
-            if(i<1){
-                menu.style.opacity = i;
-                i+=0.1;
-                setTimeout('showMenu()',speed);
-            }
-        }
-        function hiddenMenu(){
-            var menu = document.getElementById('menu');
-            if(i>=0){
-                menu.style.opacity = i;
-                i-=0.1;
-                setTimeout('hiddenMenu()',speed);
-            }
-            if(i>=0&&i<=0.1){
-                menu.style.display = 'none';
-                menu.style.position = 'absolute';
-            }
-        }
     </script>
 </head>
 <body>
@@ -127,7 +105,7 @@
             <p>&copy; Ai Jiangnan 2016</p>
         </div>
     </footer>
-    <div id="menu">
+    <div id="menu" style="right:0">
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./word.html">Word</a></li>
