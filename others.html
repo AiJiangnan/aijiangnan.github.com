@@ -1,6 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <script src="javascript/baidutongji.js"></script>
+    <title>Others</title>
+    <script type="text/javascript">
+        XMLPath('XML/others.xml');
+        // 菜单
+        var i = 0;
+        var flag = 0;
+        var speed = 50;
+        function menu(){
+            if(flag==0){
+                showMenu();
+                flag = 1;
+            }else{
+                hiddenMenu();
+                flag = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="top">
+            <a onclick="menu()"><svg width="40" height="25">
+                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
+            </svg></a>
+            <a class="logo" href="./index.html">一品江南</a>
+        </nav>
+    </header>
+    <div class="content">
+        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F13A8034BD697415FB7AEF5F76B587B9A%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3D20bc92ecbefbd9f5beea3d66a7dcf9ed" frameborder="0"></iframe>
+    </div>
+    <div id="menu" style="left:0">
+        <ul>
+            <script type="text/javascript">
+                var x=xmlDoc.getElementsByTagName("ARTICLE");
+                for(j=0;j<x.length;j++){
+                    document.write('<li><a href="'+x[j].getElementsByTagName("LINK")[0].childNodes[0].nodeValue+'" target="myifr">'+x[j].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+'</a></li>');
+                }
+            </script>
+        </ul>
+    </div>
+</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="utf-8" />
 	<script src="javascript/menu.js"></script>
 	<link rel="stylesheet" href="stylesheets/public.css">
@@ -45,4 +95,4 @@
         </script>
 	</div>
 </body>
-</html>
+</html>-->
