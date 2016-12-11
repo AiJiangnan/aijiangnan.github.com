@@ -12,7 +12,8 @@
         var speed = 50;
         function showMenu(){
             var menu = document.getElementById('menu');
-            menu.style.visibility = 'initial';
+            menu.style.display = 'block';
+            menu.style.position = 'fixed';
             if(i<1){
                 menu.style.opacity = i;
                 i+=0.1;
@@ -27,7 +28,8 @@
                 setTimeout('hiddenMenu()',speed);
             }
             if(i>=0&&i<=0.1){
-                menu.style.visibility = 'hidden';
+                menu.style.display = 'none';
+                menu.style.position = 'absolute';
             }
         }
     </script>
@@ -102,13 +104,16 @@
                     <p>一些其他的</p>
                 </section>
                 <section class="content_right">
-                    
+                    <p>Others</p>
                 </section>
             </div>
         </a></section>
     </div>
     <!--Footer-->
     <footer>
+        <div id="logo_image">
+            <img src="./image/logo.svg" height="100">
+        </div>
         <div id="contact">
             <h3>Email:</h3>
             <p><a href="mailto:ajn1995@outlook.com">ajn1995@outlook.com</a></p>

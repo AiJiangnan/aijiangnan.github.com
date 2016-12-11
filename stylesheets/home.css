@@ -85,25 +85,18 @@ section{
     background: orange;
     float: left;
     margin-left: 20px;
+    border-radius: 15px;
 }
 
 .content_left h1{
     color: orange;
 }
 
-#word{
+#word, #math{
     background: #fff;
 }
 
-#computer{
-    background: #eee;
-}
-
-#math{
-    background: #fff;
-}
-
-#others{
+#computer, #others{
     background: #eee;
 }
 
@@ -123,6 +116,15 @@ section{
 }
 
 #others .content_right{
+    font-family: Consolas;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+}
+
+#others .content_right p{
+    margin-top: 120px;
 }
 
 
@@ -131,6 +133,12 @@ footer{
     height: 200px;
     background: black;
     padding: 1px;
+}
+
+footer #logo_image{
+    width: 200px;
+    float: left;
+    margin: 40px 0 0 300px;
 }
 
 footer p,footer h3{
@@ -172,11 +180,10 @@ footer #copy p{
     width: 300px;
     height: 100%;
     position: absolute;
-    position: fixed;
     top: 40px;
     right: 0;
     opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 #menu ul{

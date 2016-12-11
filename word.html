@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/word.css">
-    <script src="javascript/menu.js"></script>
+    <!--<script src="javascript/menu.js"></script>-->
     <title>Word</title>
     <script type="text/javascript">
         if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -15,35 +15,56 @@
         xmlhttp.open("GET","XML/word.xml",false);
         xmlhttp.send();
         xmlDoc=xmlhttp.responseXML;
+        // 菜单
+        var i = 0;
+        var speed = 50;
+        function showMenu(){
+            var menu = document.getElementById('menu');
+            menu.style.display = 'block';
+            menu.style.position = 'fixed';
+            if(i<1){
+                menu.style.opacity = i;
+                i+=0.1;
+                setTimeout('showMenu()',speed);
+            }
+        }
+        function hiddenMenu(){
+            var menu = document.getElementById('menu');
+            if(i>=0){
+                menu.style.opacity = i;
+                i-=0.1;
+                setTimeout('hiddenMenu()',speed);
+            }
+            if(i>=0&&i<=0.1){
+                menu.style.display = 'none';
+                menu.style.position = 'absolute';
+            }
+        }
     </script>
 </head>
 <body>
-    <div id="menu_item">
-        <div id="exit" onclick="menu_hidden('menu_item')"></div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="word.html">Word</a></li>
-            <li><a href="computer.html">Computer</a></li>
-            <li><a href="math.html">Math</a></li>
-            <li><a href="">Others</a></li>
-        </ul>
+    <header>
+        <nav id="top">
+            <a onclick="showMenu()"><svg width="40" height="25">
+                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
+            </svg></a>
+            <a class="logo" href="./index.html">一品江南</a>
+        </nav>
+    </header>
+    <div id="content"  onclick="hiddenMenu()">
+        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F9392F61485D94C9BB5412DE99C25690C%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3Da5d7ea5b632756688fd4a014ae128af6" frameborder="0"></iframe>
     </div>
-    <div id="contents">
-        <div id="menu" onclick="menu_show('menu_item')"></div>
-        <div id="content">
+    <div id="menu">
+        <ul>
             <script type="text/javascript">
                 var x=xmlDoc.getElementsByTagName("ARTICLE");
-                for(i=0;i<x.length;i++){
-                    document.write('<div id="article_'+(i+1)+'"class="abstract">');
-                    document.write('<a href="word/article_'+(i+1)+'.html" target="_blank">');
-                    document.write("<h1>"+x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"</h1>");
-                    document.write("<h2>"+x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue+'</h2><hr size="1" color="white">');
-                    document.write("<p>"+x[i].getElementsByTagName("ABSTRACT")[0].childNodes[0].nodeValue+"</p>");
-                    document.write("</a></div>");
+                for(j=0;j<x.length;j++){
+                    document.write('<li><a href="'+x[j].getElementsByTagName("LINK")[0].childNodes[0].nodeValue+'" target="myifr">'+x[j].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+'</a></li>');
                 }
             </script>
-        </div>
+        </ul>
     </div>
-    <div id="end"></div>
 </body>
 </html>
