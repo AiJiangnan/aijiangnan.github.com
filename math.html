@@ -2,36 +2,73 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/public.css">
-    <script src="javascript/menu.js"></script>
-    <script type="text/javascript" async
-		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-		MathJax.Hub.Config({
-			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-		});
-	</script>
-    <title>数学</title>
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <script src="javascript/baidutongji.js"></script>
+    <title>Math</title>
+    <script type="text/javascript">
+        XMLPath('XML/math.xml');
+        // 菜单
+        var i = 0;
+        var flag = 0;
+        var speed = 50;
+        function menu(){
+            if(flag==0){
+                showMenu();
+                flag = 1;
+            }else{
+                hiddenMenu();
+                flag = 0;
+            }
+        }
+        function know_menu(num){
+            menu();
+            var home = document.getElementsByClassName('menu');
+            for(j=0;j<home.length;j++){
+                home[j].style.display = 'none';
+            }
+            home[num].style.display = 'block';
+        }
+        //XML database
+        function readXML(num){
+            var x=xmlDoc.getElementsByTagName("ARTICLE")[num];
+            for(k=0;k<x.getElementsByTagName("TITLE").length;k++){
+                document.write('<li><a href="'+x.getElementsByTagName("LINK")[k].childNodes[0].nodeValue+'" target="myifr">'+x.getElementsByTagName("TITLE")[k].childNodes[0].nodeValue+'</a></li>');
+            }
+        }
+    </script>
 </head>
 <body>
-    <div id="menu_item">
-        <div id="exit" onclick="menu_hidden('menu_item')"></div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="word.html">Word</a></li>
-            <li><a href="computer.html">Computer</a></li>
-            <li><a href="math.html">Math</a></li>
-            <li><a href="">Others</a></li>
-        </ul>
+    <header>
+        <nav id="top">
+            <svg onclick="know_menu(0)" width="40" height="25">
+                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
+                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
+            </svg>
+            <a class="logo" href="./index.html">一品江南</a>
+            <a onclick="know_menu(1)">小学</a>
+            <a onclick="know_menu(2)">初中</a>
+            <a onclick="know_menu(3)">高中</a>
+            <a onclick="know_menu(4)">大学</a>
+        </nav>
+    </header>
+    <div class="content">
+        <iframe name="myifr" src="" frameborder="0"></iframe>
     </div>
-    <div id="body">
-        <div id="menu" onclick="menu_show('menu_item')"></div>
-        \[
-        \begin{array}{lll}
-        \dot{x} = \sigma(y-x) \\ 
-        \dot{y} = \rho x-y-xz \\
-        \dot{z} = -\beta z+xy
-        \end{array}
-        \]
+    <div id="menu" style="left:0;">
+        <ul class="menu" style="display: none;">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./word.html">Word</a></li>
+            <li><a href="./computer.html">Computer</li>
+            <li><a href="./math.html">Math</a></li>
+            <li><a href="./others.html">Others</a></li>
+        </ul>
+        <script type="text/javascript">
+            var x=xmlDoc.getElementsByTagName("ARTICLE");
+            for(l=0;l<x.length;l++){
+                document.write('<ul class="menu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
+            }
+        </script>
     </div>
 </body>
 </html>

@@ -61,16 +61,12 @@
             <li><a href="./math.html">Math</a></li>
             <li><a href="./others.html">Others</a></li>
         </ul>
-        <ul class="menu" style="display: none;">
-            <script type="text/javascript">
-                readXML(0);
-            </script>
-        </ul>
-        <ul class="menu" style="display: none;">
-            <script type="text/javascript">
-                readXML(1);
-            </script>
-        </ul>
+        <script type="text/javascript">
+            var x=xmlDoc.getElementsByTagName("ARTICLE");
+            for(l=0;l<x.length;l++){
+                document.write('<ul class="menu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
+            }
+        </script>
     </div>
 </body>
 </html>
