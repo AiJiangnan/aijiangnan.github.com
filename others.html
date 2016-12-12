@@ -34,7 +34,7 @@
         </nav>
     </header>
     <div class="content">
-        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F13A8034BD697415FB7AEF5F76B587B9A%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3D20bc92ecbefbd9f5beea3d66a7dcf9ed" frameborder="0"></iframe>
+        <iframe id="con" name="myifr" frameborder="0"></iframe>
     </div>
     <div id="menu" style="left:0">
         <ul>
@@ -43,6 +43,7 @@
                 for(j=0;j<x.length;j++){
                     document.write('<li><a href="'+x[j].getElementsByTagName("LINK")[0].childNodes[0].nodeValue+'" target="myifr">'+x[j].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+'</a></li>');
                 }
+                document.getElementById('con').src = x[0].getElementsByTagName("LINK")[0].childNodes[0].nodeValue;
             </script>
         </ul>
     </div>
