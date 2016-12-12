@@ -11,6 +11,13 @@
         // 菜单
         var i = 0;
         var speed = 50;
+        function showSubMenu(num){
+            var s = document.getElementsByClassName('submenu');
+            for(j=0;j<s.length;j++){
+                s[j].style.display = 'none';
+            }
+            s[num].style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -55,27 +62,34 @@
             </div>
         </a></section>
         <section id="computer">
-            <div class="content_0"><a href="./computer.html">
+            <div class="content_0">
                 <section class="content_left">
                     <h1>Computer</h1>
-                    <p>软件、硬件、开发</p>
+                    <ul>
+                        <li><a href="./computer/prom_lang.html">编程语言</a></li>
+                        <li>硬件、开发</li>
+                    </ul>
                 </section>
                 <section class="content_right">
                     
                 </section>
             </div>
-        </a></section>
+        </section>
         <section id="math">
-            <div class="content_0"><a href="./math.html">
+            <div class="content_0">
                 <section class="content_left">
                     <h1>Math</h1>
-                    <p>计算、建模、分析</p>
+                    <ul>
+                        <li><a href="math/math_school.html">数学课程</a></li>
+                        <li>计算、建模、分析</li>
+                    </ul>
+                    <!--<p>计算、建模、分析</p>-->
                 </section>
                 <section class="content_right">
                     
                 </section>
             </div>
-        </a></section>
+        </section>
         <section id="others">
             <div class="content_0"><a href="./others.html">
                 <section class="content_left">
@@ -106,11 +120,17 @@
         </div>
     </footer>
     <div id="menu" style="right:0">
-        <ul>
+        <ul class="onemenu">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./word.html">Word</a></li>
-            <li><a href="./computer.html">Computer</li>
-            <li><a href="./math.html">Math</a></li>
+            <li onclick="showSubMenu(0)"><a>Computer</a></li>
+            <ul class="submenu">
+                <li><a href="./computer/prom_lang.html">编程语言</a></li>
+            </ul>
+            <li onclick="showSubMenu(1)"><a>Math</a></li>
+            <ul class="submenu">
+                <li><a href="math/math_school.html">数学课程</a></li>
+            </ul>
             <li><a href="./others.html">Others</a></li>
         </ul>
     </div>

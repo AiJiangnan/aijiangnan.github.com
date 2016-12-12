@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./stylesheets/normalize.css">
-    <script src="javascript/baidutongji.js"></script>
-    <title>Math</title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <script src="../javascript/baidutongji.js"></script>
+    <title>Computer</title>
     <script type="text/javascript">
-        XMLPath('XML/math.xml');
+        XMLPath('../XML/prom_lang.xml');
         // 菜单
         var i = 0;
         var flag = 0;
@@ -40,33 +40,19 @@
 <body>
     <header>
         <nav id="top">
-            <svg onclick="know_menu(0)" width="40" height="25">
-                <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
-                <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
-                <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
-            </svg>
-            <a class="logo" href="./index.html">一品江南</a>
-            <a onclick="know_menu(1)">小学</a>
-            <a onclick="know_menu(2)">初中</a>
-            <a onclick="know_menu(3)">高中</a>
-            <a onclick="know_menu(4)">大学</a>
+            <a class="logo" href="../index.html">一品江南</a>
+            <a onclick="know_menu(0)">C语言</a>
+            <a onclick="know_menu(1)">Java</a>
         </nav>
     </header>
     <div class="content">
-        <iframe name="myifr" src="" frameborder="0"></iframe>
+        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F50755FFB0A4A4FCABABE5876907226BE%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3D93a7879514e7a39c36968c8ffdbf9803" frameborder="0"></iframe>
     </div>
     <div id="menu" style="left:0;">
-        <ul class="menu" style="display: none;">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./word.html">Word</a></li>
-            <li><a href="./computer.html">Computer</li>
-            <li><a href="./math.html">Math</a></li>
-            <li><a href="./others.html">Others</a></li>
-        </ul>
         <script type="text/javascript">
             var x=xmlDoc.getElementsByTagName("ARTICLE");
             for(l=0;l<x.length;l++){
-                document.write('<ul class="menu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
+                document.write('<ul class="menu onemenu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
             }
         </script>
     </div>
