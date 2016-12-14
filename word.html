@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <script src="./javascript/jquery-3.1.1.min.js"></script>
     <script src="javascript/baidutongji.js"></script>
     <title>Word</title>
     <script type="text/javascript">
         XMLPath('XML/word.xml');
-        // 菜单
-        var i = 0;
-        var flag = 0;
-        var speed = 50;
-        function menu(){
-            if(flag==0){
-                showMenu();
-                flag = 1;
-            }else{
-                hiddenMenu();
-                flag = 0;
-            }
-        }
+        $(function () {
+            $('#show').click(function () {
+                $('#menu').fadeToggle();
+            });
+        });
     </script>
 </head>
 <body> 
     <header>
         <nav id="top">
-            <svg onclick="menu()" width="40" height="25">
+            <svg id="show" width="40" height="25">
                 <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="14" width="30" height="4" style="fill:white;"/>

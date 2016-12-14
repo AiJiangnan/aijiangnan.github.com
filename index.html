@@ -5,12 +5,17 @@
     <link rel="icon" type="image/png" href="image/logo_icon.png">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/home.css">
+    <script src="./javascript/jquery-3.1.1.min.js"></script>
     <script src="javascript/baidutongji.js"></script>
     <title>AiJiangnan - Website</title>
     <script type="text/javascript">
-        // 菜单
-        var i = 0;
-        var speed = 50;
+        $(function(){
+            $('#show').click(function(){
+                $('#menu').fadeToggle();
+                $('#menu').css('position', 'fixed');
+            });
+            $('#inner').show('2000');
+        });
     </script>
 </head>
 <body>
@@ -18,13 +23,13 @@
     <header>
         <nav id="top">
             <a class="logo" href="./index.html">一品江南</a>
-            <a onclick="showMenu()"><svg width="40" height="25">
+            <svg id="show" width="40" height="25">
                 <rect x="0" y="0" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="7" width="30" height="4" style="fill:white;"/>
                 <rect x="0" y="14" width="30" height="4" style="fill:white;"/>
-            </svg></a>
+            </svg>
         </nav>
-        <div id="banner" onclick="hiddenMenu()">
+        <div id="banner">
             <div id="inner">
                 <hr>
                 <h1>艾江南</h1>
@@ -40,7 +45,7 @@
         </div>
     </header>
     <!--Body-->
-    <div id="content" onclick="hiddenMenu()">
+    <div id="content">
         <section id="word">
             <div class="content_0"><a href="./word.html">
                 <section class="content_left">
@@ -76,7 +81,6 @@
                         <li><a href="math/math_school.html">数学课程</a></li>
                         <li>计算、建模、分析</li>
                     </ul>
-                    <!--<p>计算、建模、分析</p>-->
                 </section>
                 <section class="content_right">
                     

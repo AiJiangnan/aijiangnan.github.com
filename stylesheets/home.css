@@ -20,6 +20,7 @@ nav svg{
     width: 300px;
     margin: 400px 0 0 80px;
     text-align: center;
+    display: none;
 }
 
 #inner hr{

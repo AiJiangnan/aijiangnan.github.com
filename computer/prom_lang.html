@@ -3,31 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <script src="../javascript/jquery-3.1.1.min.js"></script>
     <script src="../javascript/baidutongji.js"></script>
     <title>Computer</title>
     <script type="text/javascript">
         XMLPath('../XML/prom_lang.xml');
-        // 菜单
-        var i = 0;
-        var flag = 0;
-        var speed = 50;
-        function menu(){
-            if(flag==0){
-                showMenu();
-                flag = 1;
-            }else{
-                hiddenMenu();
-                flag = 0;
-            }
-        }
-        function know_menu(num){
-            menu();
-            var home = document.getElementsByClassName('menu');
-            for(j=0;j<home.length;j++){
-                home[j].style.display = 'none';
-            }
-            home[num].style.display = 'block';
-        }
+        //菜单
+        $(function(){
+            $('.top_menu').click(function(){
+                $('#menu').fadeToggle();
+                var ss = $(this).index();
+                $('.menu').hide();
+                $('.menu').eq(ss-1).show();
+            });
+        });
         //XML database
         function readXML(num){
             var x=xmlDoc.getElementsByTagName("ARTICLE")[num];
@@ -41,8 +30,8 @@
     <header>
         <nav id="top">
             <a class="logo" href="../index.html">一品江南</a>
-            <a onclick="know_menu(0)">C语言</a>
-            <a onclick="know_menu(1)">Java</a>
+            <a class="top_menu">C语言</a>
+            <a class="top_menu">Java</a>
         </nav>
     </header>
     <div class="content">
