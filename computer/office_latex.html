@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <script src="../javascript/baidutongji.js"></script>
+    <title>Office、LaTex</title>
+    <script type="text/javascript">
+        XMLPath('../XML/office_latex.xml');
+        // 菜单
+        var i = 0;
+        var flag = 0;
+        var speed = 50;
+        function menu(){
+            if(flag==0){
+                showMenu();
+                flag = 1;
+            }else{
+                hiddenMenu();
+                flag = 0;
+            }
+        }
+        function know_menu(num){
+            menu();
+            var home = document.getElementsByClassName('menu');
+            for(j=0;j<home.length;j++){
+                home[j].style.display = 'none';
+            }
+            home[num].style.display = 'block';
+        }
+        //XML database
+        function readXML(num){
+            var x=xmlDoc.getElementsByTagName("ARTICLE")[num];
+            for(k=0;k<x.getElementsByTagName("TITLE").length;k++){
+                document.write('<li><a href="'+x.getElementsByTagName("LINK")[k].childNodes[0].nodeValue+'" target="myifr">'+x.getElementsByTagName("TITLE")[k].childNodes[0].nodeValue+'</a></li>');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="top">
+            <a class="logo" href="../index.html">一品江南</a>
+            <a onclick="know_menu(0)">Word</a>
+            <a onclick="know_menu(1)">Excel</a>
+            <a onclick="know_menu(2)">PPT</a>
+            <a onclick="know_menu(3)">LaTex</a>
+        </nav>
+    </header>
+    <div class="content">
+        <iframe name="myifr" src="http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F0826AE3765A94E9BBEF066584D64388B%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3De2ead9aeaf58e5ee5a9c8352f81ca968" frameborder="0"></iframe>
+    </div>
+    <div id="menu" style="left:0;">
+        <script type="text/javascript">
+            var x=xmlDoc.getElementsByTagName("ARTICLE");
+            for(l=0;l<x.length;l++){
+                document.write('<ul class="menu onemenu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
+            }
+        </script>
+    </div>
+</body>
+</html>
