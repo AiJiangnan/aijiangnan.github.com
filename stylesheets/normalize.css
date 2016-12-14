@@ -503,16 +503,14 @@ nav svg{
     height: 100%;
     position: absolute;
     top: 40px;
-    opacity: 0;
-    display: none;
+    /*opacity: 0;*/
+    /*display: none;*/
 }
 
 #menu ul{
     list-style-type: none;
-}
-
-#menu>ul{
-    padding: 20px;
+	font-size: 20px;
+	padding: 20px;
 }
 
 #menu a{
@@ -521,25 +519,23 @@ nav svg{
 	text-decoration: none;
 }
 
-#menu .onemenu>li a{
-    font-size: 20px;
-	cursor: pointer;
-}
-
 #menu a:hover{
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
-.submenu{
+#menu ul li ul{
+	padding: 2px 30px;
+	opacity: 0;
 	display: none;
 }
 
-.submenu li{
-    padding: 2px 0;
+#menu ul li ul li{
+	font-size: 15px;
 }
 
-.submenu a{
-    font-size: 15px;
+#menu ul li:hover ul{
+	display: block;
+	opacity: 1;
 }
 
 /*-----Content-----*/

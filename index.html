@@ -11,13 +11,6 @@
         // 菜单
         var i = 0;
         var speed = 50;
-        function showSubMenu(num){
-            var s = document.getElementsByClassName('submenu');
-            for(j=0;j<s.length;j++){
-                s[j].style.display = 'none';
-            }
-            s[num].style.display = 'block';
-        }
     </script>
 </head>
 <body>
@@ -120,18 +113,20 @@
         </div>
     </footer>
     <div id="menu" style="right:0">
-        <ul class="onemenu">
+        <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./word.html">Word</a></li>
-            <li onclick="showSubMenu(0)"><a>Computer</a></li>
-            <ul class="submenu">
-                <li><a href="./computer/prom_lang.html">编程语言</a></li>
-                <li><a href="./computer/office_latex.html">Office、LaTex</a></li>
-            </ul>
-            <li onclick="showSubMenu(1)"><a>Math</a></li>
-            <ul class="submenu">
-                <li><a href="math/math_school.html">数学课程</a></li>
-            </ul>
+            <li><a>Computer</a>
+                <ul>
+                    <li><a href="./computer/prom_lang.html">编程语言</a></li>
+                    <li><a href="./computer/office_latex.html">Office、LaTex</a></li>
+                </ul>
+            </li>
+            <li><a>Math</a>
+                <ul>
+                    <li><a href="math/math_school.html">数学课程</a></li>
+                </ul>
+            </li>
             <li><a href="./others.html">Others</a></li>
         </ul>
     </div>
