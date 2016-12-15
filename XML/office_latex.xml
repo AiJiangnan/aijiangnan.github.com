@@ -3,8 +3,8 @@
   <ARTICLE>
     <ID>1</ID>
     <NAME>Word</NAME>
-    <TITLE>1_1</TITLE>
-    <LINK>0</LINK>
+    <TITLE>第1章 菜单解读</TITLE>
+    <LINK>http://note.youdao.com/md/preview/preview.html?file=%2Fyws%2Fapi%2Fpersonal%2Ffile%2F6C564EE682D747EE89B0C72939DC7911%0A%20%20%20%20%20%20%3Fmethod%3Ddownload%26read%3Dtrue%26shareKey%3Dbdb2d701717f7106762e9201e1d0386e</LINK>
     <TITLE>1_2</TITLE>
     <LINK>0</LINK>
     <TITLE>1_3</TITLE>
@@ -32,12 +32,22 @@
   </ARTICLE>
   <ARTICLE>
     <ID>4</ID>
-    <NAME>LaTex</NAME>
+    <NAME>VBA</NAME>
     <TITLE>4_1</TITLE>
     <LINK>0</LINK>
     <TITLE>4_2</TITLE>
     <LINK>0</LINK>
     <TITLE>4_3</TITLE>
+    <LINK>0</LINK>
+  </ARTICLE>
+  <ARTICLE>
+    <ID>5</ID>
+    <NAME>LaTex</NAME>
+    <TITLE>5_1</TITLE>
+    <LINK>0</LINK>
+    <TITLE>5_2</TITLE>
+    <LINK>0</LINK>
+    <TITLE>5_3</TITLE>
     <LINK>0</LINK>
   </ARTICLE>
 </CATALOG>
