@@ -3,31 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <script src="../javascript/jquery-3.1.1.min.js"></script>
     <script src="../javascript/baidutongji.js"></script>
     <title>Math in School</title>
     <script type="text/javascript">
         XMLPath('../XML/math.xml');
-        // 菜单
-        var i = 0;
-        var flag = 0;
-        var speed = 50;
-        function menu(){
-            if(flag==0){
-                showMenu();
-                flag = 1;
-            }else{
-                hiddenMenu();
-                flag = 0;
-            }
-        }
-        function know_menu(num){
-            menu();
-            var home = document.getElementsByClassName('menu');
-            for(j=0;j<home.length;j++){
-                home[j].style.display = 'none';
-            }
-            home[num].style.display = 'block';
-        }
         //XML database
         function readXML(num){
             var x=xmlDoc.getElementsByTagName("ARTICLE")[num];
@@ -35,16 +15,25 @@
                 document.write('<li><a href="'+x.getElementsByTagName("LINK")[k].childNodes[0].nodeValue+'" target="myifr">'+x.getElementsByTagName("TITLE")[k].childNodes[0].nodeValue+'</a></li>');
             }
         }
+        //菜单
+        $(function(){
+            $('.top_menu').click(function(){
+                $('#menu').fadeToggle();
+                var ss = $(this).index();
+                $('.menu').hide();
+                $('.menu').eq(ss-1).show();
+            });
+        });
     </script>
 </head>
 <body>
     <header>
         <nav id="top">
             <a class="logo" href="../index.html">一品江南</a>
-            <a onclick="know_menu(0)">小学</a>
-            <a onclick="know_menu(1)">初中</a>
-            <a onclick="know_menu(2)">高中</a>
-            <a onclick="know_menu(3)">大学</a>
+            <a class="top_menu">小学</a>
+            <a class="top_menu">初中</a>
+            <a class="top_menu">高中</a>
+            <a class="top_menu">大学</a>
         </nav>
     </header>
     <div class="content">
@@ -54,7 +43,7 @@
         <script type="text/javascript">
             var x=xmlDoc.getElementsByTagName("ARTICLE");
             for(l=0;l<x.length;l++){
-                document.write('<ul class="menu onemenu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
+                document.write('<ul class="menu" style="display: none;"><script type="text/javascript">readXML('+l+');<\/script></ul>');
             }
         </script>
     </div>
