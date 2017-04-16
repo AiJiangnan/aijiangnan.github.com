@@ -1,133 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="image/logo_icon.png">
-    <link rel="stylesheet" href="./stylesheets/normalize.css">
-    <link rel="stylesheet" href="./stylesheets/home.css">
-    <script src="./javascript/jquery-3.1.1.min.js"></script>
-    <script src="javascript/baidutongji.js"></script>
-    <title>AiJiangnan - Website</title>
-    <script type="text/javascript">
-        $(function(){
-            $('#show').click(function(){
-                $('#menu').fadeToggle();
-                $('#menu').css('position', 'fixed');
-            });
-            $('#inner').show('2000');
-        });
-    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <title>J.N.AI</title>
 </head>
+
 <body>
-    <!--Header-->
-    <header>
-        <nav id="top">
-            <a class="logo" href="./index.html">一品江南</a>
-            <img id="show" src="image/menu.svg">
-        </nav>
-        <div id="banner">
-            <div id="inner">
-                <hr>
-                <h1>艾江南</h1>
-                <p>No pain, no gain.</p>
-                <hr>
-                <p>更多</p>
-                <svg width="10" height="30">
-                    <circle cx="5" cy="4" r="2" fill="white"/>
-                    <circle cx="5" cy="12" r="2" fill="white"/>
-                    <circle cx="5" cy="20" r="2" fill="white"/>
-            </svg></a>
-            </div>
-        </div>
-    </header>
-    <!--Body-->
-    <div id="content">
-        <section id="word">
-            <div class="content_0"><a href="./word.html">
-                <section class="content_left">
-                    <h1>Word</h1>
-                    <p>心情、回忆、随笔</p>
-                </section>
-                <section class="content_right">
-                    
-                </section>
-            </div>
-        </a></section>
-        <section id="computer">
-            <div class="content_0">
-                <section class="content_left">
-                    <h1>Computer</h1>
-                    <ul>
-                        <li><a href="./computer/prom_lang.html">编程语言</a></li>
-                        <li><a href="./computer/office_latex.html">Office、LaTex</a></li>
-                        <li><a href="./computer/html_css_JS.html">前端开发</a></li>
-                    </ul>
-                </section>
-                <section class="content_right">
-                    
-                </section>
-            </div>
-        </section>
-        <section id="math">
-            <div class="content_0">
-                <section class="content_left">
-                    <h1>Math</h1>
-                    <ul>
-                        <li><a href="math/math_school.html">数学课程</a></li>
-                        <li>计算、建模、分析</li>
-                    </ul>
-                </section>
-                <section class="content_right">
-                    
-                </section>
-            </div>
-        </section>
-        <section id="others">
-            <div class="content_0"><a href="./others.html">
-                <section class="content_left">
-                    <h1>Others</h1>
-                    <p>一些其他的</p>
-                </section>
-                <section class="content_right">
-                    <p>Others</p>
-                </section>
-            </div>
-        </a></section>
-    </div>
-    <!--Footer-->
-    <footer>
-        <div id="logo_image">
-            <img src="./image/logo.svg" height="100">
-        </div>
-        <div id="contact">
-            <h3>Email:</h3>
-            <p><a href="mailto:ajn1995@outlook.com">ajn1995@outlook.com</a></p>
-            <h3>QQ & We_Chat:</h3>
-            <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=904629998&site=qq&menu=yes">904629998</a></p>
-            <h3>Phone:</h3>
-            <p>159 3263 4609</p>
-        </div>
-        <div id="copy">
-            <p>&copy; Ai Jiangnan 2016</p>
-        </div>
-    </footer>
-    <div id="menu" style="right:0">
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./word.html">Word</a></li>
-            <li><a>Computer</a>
-                <ul>
-                    <li><a href="./computer/prom_lang.html">编程语言</a></li>
-                    <li><a href="./computer/office_latex.html">Office、LaTex</a></li>
-                </ul>
-            </li>
-            <li><a>Math</a>
-                <ul>
-                    <li><a href="math/math_school.html">数学课程</a></li>
-                </ul>
-            </li>
-            <li><a href="./others.html">Others</a></li>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">J.N.AI</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="word.html">Word</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computer<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Language</li>
+              <li><a href="computer/c.html">C</a></li>
+              <li><a href="computer/java.html">Java</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Office</li>
+              <li><a href="computer/word.html">Word</a></li>
+              <li><a href="computer/excel.html">Excel</a></li>
+              <li><a href="computer/ppt.html">PPT</a></li>
+              <li><a href="computer/latex.html">LaTex</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Math<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">基础知识</li>
+              <li><a href="#">C</a></li>
+            </ul>
+          </li>
+          <li><a href="other.html">Other</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>AiJiangnan's Blog</h1>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12 con">
+        <h2 class="">Word</h2>
+        <ul class="list-group">
+          <a href="http://note.youdao.com/share/?id=a5d7ea5b632756688fd4a014ae128af6&type=note#/" target="_blank" class="list-group-item">乒乓球 <span class="label label-success">New</span></a>
+          <a href="http://note.youdao.com/share/?id=706b10e39fe97cd4861cf0424122bed4&type=note#/" target="_blank" class="list-group-item">我的北，你的南</a>
+          <a href="http://note.youdao.com/share/?id=691a956b4fa6e64fbd627c315e15cfdd&type=note#/" target="_blank" class="list-group-item">送你一块烤地瓜，上面插着一朵花</a>
+          <a href="http://note.youdao.com/share/?id=4c61232ca90277bd66cf7acbd849029d&type=note#/" target="_blank" class="list-group-item">妈妈的冰淇淋</a>
+          <a href="http://note.youdao.com/share/?id=b0cfd86ddb6e59762b065df5a993c249&type=note#/" target="_blank" class="list-group-item">致唐丽姿的一封信</a>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 con">
+        <h2 class="">Computer</h2>
+        <ul class="list-group">
+          <a class="list-group-item" data-toggle="modal" data-target=".bs-m1-modal-sm">Language</a>
+          <a class="list-group-item" data-toggle="modal" data-target=".bs-m2-modal-sm">Office</a>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 con">
+        <h2 class="">Math</h2>
+        <ul class="list-group">
+          <a class="list-group-item">基础知识</a>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 con">
+        <h2 class="">Other</h2>
+        <ul class="list-group">
+          <a class="list-group-item">Markdown</a>
+          <a class="list-group-item">信息中的0和1</a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal fade bs-m1-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Language</a>
+            <a href="#" class="list-group-item">C</a>
+            <a href="#" class="list-group-item">Java</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bs-m2-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Office</a>
+            <a href="#" class="list-group-item">Word</a>
+            <a href="#" class="list-group-item">Excel</a>
+            <a href="#" class="list-group-item">PPT</a>
+            <a href="#" class="list-group-item">LaTex</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="container-fluid bg-primary">
+    <div class="row">
+      <div class="col-xs-6 col-md-4" id="info">
+        <dl class="dl-horizontal pull-right">
+          <dt>Email</dt>
+          <dd>904629998@qq.com</dd>
+          <dt>QQ & We_Chat</dt>
+          <dd>904629998</dd>
+          <dt>Phone</dt>
+          <dd>186 9218 4162</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="row">
+      <p class="text-center">&copy; Ai Jiangnan 2017</p>
+    </div>
+
+  </footer>
 </body>
+
 </html>

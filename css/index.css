@@ -1,0 +1,15 @@
+body{
+  margin-top: 50px;
+}
+
+.jumbotron{
+  margin-bottom: 0;
+}
+
+.con{
+  padding: 10px;
+}
+
+#info {
+  padding-top: 20px;
+}
