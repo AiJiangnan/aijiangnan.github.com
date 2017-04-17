@@ -11,8 +11,13 @@
   <script src="js/bootstrap.js"></script>
   <title>J.N.AI</title>
   <style>
-    .con{padding: 10px;}
-    #info {padding-top: 20px;}
+    .con {
+      padding: 10px;
+    }
+    
+    #info {
+      padding-top: 20px;
+    }
   </style>
 </head>
 
@@ -39,6 +44,11 @@
               <li><a href="computer/c.html">C</a></li>
               <li><a href="computer/java.html">Java</a></li>
               <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Web</li>
+              <li><a href="computer/html.html">Html</a></li>
+              <li><a href="computer/css.html">CSS</a></li>
+              <li><a href="computer/javascript.html">JavaScript</a></li>
+              <li role="separator" class="divider"></li>
               <li class="dropdown-header">Office</li>
               <li><a href="computer/word.html">Word</a></li>
               <li><a href="computer/excel.html">Excel</a></li>
@@ -58,11 +68,51 @@
     </div>
   </nav>
 
+  <div class="modal fade bs-m1-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="list-group">
+          <a class="list-group-item active">Language</a>
+          <a href="computer/c.html" class="list-group-item">C</a>
+          <a href="computer/java.html" class="list-group-item">Java</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bs-m2-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="list-group">
+          <a class="list-group-item active">Web</a>
+          <a href="computer/html.html" class="list-group-item">Html</a>
+          <a href="computer/css.html" class="list-group-item">CSS</a>
+          <a href="computer/javascript.html" class="list-group-item">JavaScript</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bs-m3-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="list-group">
+          <a class="list-group-item active">Office</a>
+          <a href="computer/word.html" class="list-group-item">Word</a>
+          <a href="computer/excel.html" class="list-group-item">Excel</a>
+          <a href="computer/ppt.html" class="list-group-item">PPT</a>
+          <a href="computer/latex.html" class="list-group-item">LaTex</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="jumbotron">
     <div class="container">
       <h1>AiJiangnan's Blog</h1>
     </div>
   </div>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12 con">
@@ -79,7 +129,8 @@
         <h2 class="">Computer</h2>
         <ul class="list-group">
           <a class="list-group-item" data-toggle="modal" data-target=".bs-m1-modal-sm">Language</a>
-          <a class="list-group-item" data-toggle="modal" data-target=".bs-m2-modal-sm">Office</a>
+          <a class="list-group-item" data-toggle="modal" data-target=".bs-m2-modal-sm">Web</a>
+          <a class="list-group-item" data-toggle="modal" data-target=".bs-m3-modal-sm">Office</a>
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12 con">
@@ -96,34 +147,8 @@
         </ul>
       </div>
     </div>
-
-    <div class="modal fade bs-m1-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Language</a>
-            <a href="#" class="list-group-item">C</a>
-            <a href="#" class="list-group-item">Java</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade bs-m2-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Office</a>
-            <a href="#" class="list-group-item">Word</a>
-            <a href="#" class="list-group-item">Excel</a>
-            <a href="#" class="list-group-item">PPT</a>
-            <a href="#" class="list-group-item">LaTex</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
   <footer class="container-fluid bg-primary">
     <div class="row">
       <div class="col-xs-6 col-md-4" id="info">
