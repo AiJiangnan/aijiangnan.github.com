@@ -1,0 +1,913 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4-Oracle函数 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../5-分组查询和子查询/分组查询和子查询.html" />
+    
+    
+    <link rel="prev" href="../3-条件查询/条件查询.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="http://aijiangnan.site">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                <a href="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                    
+                    1-打开Oracle大门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../2-简单查询/简单查询.html">
+            
+                <a href="../2-简单查询/简单查询.html">
+            
+                    
+                    2-简单查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../3-条件查询/条件查询.html">
+            
+                <a href="../3-条件查询/条件查询.html">
+            
+                    
+                    3-条件查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="Oracle函数.html">
+            
+                <a href="Oracle函数.html">
+            
+                    
+                    4-Oracle函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                <a href="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                    
+                    5-分组查询和子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../6-多表连接查询/多表连接查询.html">
+            
+                <a href="../6-多表连接查询/多表连接查询.html">
+            
+                    
+                    6-多表连接查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                <a href="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                    
+                    7-新增、修改和删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../8-常用对象之用户/常用对象之用户.html">
+            
+                <a href="../8-常用对象之用户/常用对象之用户.html">
+            
+                    
+                    8-常用对象之用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../9-常用对象之表格/常用对象之表格.html">
+            
+                <a href="../9-常用对象之表格/常用对象之表格.html">
+            
+                    
+                    9-常用对象之表格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../10-完整性约束/完整性约束.html">
+            
+                <a href="../10-完整性约束/完整性约束.html">
+            
+                    
+                    10-完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                <a href="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                    
+                    11-常用对象之序列、索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../12-常用对象之视图/常用对象之视图.html">
+            
+                <a href="../12-常用对象之视图/常用对象之视图.html">
+            
+                    
+                    12-常用对象之视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../13-事务管理/事务管理.html">
+            
+                <a href="../13-事务管理/事务管理.html">
+            
+                    
+                    13-事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                <a href="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                    
+                    14-ROWID和ROWNUM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../15-三大范式/三大范式.html">
+            
+                <a href="../15-三大范式/三大范式.html">
+            
+                    
+                    15-三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../16-JDBC/JDBC.html">
+            
+                <a href="../16-JDBC/JDBC.html">
+            
+                    
+                    16-JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../17-JDBC实例之用户注册与登陆/JDBC实例之用户注册与登陆.html">
+            
+                <a href="../17-JDBC实例之用户注册与登陆/JDBC实例之用户注册与登陆.html">
+            
+                    
+                    17-JDBC实例之用户注册与登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                <a href="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                    
+                    18-JDBC实例之质数与合数操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                <a href="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                    
+                    19-JDBC分层开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../20-MySQL数据库/MySQL数据库.html">
+            
+                <a href="../20-MySQL数据库/MySQL数据库.html">
+            
+                    
+                    20-MySQL数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4-Oracle函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="oracle&#x51FD;&#x6570;">Oracle&#x51FD;&#x6570;</h1>
+<p>&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x63D0;&#x9AD8;SELECT&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x5B83;&#x7ED9;&#x6570;&#x636E;&#x7684;&#x8F6C;&#x6362;&#x548C;&#x5904;&#x7406;&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x4FBF;&#x3002;&#x51FD;&#x6570;&#x53EA;&#x662F;&#x5C06;&#x53D6;&#x51FA;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x503C;&#x3002;&#x5728;&#x8FD9;&#x53EA;&#x5217;&#x4E3E;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x66F4;&#x591A;&#x51FD;&#x6570;&#x7528;&#x6CD5;&#xFF0C;&#x53EF;&#x4E0A;&#x7F51;&#x627E;&#x8D44;&#x6599;&#x62D3;&#x5C55;&#xFF0C;&#x540E;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#x4F1A;&#x7528;&#x5230;Oracle&#x4E2D;&#x7684;&#x4E00;&#x5F20;&#x540D;&#x4E3A;dual&#x865A;&#x62DF;&#x8868;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>Oracle&#x51FD;&#x6570;&#x5206;&#x4E3A;&#x5355;&#x884C;&#x51FD;&#x6570;&#x548C;&#x591A;&#x884C;&#x51FD;&#x6570;&#x4E24;&#x5927;&#x7C7B;&#xFF1A;</p>
+<p> <img src="0002.png" alt="0002"></p>
+<h2 id="&#x4E00;&#x3001;&#x5355;&#x884C;&#x51FD;&#x6570;">&#x4E00;&#x3001;&#x5355;&#x884C;&#x51FD;&#x6570;</h2>
+<h2 id="1-&#x5B57;&#x7B26;&#x51FD;&#x6570;">1. &#x5B57;&#x7B26;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">upper(str)</td>
+<td style="text-align:center">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">lower(str)</td>
+<td style="text-align:center">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">initcap(str)</td>
+<td style="text-align:center">&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">length(str)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:center">replace(str,str1,[str2])</td>
+<td style="text-align:center">&#x66FF;&#x6362;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">instr(str,str1,[start])</td>
+<td style="text-align:center">&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x641C;&#x7D22;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:center">substr(str,start,length)</td>
+<td style="text-align:center">&#x622A;&#x53D6;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">concat(str1,str2)</td>
+<td style="text-align:center">&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">translate(str,str1,str2)</td>
+<td style="text-align:center">&#x7FFB;&#x8BD1;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) &#x5B57;&#x7B26;&#x4E32;&#x5927;&#x5C0F;&#x5199;&#x5904;&#x7406;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [1] upper: &#x5B57;&#x6BCD;&#x5168;&#x90E8;&#x5927;&#x5199;</span>
+<span class="hljs-comment">-- [2] lower: &#x5B57;&#x6BCD;&#x5168;&#x90E8;&#x5C0F;&#x5199;</span>
+<span class="hljs-comment">-- [3] initcap: &#x5B57;&#x6BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;</span>
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;, &#x5E76;&#x5206;&#x522B;&#x4EE5;&#x5C0F;&#x5199;, &#x5927;&#x5199;&#x548C;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x663E;&#x793A;</span>
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">LOWER</span>(ename), <span class="hljs-keyword">UPPER</span>(ename), INITCAP(ename) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">LOWER</span>(<span class="hljs-string">&apos;Hello Oracle123&apos;</span>), INITCAP(<span class="hljs-string">&apos;hello oracle&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p><strong>b) &#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [4] length: &#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</span>
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;, &#x663E;&#x793A;&#x59D3;&#x540D;&#x7684;&#x957F;&#x5EA6;</span>
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">LENGTH</span>(ename) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x59D3;&#x540D;&#x957F;&#x5EA6;&#x5927;&#x4E8E;5&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> emp <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">LENGTH</span>(ename)&gt;<span class="hljs-number">5</span>;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;length&#x51FD;&#x6570;&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x65F6;&#xFF0C;&#x6C49;&#x5B57;&#x6216;&#x5168;&#x89D2;&#x7B26;&#x6309;1&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6309;2&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7528;lengthb&#x51FD;&#x6570;&#x3002;</p>
+<p><strong>c) &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x67E5;&#x627E;&#x4E0E;&#x66FF;&#x6362;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [5] replace: &#x5B9E;&#x73B0;&#x66FF;&#x6362;&#x529F;&#x80FD;</span>
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;, &#x5C06;&#x59D3;&#x540D;&#x4E2D;&#x7684;&apos;A&apos;&#x66FF;&#x6362;&#x4E3A;&apos;a&apos;</span>
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">REPLACE</span>(ename,<span class="hljs-string">&apos;A&apos;</span>,<span class="hljs-string">&apos;a&apos;</span>) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- [6] instr: &#x67E5;&#x627E;&#x5B50;&#x4E32;&#x7684;&#x4F4D;&#x7F6E;(&#x7D22;&#x5F15;)</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">INSTR</span>(<span class="hljs-string">&apos;abcdefg&apos;</span>,<span class="hljs-string">&apos;x&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;replace&#x51FD;&#x6570;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8FD8;&#x80FD;&#x66FF;&#x6362;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3002;replace&#x51FD;&#x6570;&#x7684;&#x7B2C;3&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x5220;&#x9664;&#x3002;instr&#x7684;&#x7B2C;3&#x4E2A;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4E3A;&#x7A7A;&#xFF0C;&#x641C;&#x7D22;&#x7684;&#x4F4D;&#x7F6E;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF0C;&#x540C;&#x6837;&#x6B64;&#x51FD;&#x6570;&#x6C49;&#x5B57;&#x6216;&#x5168;&#x89D2;&#x7B26;&#x6309;1&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6309;2&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#xFF0C;&#x9700;&#x7528;instrb&#x51FD;&#x6570;&#x3002;</p>
+<p><strong>d) &#x622A;&#x53D6;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [7] substr: &#x7528;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x622A;&#x53D6;</span>
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;,&#x5E76;&#x663E;&#x793A;&#x59D3;&#x540D;&#x7684;&#x524D;3&#x4E2A;&#x5B57;&#x6BCD;</span>
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">SUBSTR</span>(ename, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;,&#x5E76;&#x663E;&#x793A;&#x59D3;&#x540D;&#x7684;&#x540E;3 &#x4E2A;&#x5B57;&#x6BCD;</span>
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">SUBSTR</span>(ename,<span class="hljs-keyword">LENGTH</span>(ename)<span class="hljs-number">-2</span>,<span class="hljs-number">3</span>) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">SUBSTR</span>(ename,<span class="hljs-keyword">LENGTH</span>(ename)<span class="hljs-number">-2</span>) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> ename, <span class="hljs-keyword">SUBSTR</span>(ename,<span class="hljs-number">-3</span>) <span class="hljs-keyword">FROM</span> emp;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;2&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x8D1F;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x5012;&#x7740;&#x622A;&#x53D6;;</li>
+<li>&#x7B2C;3&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x622A;&#x53D6;&#x957F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#xFF0C;&#x8868;&#x793A;&#x622A;&#x53D6;&#x5230;&#x672B;&#x5C3E;;</li>
+<li>&#x8DDF;&#x524D;&#x9762;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x6709;&#x4E0E;&#x957F;&#x5EA6;&#x6709;&#x5173;&#x7684;&#x51FD;&#x6570;&#x5168;&#x89D2;&#x7B26;&#x90FD;&#x662F;&#x4EE5;1&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x4EE5;2&#x4E2A;&#x5B57;&#x7B26;&#x8BA1;&#x7B97;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x540D;&#x540E;&#x9762;&#x52A0;b&#x3002;</li>
+</ul>
+<p><strong>e) &#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [8] concat: &#x8868;&#x793A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8FDE;&#x63A5;, &#x529F;&#x80FD;&#x4E0E;||&#x4E00;&#x81F4;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT</span>(<span class="hljs-string">&apos;hello&apos;</span>,<span class="hljs-string">&apos;Oracle&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-string">&apos;hello&apos;</span>||<span class="hljs-string">&apos;Oracle&apos;</span> <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p><strong>f) &#x6309;&#x5B57;&#x7B26;&#x7FFB;&#x8BD1;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [9] translate: &#x6309;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">TRANSLATE</span>(<span class="hljs-string">&apos;aslkdfjlksdf&apos;</span>,<span class="hljs-string">&apos;abcdefg&apos;</span>,<span class="hljs-string">&apos;1234567&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x628A;abcdefg&#x5355;&#x4E2A;&#x5B57;&#x6761;&#x5BF9;&#x5E94;&#x66FF;&#x6362;&#x4E3A;1234567&#x3002;</p>
+<h2 id="2-&#x6570;&#x503C;&#x51FD;&#x6570;">2. &#x6570;&#x503C;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ceil(x)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x8F83;&#x5927;&#x7684;&#x6700;&#x5C0F;&#x6574;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">floor(x)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x8F83;&#x5C0F;&#x7684;&#x6700;&#x5927;&#x6574;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">round(x,[y])</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x540E;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">trunc(x,[y])</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x622A;&#x53D6;&#x540E;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">abs(x)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x7EDD;&#x5BF9;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">sign(x)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x6B63;&#x8D1F;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">mod(x,y)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE; $x\div y$ &#x7684;&#x4F59;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">power(x,y)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE; $x^y$ &#xFF08;$x$ &#x7684; $y$ &#x6B21;&#x5E42;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:center">sqrt(x)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE; $\sqrt{x}$&#xFF08;$x$ &#x7684;&#x5E73;&#x65B9;&#x6839;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) &#x6570;&#x503C;&#x7CBE;&#x5EA6;&#x8BA1;&#x7B97;&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [1] ceil: &#x5411;&#x4E0A;&#x53D6;&#x6574;</span>
+<span class="hljs-comment">-- [2] floor: &#x5411;&#x4E0B;&#x53D6;&#x6574;</span>
+<span class="hljs-comment">-- [3] round: &#x56DB;&#x820D;&#x4E94;&#x5165;</span>
+<span class="hljs-comment">-- [4] trunc: &#x622A;&#x65AD;&#xFF0C;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CEIL</span>(<span class="hljs-number">3.0000001</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">FLOOR</span>(<span class="hljs-number">3.999999</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">ROUND</span>(<span class="hljs-number">3.455</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> TRUNC(<span class="hljs-number">3.999999</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">ROUND</span>(<span class="hljs-number">65.547632</span>,<span class="hljs-number">-2</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> TRUNC(<span class="hljs-number">65.547632</span>,<span class="hljs-number">1</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;round&#x548C;trunc&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;,&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#x4FDD;&#x7559;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6B63;&#x6570;&#x3001;&#x8D1F;&#x6570;&#x6216;0&#x3002;</p>
+<p><strong>b) &#x5E38;&#x7528;&#x6570;&#x503C;&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [5] abs: &#x53D6;&#x7EDD;&#x5BF9;&#x503C;</span>
+<span class="hljs-comment">-- [6] sign: &#x53D6;&#x7B26;&#x53F7;</span>
+<span class="hljs-comment">-- [7] mod: &#x53D6;&#x6A21;&#xFF0C;&#x6C42;&#x4F59;&#x6570;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">ABS</span>(<span class="hljs-number">-10</span>), <span class="hljs-keyword">ABS</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SIGN</span>(<span class="hljs-number">-10</span>), <span class="hljs-keyword">SIGN</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">MOD</span>(<span class="hljs-number">10</span>,<span class="hljs-number">3</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>$$
+abs(x)=\begin{cases}
+x,&amp;x\ge 0\
+-x,&amp;x<0 \end{cases}="" \\="" sign(x)="\begin{cases}" 1,&x="">0\
+0,&amp;x=0\
+-1,&amp;x&lt;0
+\end{cases}</0></p>
+<p>$$
+<strong>c) &#x6307;&#x6570;&#x8FD0;&#x7B97;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [8] power: &#x6C42;&#x5E42;&#x6B21;&#x65B9;</span>
+<span class="hljs-comment">-- [9] sqrt: &#x6C42;&#x7B97;&#x6570;&#x5E73;&#x65B9;&#x6839;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POWER</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SQRT</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;$power(x,y)=x^y, sqrt(x)=\sqrt{x}$</p>
+<h2 id="3-&#x65E5;&#x671F;&#x51FD;&#x6570;">3. &#x65E5;&#x671F;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sysdate</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:center">months_between(d1,d2)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;2&#x4E2A;&#x65E5;&#x671F;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x6708;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">add_months(d,n)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x6708;&#x6570;&#x540E;&#x7684;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:center">next_day(d,[c])</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x4E0B;&#x5468;&#x67D0;&#x4E00;&#x5929;&#x7684;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:center">last_day(d)</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x672C;&#x6708;&#x6700;&#x540E;&#x4E00;&#x5929;&#x7684;&#x65E5;&#x671F;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span> <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-comment">-- &#x65E5;&#x671F;&#x548C;&#x6570;&#x5B57;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x52A0;&#x51CF;&#x6CD5;&#x8FD0;&#x7B97;,&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x65E5;&#x671F;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span>+<span class="hljs-number">10</span> <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-comment">-- &#x8BA1;&#x7B97;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x5165;&#x804C;&#x5E74;&#x6570;--&#x4E0D;&#x7CBE;&#x786E;</span>
+<span class="hljs-keyword">SELECT</span> ename, TRUNC((<span class="hljs-keyword">SYSDATE</span>-hiredate)/<span class="hljs-number">365</span>) <span class="hljs-keyword">years</span> <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- months_between</span>
+<span class="hljs-keyword">SELECT</span> ename, TRUNC(months_between(<span class="hljs-keyword">SYSDATE</span>,hiredate)) mons <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- add_months</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span>, add_months(<span class="hljs-keyword">SYSDATE</span>,<span class="hljs-number">5</span>) mon <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span>, add_months(<span class="hljs-keyword">SYSDATE</span>,<span class="hljs-number">-10</span>) mon <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-comment">-- next_day</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span>, next_day(<span class="hljs-keyword">SYSDATE</span>,<span class="hljs-string">&apos;&#x661F;&#x671F;&#x4E00;&apos;</span>) d <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-comment">-- last_day</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SYSDATE</span>, <span class="hljs-keyword">last_day</span>(<span class="hljs-string">&apos;1-2&#x6708;-2017&apos;</span>) d <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<h2 id="4-&#x8F6C;&#x6362;&#x51FD;&#x6570;">4. &#x8F6C;&#x6362;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">to_number(x,[y])</td>
+<td style="text-align:center">&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;</td>
+</tr>
+<tr>
+<td style="text-align:center">to_char(x,[y])</td>
+<td style="text-align:center">&#x6570;&#x5B57;&#x6216;&#x65E5;&#x671F;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">to_date(x,[y])</td>
+<td style="text-align:center">&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x65E5;&#x671F;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x683C;&#x5F0F;&#x7B26;&#xFF1A;</strong></p>
+<ul>
+<li>9&#xFF1A;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x4E00;&#x4F4D;&#x6570;&#x5B57;, &#x6CA1;&#x6709;&#x5C31;&#x4E0D;&#x663E;&#x793A;</li>
+<li>0&#xFF1A;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x4E00;&#x4F4D;&#x6570;&#x5B57;, &#x6CA1;&#x6709;&#x5C31;&#x663E;&#x793A;0</li>
+</ul>
+<ul>
+<li>$&#xFF1A;&#x8868;&#x793A;&#x7F8E;&#x5143;&#x7B26;</li>
+</ul>
+<ul>
+<li>L&#xFF1A;&#x8868;&#x793A;&#x672C;&#x5730;&#x8D27;&#x5E01;&#x7B26;</li>
+</ul>
+<ul>
+<li>.&#xFF1A;&#x8868;&#x793A;&#x5C0F;&#x6570;&#x70B9;</li>
+</ul>
+<ul>
+<li>,&#xFF1A;&#x8868;&#x793A;&#x5343;&#x5206;&#x4F4D;</li>
+</ul>
+<p><strong>a) &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x503C;&#x7C7B;&#x578B;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- to_number</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-string">&apos;123,000.00&apos;</span>, to_number(<span class="hljs-string">&apos;123,000.00&apos;</span>,<span class="hljs-string">&apos;$999,999.00&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p><strong>b) &#x6570;&#x503C;&#x7C7B;&#x578B;&#x6216;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- to_char</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-number">123</span>, to_char(<span class="hljs-number">123</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x548C;&#x5DE5;&#x8D44;,&#x5C06;&#x5DE5;&#x8D44;&#x663E;&#x793A;&#x4E3A;&#x5982;&#x4E0B;&#x6548;&#x679C;: &#xFFE5;5,000.00</span>
+<span class="hljs-keyword">SELECT</span> ename, sal, to_char(sal,<span class="hljs-string">&apos;L999,999.00&apos;</span>) salary <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x548C;&#x5165;&#x804C;&#x65E5;&#x671F;, &#x65E5;&#x671F;&#x4EE5;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x663E;&#x793A;: 2000-12-12</span>
+<span class="hljs-keyword">SELECT</span> ename, to_char(hiredate,<span class="hljs-string">&apos;YYYY-MM-DD HH24:MI:SS&apos;</span>) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> to_char(<span class="hljs-keyword">SYSDATE</span>,<span class="hljs-string">&apos;YYYY-MM-DD HH24:MI:SS&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p><strong>c) &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x65E5;&#x671F;&#x7C7B;&#x578B;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- to_date</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-string">&apos;2012-12-21 10:00:00&apos;</span>, <span class="hljs-keyword">to_date</span>(<span class="hljs-string">&apos;2012&#x5E74;12&#x6708;21&#x65E5; 10:00:00&apos;</span>,<span class="hljs-string">&apos;yyyy&quot;&#x5E74;&quot;mm&quot;&#x6708;&quot;dd&quot;&#x65E5;&quot; hh24:mi:ss&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-string">&apos;2012-12-21 10:00:00&apos;</span>, <span class="hljs-keyword">to_date</span>(<span class="hljs-string">&apos;2012a12*21 10=00+00&apos;</span>,<span class="hljs-string">&apos;yyyy-mm-dd hh24:mi:ss&apos;</span>) <span class="hljs-keyword">FROM</span> dual;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x65F6;&#x95F4;&#x7684;&#x683C;&#x5F0F;&#x7B26;&#x53EF;&#x4EE5;&#x53BB;&#x53C2;&#x8003;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x6216;&#x4E0A;&#x7F51;&#x627E;&#x8D44;&#x6599;&#x3002;</p>
+<h2 id="5-&#x5176;&#x4ED6;&#x51FD;&#x6570;">5. &#x5176;&#x4ED6;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">nvl(x1,x2)</td>
+<td style="text-align:center">&#x4E3A;&#x7A7A;&#x503C;&#x8D4B;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">nvl2(x,x1,x2)</td>
+<td style="text-align:center">&#x4E3A;&#x7A7A;&#x503C;&#x8D4B;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">decode(x,x1,y1,[x2,y2,...])</td>
+<td style="text-align:center">&#x6761;&#x4EF6;&#x53D6;&#x503C;&#xFF0C;&#x4E0E;switch...case...&#x7C7B;&#x4F3C;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) nvl&#x548C;nvl2&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;, &#x85AA;&#x6C34;, &#x63D0;&#x6210;&#x53CA;&#x603B;&#x6536;&#x5165;(&#x85AA;&#x6C34; + &#x63D0;&#x6210; )</span>
+<span class="hljs-keyword">SELECT</span> ename,sal,comm, sal+NVL(comm,<span class="hljs-number">0</span>) salary <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> ename,sal,comm, NVL2(comm,sal+comm,sal) salary <span class="hljs-keyword">FROM</span> emp;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>$$
+nvl(x1,x2)=\begin{cases}
+x1,&amp;x1\ne NULL\
+x2,&amp;x1=NULL
+\end{cases}\
+nvl2(x,x1,x2)=\begin{cases}
+x1,&amp;x\ne NULL\
+x2,&amp;x=NULL
+\end{cases}</p>
+<p>$$
+<strong>b) decode&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x804C;&#x4F4D;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> job <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x4EE5;&#x4E2D;&#x6587;&#x6765;&#x663E;&#x793A;&#x5404;&#x4E2A;&#x804C;&#x4F4D;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> job,<span class="hljs-keyword">DECODE</span>(job,<span class="hljs-string">&apos;CLERK&apos;</span>,<span class="hljs-string">&apos;&#x804C;&#x5458;&apos;</span>,<span class="hljs-string">&apos;SALESMAN&apos;</span>,<span class="hljs-string">&apos;&#x9500;&#x552E;&apos;</span>,<span class="hljs-string">&apos;PRESIDENT&apos;</span>,<span class="hljs-string">&apos;&#x603B;&#x88C1;&apos;</span>,<span class="hljs-string">&apos;MANAGER&apos;</span>,<span class="hljs-string">&apos;&#x7ECF;&#x7406;&apos;</span>,<span class="hljs-string">&apos;ANALYST&apos;</span>,<span class="hljs-string">&apos;&#x5206;&#x6790;&#x5E08;&apos;</span>) job_zh <span class="hljs-keyword">FROM</span> emp;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>$$
+decode(x,x_1,y_1,[x_2,y_2,...])=\begin{cases}
+y_1,&amp;x=x_1\
+y_2,&amp;x=x_2\
+\vdots\
+y_n,&amp;x=x_n
+\end{cases}</p>
+<p>$$</p>
+<h2 id="&#x4E8C;&#x3001;&#x591A;&#x884C;&#x51FD;&#x6570;">&#x4E8C;&#x3001;&#x591A;&#x884C;&#x51FD;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x51FD;&#x6570;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sum(x)</td>
+<td style="text-align:center">&#x7EDF;&#x8BA1;&#x5408;&#x8BA1;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">avg(x)</td>
+<td style="text-align:center">&#x7EDF;&#x8BA1;&#x5E73;&#x5747;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">count(x)</td>
+<td style="text-align:center">&#x7EDF;&#x8BA1;&#x67E5;&#x8BE2;&#x6240;&#x5F97;&#x884C;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">max(x)</td>
+<td style="text-align:center">&#x7EDF;&#x8BA1;&#x6700;&#x5927;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">min(x)</td>
+<td style="text-align:center">&#x7EDF;&#x8BA1;&#x6700;&#x5C0F;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) &#x53EA;&#x80FD;&#x64CD;&#x4F5C;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [1] sum: &#x6C42;&#x548C;</span>
+<span class="hljs-comment">-- [2] avg: &#x6C42;&#x5E73;&#x5747;&#x503C;</span>
+<span class="hljs-comment">-- &#x7EDF;&#x8BA1;&#x516C;&#x53F8;&#x7684;&#x5DE5;&#x8D44;&#x603B;&#x548C;, &#x5E73;&#x5747;&#x5DE5;&#x8D44;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SUM</span>(sal),<span class="hljs-keyword">AVG</span>(sal) <span class="hljs-keyword">FROM</span> emp;
+</code></pre>
+<p><strong>b) &#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [3] count: &#x8BA1;&#x6570;</span>
+<span class="hljs-comment">-- [4] max: &#x6C42;&#x6700;&#x5927;&#x503C;</span>
+<span class="hljs-comment">-- [5] min: &#x6C42;&#x6700;&#x5C0F;&#x503C;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(ename) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">MAX</span>(ename),<span class="hljs-keyword">MIN</span>(hiredate) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x7EDF;&#x8BA1;&#x516C;&#x53F8;&#x7684;&#x5DE5;&#x8D44;&#x603B;&#x548C;, &#x5E73;&#x5747;&#x5DE5;&#x8D44;, &#x603B;&#x4EBA;&#x6570;, &#x6700;&#x9AD8;&#x5DE5;&#x8D44;&#x548C;&#x6700;&#x4F4E;&#x5DE5;&#x8D44;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SUM</span>(sal),<span class="hljs-keyword">AVG</span>(sal),<span class="hljs-keyword">COUNT</span>(empno),<span class="hljs-keyword">MAX</span>(sal),<span class="hljs-keyword">MIN</span>(sal) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;&#x603B;&#x63D0;&#x6210;, &#x5E73;&#x5747;&#x63D0;&#x6210;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SUM</span>(comm),<span class="hljs-keyword">AVG</span>(comm) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(comm) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x67E5;&#x8BE2;emp&#x8868;&#x683C;&#x603B;&#x5171;&#x6709;&#x591A;&#x5C11;&#x6761;&#x8BB0;&#x5F55;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> emp;
+<span class="hljs-comment">-- &#x7EDF;&#x8BA1;10&#x90E8;&#x95E8;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x603B;&#x5DE5;&#x8D44;&#x548C;&#x5E73;&#x5747;&#x5DE5;&#x8D44;</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SUM</span>(sal),<span class="hljs-keyword">AVG</span>(sal) <span class="hljs-keyword">FROM</span> emp <span class="hljs-keyword">WHERE</span> deptno=<span class="hljs-number">10</span>;
+<span class="hljs-keyword">SELECT</span> deptno,<span class="hljs-keyword">SUM</span>(sal),<span class="hljs-keyword">AVG</span>(sal) <span class="hljs-keyword">FROM</span> emp <span class="hljs-keyword">WHERE</span> deptno=<span class="hljs-number">10</span>;
+</code></pre>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x7531;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x548C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x53EF;&#x77E5;&#xFF0C;NULL&#x7A7A;&#x503C;&#x4E0D;&#x53C2;&#x4E0E;&#x591A;&#x884C;&#x51FD;&#x6570;&#x7684;&#x8FD0;&#x7B97;;&#x6CA1;&#x6709;&#x4F7F;&#x7528;group by&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x65F6;, &#x5206;&#x7EC4;&#x51FD;&#x6570;&#xFF08;&#x591A;&#x884C;&#x51FD;&#x6570;&#xFF09;&#x4E0D;&#x80FD;&#x548C;&#x666E;&#x901A;&#x5B57;&#x6BB5;&#x540C;&#x65F6;&#x67E5;&#x8BE2;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x4E86;group by&#x4E4B;&#x540E;&#xFF0C;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x624D;&#x53EF;&#x4EE5;&#x548C;&#x5206;&#x7EC4;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x4F1A;&#x8BB2;&#x5230;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../3-条件查询/条件查询.html" class="navigation navigation-prev " aria-label="Previous page: 3-条件查询">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../5-分组查询和子查询/分组查询和子查询.html" class="navigation navigation-next " aria-label="Next page: 5-分组查询和子查询">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4-Oracle函数","level":"1.2.4","depth":2,"next":{"title":"5-分组查询和子查询","level":"1.2.5","depth":2,"path":"5-分组查询和子查询/分组查询和子查询.md","ref":"5-分组查询和子查询/分组查询和子查询.md","articles":[]},"previous":{"title":"3-条件查询","level":"1.2.3","depth":2,"path":"3-条件查询/条件查询.md","ref":"3-条件查询/条件查询.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4-Oracle函数/Oracle函数.md","mtime":"2017-07-08T03:43:33.633Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-15T11:15:45.036Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

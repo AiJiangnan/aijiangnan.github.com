@@ -1,0 +1,779 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>17-JDBC实例之用户注册与登陆 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html" />
+    
+    
+    <link rel="prev" href="../16-JDBC/JDBC.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="http://aijiangnan.site">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                <a href="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                    
+                    1-打开Oracle大门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../2-简单查询/简单查询.html">
+            
+                <a href="../2-简单查询/简单查询.html">
+            
+                    
+                    2-简单查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../3-条件查询/条件查询.html">
+            
+                <a href="../3-条件查询/条件查询.html">
+            
+                    
+                    3-条件查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../4-Oracle函数/Oracle函数.html">
+            
+                <a href="../4-Oracle函数/Oracle函数.html">
+            
+                    
+                    4-Oracle函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                <a href="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                    
+                    5-分组查询和子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../6-多表连接查询/多表连接查询.html">
+            
+                <a href="../6-多表连接查询/多表连接查询.html">
+            
+                    
+                    6-多表连接查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                <a href="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                    
+                    7-新增、修改和删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../8-常用对象之用户/常用对象之用户.html">
+            
+                <a href="../8-常用对象之用户/常用对象之用户.html">
+            
+                    
+                    8-常用对象之用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../9-常用对象之表格/常用对象之表格.html">
+            
+                <a href="../9-常用对象之表格/常用对象之表格.html">
+            
+                    
+                    9-常用对象之表格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../10-完整性约束/完整性约束.html">
+            
+                <a href="../10-完整性约束/完整性约束.html">
+            
+                    
+                    10-完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                <a href="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                    
+                    11-常用对象之序列、索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../12-常用对象之视图/常用对象之视图.html">
+            
+                <a href="../12-常用对象之视图/常用对象之视图.html">
+            
+                    
+                    12-常用对象之视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../13-事务管理/事务管理.html">
+            
+                <a href="../13-事务管理/事务管理.html">
+            
+                    
+                    13-事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                <a href="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                    
+                    14-ROWID和ROWNUM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../15-三大范式/三大范式.html">
+            
+                <a href="../15-三大范式/三大范式.html">
+            
+                    
+                    15-三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../16-JDBC/JDBC.html">
+            
+                <a href="../16-JDBC/JDBC.html">
+            
+                    
+                    16-JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.17" data-path="JDBC实例之用户注册与登陆.html">
+            
+                <a href="JDBC实例之用户注册与登陆.html">
+            
+                    
+                    17-JDBC实例之用户注册与登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                <a href="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                    
+                    18-JDBC实例之质数与合数操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                <a href="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                    
+                    19-JDBC分层开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../20-MySQL数据库/MySQL数据库.html">
+            
+                <a href="../20-MySQL数据库/MySQL数据库.html">
+            
+                    
+                    20-MySQL数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >17-JDBC实例之用户注册与登陆</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="jdbc&#x5B9E;&#x4F8B;&#x4E4B;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;">JDBC&#x5B9E;&#x4F8B;&#x4E4B;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;</h1>
+<p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x4E86;JDBC&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6B21;&#x5229;&#x7528;JDBC&#x6765;&#x5B8C;&#x6210;&#x7528;&#x6237;&#x7684;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;&#x3002;&#x5148;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8868;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x521B;&#x5EFA;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8868;</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> t_user (
+    uno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">4</span>) PRIMARY <span class="hljs-keyword">KEY</span>,
+    uname VARCHAR2(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    upwd VARCHAR2(<span class="hljs-number">20</span>)
+);
+<span class="hljs-comment">-- &#x521B;&#x5EFA;uno&#x5E8F;&#x5217;</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">SEQUENCE</span> seq_user_uno;
+</code></pre>
+<h2 id="&#x4E00;&#x3001;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;">&#x4E00;&#x3001;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;</h2>
+<p><strong>1. &#x7F16;&#x5199;&#x63A7;&#x5236;&#x53F0;&#x7B80;&#x5355;&#x754C;&#x9762;</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.sql.Connection;
+<span class="hljs-keyword">import</span> java.sql.DriverManager;
+<span class="hljs-keyword">import</span> java.sql.ResultSet;
+<span class="hljs-keyword">import</span> java.sql.SQLException;
+<span class="hljs-keyword">import</span> java.sql.Statement;
+<span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestUser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+            System.out.println(<span class="hljs-string">&quot;--------------\n&quot;</span>
+                    + <span class="hljs-string">&quot;\t1. &#x6CE8;&#x518C;\n&quot;</span>
+                    + <span class="hljs-string">&quot;\t2. &#x767B;&#x9646;\n&quot;</span>
+                    + <span class="hljs-string">&quot;\t0. &#x9000;&#x51FA;\n&quot;</span>
+                    + <span class="hljs-string">&quot;--------------&quot;</span>);
+            System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x9009;&#x62E9;&#xFF1A;&quot;</span>);
+            <span class="hljs-keyword">switch</span> (in.nextInt()) {
+            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                register();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                login();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+                System.out.println(<span class="hljs-string">&quot;&#x611F;&#x8C22;&#x4F7F;&#x7528;&#xFF01;&quot;</span>);
+                <span class="hljs-keyword">return</span>;
+            <span class="hljs-keyword">default</span>:
+                System.out.println(<span class="hljs-string">&quot;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#xFF01;&#x8BF7;&#x91CD;&#x65B0;&#x8F93;&#x5165;&#x3002;&quot;</span>);
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>2. &#x7F16;&#x5199;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+* &#x6CE8;&#x518C;&#x64CD;&#x4F5C;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">register</span><span class="hljs-params">()</span> </span>{
+    String url = <span class="hljs-string">&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;</span>;
+    String user = <span class="hljs-string">&quot;ajn&quot;</span>;
+    String password = <span class="hljs-string">&quot;ajn&quot;</span>;
+
+    Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#xFF1A;&quot;</span>);
+    String uname = in.nextLine();
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF1A;&quot;</span>);
+    String upwd = in.nextLine();
+
+    String sql = <span class="hljs-string">&quot;insert into t_user values (seq_user_uno.nextval,&apos;&quot;</span> + uname + <span class="hljs-string">&quot;&apos;,&apos;&quot;</span> + upwd + <span class="hljs-string">&quot;&apos;)&quot;</span>;
+
+    Connection conn = <span class="hljs-keyword">null</span>;
+    Statement stmt = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-keyword">try</span> {
+        Class.forName(<span class="hljs-string">&quot;oracle.jdbc.OracleDriver&quot;</span>);
+        conn = DriverManager.getConnection(url, user, password);
+        stmt = conn.createStatement();
+        <span class="hljs-keyword">int</span> rc = stmt.executeUpdate(sql);
+        <span class="hljs-keyword">if</span>(rc&gt;<span class="hljs-number">0</span>){
+            System.out.println(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF01;&quot;</span>);
+        }<span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x5931;&#x8D25;&#xFF01;&quot;</span>);
+        }
+    } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">catch</span> (SQLException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(stmt!=<span class="hljs-keyword">null</span>){
+                stmt.close();
+            }
+            <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>){
+                conn.close();
+            }
+        } <span class="hljs-keyword">catch</span> (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p><strong>3. &#x7F16;&#x5199;&#x767B;&#x9646;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x767B;&#x9646;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">login</span><span class="hljs-params">()</span> </span>{
+    String url = <span class="hljs-string">&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;</span>;
+    String user = <span class="hljs-string">&quot;ajn&quot;</span>;
+    String password = <span class="hljs-string">&quot;ajn&quot;</span>;
+
+    Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#xFF1A;&quot;</span>);
+    String uname = in.nextLine();
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF1A;&quot;</span>);
+    String upwd = in.nextLine();
+
+    String sql = <span class="hljs-string">&quot;SELECT COUNT(*) FROM t_user WHERE uname=&apos;&quot;</span> + uname + <span class="hljs-string">&quot;&apos; AND upwd=&apos;&quot;</span> + upwd + <span class="hljs-string">&quot;&apos;&quot;</span>;
+
+    Connection conn = <span class="hljs-keyword">null</span>;
+    Statement stmt = <span class="hljs-keyword">null</span>;
+    ResultSet rs = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-keyword">try</span> {
+        Class.forName(<span class="hljs-string">&quot;oracle.jdbc.OracleDriver&quot;</span>);
+        conn = DriverManager.getConnection(url, user, password);
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(sql);
+        <span class="hljs-keyword">if</span>(rs.next()){
+            <span class="hljs-keyword">int</span> count = rs.getInt(<span class="hljs-number">1</span>);
+            <span class="hljs-keyword">if</span>(count==<span class="hljs-number">0</span>){
+                System.out.println(<span class="hljs-string">&quot;&#x767B;&#x9646;&#x5931;&#x8D25;&#xFF01;&#x8BF7;&#x91CD;&#x65B0;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x3002;&quot;</span>);
+            }<span class="hljs-keyword">else</span>{
+                System.out.println(<span class="hljs-string">&quot;&#x6B22;&#x8FCE;&quot;</span>+uname+<span class="hljs-string">&quot;&#x767B;&#x9646;&#x6210;&#x529F;&#xFF01;&quot;</span>);
+            }
+        }
+    } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">catch</span> (SQLException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(rs!=<span class="hljs-keyword">null</span>){
+                rs.close();
+            }
+            <span class="hljs-keyword">if</span>(stmt!=<span class="hljs-keyword">null</span>){
+                stmt.close();
+            }
+            <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>){
+                conn.close();
+            }
+        } <span class="hljs-keyword">catch</span> (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p>&#x5206;&#x6790;&#xFF1A;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x7684;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x9632;&#x6B62;SQL&#x6CE8;&#x5165;&#x3002;&#x56E0;&#x4E3A;&#x767B;&#x9646;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B; &#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> t_user <span class="hljs-keyword">WHERE</span> uname=<span class="hljs-string">&apos;para_1&apos;</span> <span class="hljs-keyword">AND</span> upwd=<span class="hljs-string">&apos;para_2&apos;</span>;
+</code></pre>
+<p>&#x5176;&#x4E2D;para_1&#x4E3A;&#x7528;&#x6237;&#x540D;&#xFF0C;para_2&#x4E3A;&#x5BC6;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x767B;&#x9646;&#x7684;&#x65F6;&#x5019;&#x7528;&#x6237;&#x540D;&#x65E0;&#x8BBA;&#x8F93;&#x5165;&#x4EC0;&#x4E48;&#xFF0C;&#x5F53;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x4E3A;<code>&apos; or 1=&apos;1</code>&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> t_user <span class="hljs-keyword">WHERE</span> uname=<span class="hljs-string">&apos;para_1&apos;</span> <span class="hljs-keyword">AND</span> upwd=<span class="hljs-string">&apos;&apos;</span> <span class="hljs-keyword">OR</span> <span class="hljs-number">1</span>=<span class="hljs-string">&apos;1&apos;</span>;
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x65E0;&#x8BBA;para_1&#x4E3A;&#x4F55;&#x503C;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x4F1A;&#x662F;1&#xFF0C;&#x8FD9;&#x65F6;&#x767B;&#x9646;&#x529F;&#x80FD;&#x5DF2;&#x7ECF;&#x5931;&#x6548;&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;&#x9632;&#x6B62;sql&#x6CE8;&#x5165;">&#x4E8C;&#x3001;&#x6CE8;&#x518C;&#x4E0E;&#x767B;&#x9646;&#x9632;&#x6B62;SQL&#x6CE8;&#x5165;</h2>
+<p>&#x7528;&#x524D;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x7F16;&#x5199;&#x597D;&#x754C;&#x9762;&#x3002;</p>
+<p><strong>1. &#x7F16;&#x5199;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x6CE8;&#x518C;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">register</span><span class="hljs-params">()</span> </span>{
+    String url = <span class="hljs-string">&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;</span>;
+    String user = <span class="hljs-string">&quot;ajn&quot;</span>;
+    String password = <span class="hljs-string">&quot;ajn&quot;</span>;
+
+    Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#xFF1A;&quot;</span>);
+    String uname = in.next();
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF1A;&quot;</span>);
+    String upwd = in.next();
+
+    String sql = <span class="hljs-string">&quot;insert into t_user values (seq_user_uno.nextval,?,?)&quot;</span>;
+
+    Connection conn = <span class="hljs-keyword">null</span>;
+    PreparedStatement pstmt = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-keyword">try</span> {
+        Class.forName(<span class="hljs-string">&quot;oracle.jdbc.OracleDriver&quot;</span>);
+        conn = DriverManager.getConnection(url, user, password);
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setString(<span class="hljs-number">1</span>, uname);
+        pstmt.setString(<span class="hljs-number">2</span>, upwd);
+        <span class="hljs-keyword">int</span> rc = pstmt.executeUpdate();
+        <span class="hljs-keyword">if</span>(rc&gt;<span class="hljs-number">0</span>){
+            System.out.println(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF01;&quot;</span>);
+        }<span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x5931;&#x8D25;&#xFF01;&quot;</span>);
+        }
+    } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">catch</span> (SQLException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(pstmt!=<span class="hljs-keyword">null</span>){
+                pstmt.close();
+            }
+            <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>){
+                conn.close();
+            }
+        } <span class="hljs-keyword">catch</span> (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p><strong>2. &#x7F16;&#x5199;&#x767B;&#x9646;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x767B;&#x9646;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">login</span><span class="hljs-params">()</span> </span>{
+    String url = <span class="hljs-string">&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;</span>;
+    String user = <span class="hljs-string">&quot;ajn&quot;</span>;
+    String password = <span class="hljs-string">&quot;ajn&quot;</span>;
+
+    Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#xFF1A;&quot;</span>);
+    String uname = in.nextLine();
+    System.out.print(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF1A;&quot;</span>);
+    String upwd = in.nextLine();
+
+    String sql = <span class="hljs-string">&quot;SELECT COUNT(*) FROM t_user WHERE uname=? AND upwd=?&quot;</span>;
+
+    Connection conn = <span class="hljs-keyword">null</span>;
+    PreparedStatement pstmt = <span class="hljs-keyword">null</span>;
+    ResultSet rs = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-keyword">try</span> {
+        Class.forName(<span class="hljs-string">&quot;oracle.jdbc.OracleDriver&quot;</span>);
+        conn = DriverManager.getConnection(url, user, password);
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setString(<span class="hljs-number">1</span>, uname);
+        pstmt.setString(<span class="hljs-number">2</span>, upwd);
+        rs = pstmt.executeQuery();
+        <span class="hljs-keyword">if</span>(rs.next()){
+            <span class="hljs-keyword">int</span> count = rs.getInt(<span class="hljs-number">1</span>);
+            <span class="hljs-keyword">if</span>(count==<span class="hljs-number">0</span>){
+                System.out.println(<span class="hljs-string">&quot;&#x767B;&#x9646;&#x5931;&#x8D25;&#xFF01;&#x8BF7;&#x91CD;&#x65B0;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x3002;&quot;</span>);
+            }<span class="hljs-keyword">else</span>{
+                System.out.println(<span class="hljs-string">&quot;&#x6B22;&#x8FCE;&quot;</span>+uname+<span class="hljs-string">&quot;&#x767B;&#x9646;&#x6210;&#x529F;&#xFF01;&quot;</span>);
+            }
+        }
+    } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">catch</span> (SQLException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(rs!=<span class="hljs-keyword">null</span>){
+                rs.close();
+            }
+            <span class="hljs-keyword">if</span>(pstmt!=<span class="hljs-keyword">null</span>){
+                pstmt.close();
+            }
+            <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>){
+                conn.close();
+            }
+        } <span class="hljs-keyword">catch</span> (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p>&#x5206;&#x6790;&#xFF1A;&#x4F7F;&#x7528;Statement&#x7684;&#x5B50;&#x7C7B;PreparedStatement&#x6765;&#x521B;&#x5EFA;SQL&#x8BED;&#x53E5;&#x53D1;&#x9001;&#x5668;&#xFF0C;&#x7528;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x6765;&#x9632;&#x6B62;SQL&#x6CE8;&#x5165;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../16-JDBC/JDBC.html" class="navigation navigation-prev " aria-label="Previous page: 16-JDBC">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html" class="navigation navigation-next " aria-label="Next page: 18-JDBC实例之质数与合数操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"17-JDBC实例之用户注册与登陆","level":"1.2.17","depth":2,"next":{"title":"18-JDBC实例之质数与合数操作","level":"1.2.18","depth":2,"path":"18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.md","ref":"18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.md","articles":[]},"previous":{"title":"16-JDBC","level":"1.2.16","depth":2,"path":"16-JDBC/JDBC.md","ref":"16-JDBC/JDBC.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"17-JDBC实例之用户注册与登陆/JDBC实例之用户注册与登陆.md","mtime":"2017-07-12T11:51:14.257Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-15T11:15:45.036Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

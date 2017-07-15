@@ -1,0 +1,733 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>10-完整性约束 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../11-常用对象之序列、索引/常用对象之序列、索引.html" />
+    
+    
+    <link rel="prev" href="../9-常用对象之表格/常用对象之表格.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="http://aijiangnan.site">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                <a href="../1-打开Oracle大门/打开Oracle大门.html">
+            
+                    
+                    1-打开Oracle大门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../2-简单查询/简单查询.html">
+            
+                <a href="../2-简单查询/简单查询.html">
+            
+                    
+                    2-简单查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../3-条件查询/条件查询.html">
+            
+                <a href="../3-条件查询/条件查询.html">
+            
+                    
+                    3-条件查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../4-Oracle函数/Oracle函数.html">
+            
+                <a href="../4-Oracle函数/Oracle函数.html">
+            
+                    
+                    4-Oracle函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                <a href="../5-分组查询和子查询/分组查询和子查询.html">
+            
+                    
+                    5-分组查询和子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../6-多表连接查询/多表连接查询.html">
+            
+                <a href="../6-多表连接查询/多表连接查询.html">
+            
+                    
+                    6-多表连接查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                <a href="../7-新增、修改和删除/新增、修改和删除.html">
+            
+                    
+                    7-新增、修改和删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../8-常用对象之用户/常用对象之用户.html">
+            
+                <a href="../8-常用对象之用户/常用对象之用户.html">
+            
+                    
+                    8-常用对象之用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../9-常用对象之表格/常用对象之表格.html">
+            
+                <a href="../9-常用对象之表格/常用对象之表格.html">
+            
+                    
+                    9-常用对象之表格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="完整性约束.html">
+            
+                <a href="完整性约束.html">
+            
+                    
+                    10-完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                <a href="../11-常用对象之序列、索引/常用对象之序列、索引.html">
+            
+                    
+                    11-常用对象之序列、索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../12-常用对象之视图/常用对象之视图.html">
+            
+                <a href="../12-常用对象之视图/常用对象之视图.html">
+            
+                    
+                    12-常用对象之视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../13-事务管理/事务管理.html">
+            
+                <a href="../13-事务管理/事务管理.html">
+            
+                    
+                    13-事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                <a href="../14-ROWID和ROWNUM/ROWID和ROWNUM.html">
+            
+                    
+                    14-ROWID和ROWNUM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../15-三大范式/三大范式.html">
+            
+                <a href="../15-三大范式/三大范式.html">
+            
+                    
+                    15-三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../16-JDBC/JDBC.html">
+            
+                <a href="../16-JDBC/JDBC.html">
+            
+                    
+                    16-JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../17-JDBC实例之用户注册与登陆/JDBC实例之用户注册与登陆.html">
+            
+                <a href="../17-JDBC实例之用户注册与登陆/JDBC实例之用户注册与登陆.html">
+            
+                    
+                    17-JDBC实例之用户注册与登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                <a href="../18-JDBC实例之质数与合数操作/JDBC实例之质数与合数操作.html">
+            
+                    
+                    18-JDBC实例之质数与合数操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                <a href="../19-JDBC分层开发/JDBC分层开发.html">
+            
+                    
+                    19-JDBC分层开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../20-MySQL数据库/MySQL数据库.html">
+            
+                <a href="../20-MySQL数据库/MySQL数据库.html">
+            
+                    
+                    20-MySQL数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >10-完整性约束</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;">&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;</h1>
+<p>&#x5728;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x7684;&#x6570;&#x636E;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x548C;&#x8054;&#x7CFB;&#xFF0C;&#x591A;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x6709;&#x65F6;&#x4E5F;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x53C2;&#x7167;&#x5173;&#x7CFB;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x8868;&#x548C;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x548C;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x662F;&#x4E00;&#x4E9B;&#x89C4;&#x5219;&#xFF0C;&#x5728;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x8981;&#x5BF9;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x4ECE;&#x800C;&#x8D77;&#x5230;&#x7EA6;&#x675F;&#x4F5C;&#x7528;&#x3002;</p>
+<p><img src="0002.png" alt="img01"></p>
+<p><strong>&#x547D;&#x540D;&#x89C4;&#x5219;&#x63A8;&#x8350;&#x91C7;&#x7528;&#xFF1A;&#x7EA6;&#x675F;&#x7C7B;&#x578B;_&#x7EA6;&#x675F;&#x5B57;&#x6BB5;:</strong></p>
+<ul>
+<li>&#x975E;&#x7A7A;&#x7EA6;&#x675F;&#xFF1A;NN<em>&#x8868;&#x540D;</em>&#x5217;&#x540D;</li>
+</ul>
+<ul>
+<li>&#x552F;&#x4E00;&#x7EA6;&#x675F;&#xFF1A;UK<em>&#x8868;&#x540D;</em>&#x5217;&#x540D;</li>
+</ul>
+<ul>
+<li>&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#xFF1A;PK_&#x8868;&#x540D;</li>
+</ul>
+<ul>
+<li>&#x5916;&#x952E;&#x7EA6;&#x675F;&#xFF1A;FK<em>&#x8868;&#x540D;</em>&#x5217;&#x540D;</li>
+</ul>
+<ul>
+<li>&#x68C0;&#x67E5;&#x7EA6;&#x675F;&#xFF1A;CK<em>&#x8868;&#x540D;</em>&#x5217;&#x540D;</li>
+</ul>
+<h2 id="&#x4E00;&#x3001;&#x4E3B;&#x952E;&#x7EA6;&#x675F;">&#x4E00;&#x3001;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</h2>
+<p>&#x8981;&#x6C42;&#x4E3B;&#x952E;&#x5217;&#x6570;&#x636E;&#x552F;&#x4E00;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;&#x3002;&#x4E3B;&#x952E;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x8868;&#x7684;&#x4E00;&#x5217;&#x6216;&#x591A;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x5305;&#x542B;&#x8868;&#x7684;&#x591A;&#x5217;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x8868;&#x7EA7;&#x5B9A;&#x4E49;&#x3002;</p>
+<p><strong>1. &#x5728;&#x8868;&#x7EA7;&#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [1] &#x4E3B;&#x952E;&#x7EA6;&#x675F;: PRIMARY KEY</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) PRIMARY <span class="hljs-keyword">KEY</span>,
+    sname VARCHAR2(<span class="hljs-number">15</span>),
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>)
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno)
+    <span class="hljs-comment">-- PRIMARY KEY (sno)-- &#x7B80;&#x5316;&#x7248;</span>
+);
+</code></pre>
+<p>&#x8054;&#x5408;&#x4E3B;&#x952E;, &#x53EA;&#x80FD;&#x5728;&#x8868;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>),
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>)
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno, sname)
+);
+</code></pre>
+<p><strong>2. &#x5728;&#x5217;&#x7EA7;&#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    <span class="hljs-keyword">no</span> <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span>,<span class="hljs-comment">-- &#x5728;&#x5217;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</span>
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) PRIMARY <span class="hljs-keyword">KEY</span>,
+    sname VARCHAR2(<span class="hljs-number">15</span>),
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>)
+);
+</code></pre>
+<h2 id="&#x4E8C;&#x3001;&#x975E;&#x7A7A;&#x7EA6;&#x675F;">&#x4E8C;&#x3001;&#x975E;&#x7A7A;&#x7EA6;&#x675F;</h2>
+<p>&#x8981;&#x6C42;&#x8BE5;&#x5217;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x975E;&#x7A7A;&#x7EA6;&#x675F;&#x53EA;&#x80FD;&#x5728;&#x5217;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [2] &#x975E;&#x7A7A;&#x7EA6;&#x675F;: NOT NULL</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    <span class="hljs-comment">-- sname VARCHAR2(15) CONSTRAINTS nn_student_sname NOT NULL,</span>
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno)
+);
+</code></pre>
+<h2 id="&#x4E09;&#x3001;&#x552F;&#x4E00;&#x7EA6;&#x675F;">&#x4E09;&#x3001;&#x552F;&#x4E00;&#x7EA6;&#x675F;</h2>
+<p>&#x8981;&#x6C42;&#x8BE5;&#x5217;&#x552F;&#x4E00;&#xFF0C;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [3] &#x552F;&#x4E00;&#x7EA6;&#x675F;: UNIQUE</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>) <span class="hljs-keyword">UNIQUE</span>,
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno)
+    <span class="hljs-comment">-- CONSTRAINTS uk_student_email UNIQUE (email)</span>
+);
+</code></pre>
+<h2 id="&#x56DB;&#x3001;&#x68C0;&#x67E5;&#x7EA6;&#x675F;">&#x56DB;&#x3001;&#x68C0;&#x67E5;&#x7EA6;&#x675F;</h2>
+<p>&#x67D0;&#x5217;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x9650;&#x5236;&#x3001;&#x683C;&#x5F0F;&#x9650;&#x5236;&#x7B49;&#xFF0C;&#x5982;&#x5E74;&#x9F84;&#x7684;&#x7EA6;&#x675F;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [4] &#x68C0;&#x67E5;&#x7EA6;&#x675F;: CHECK</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span> <span class="hljs-keyword">CHECK</span>(gender <span class="hljs-keyword">IN</span> (<span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>)),
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">CHECK</span> (age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">18</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    clazz VARCHAR2(<span class="hljs-number">30</span>),
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno),
+    <span class="hljs-keyword">CONSTRAINTS</span> uk_student_email <span class="hljs-keyword">UNIQUE</span> (email)
+    <span class="hljs-comment">-- CONSTRAINTS ck_student_age CHECK (age BETWEEN 18 AND 30)</span>
+);
+</code></pre>
+<h2 id="&#x4E94;&#x3001;&#x5916;&#x952E;&#x7EA6;&#x675F;">&#x4E94;&#x3001;&#x5916;&#x952E;&#x7EA6;&#x675F;</h2>
+<p>&#x7528;&#x4E8E;&#x4E24;&#x8868;&#x95F4;&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;&#xFF0C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5F15;&#x7528;&#x4E3B;&#x8868;&#x7684;&#x90A3;&#x5217;&#x3002;&#x5916;&#x952E;&#x901A;&#x5E38;&#x7528;&#x6765;&#x7EA6;&#x675F;&#x4E24;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5173;&#x7CFB;&#xFF0C;&#x5B9A;&#x4E49;&#x5916;&#x952E;&#x7684;&#x90A3;&#x5F20;&#x8868;&#x79F0;&#x4E3A;&#x5B50;&#x8868;&#xFF0C;&#x53E6;&#x4E00;&#x5F20;&#x8868;&#x79F0;&#x4E3A;&#x4E3B;&#x8868;&#x3002;&#x5728;&#x8868;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5E94;&#x8BE5;&#x5148;&#x521B;&#x5EFA;&#x4E3B;&#x8868;&#xFF0C;&#x540E;&#x521B;&#x5EFA;&#x5B50;&#x8868;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- [5] &#x5916;&#x952E;&#x7EA6;&#x675F;: FOREIGN KEY</span>
+<span class="hljs-comment">-- &#x521B;&#x5EFA;&#x73ED;&#x7EA7;&#x8868;</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> clazz (
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) PRIMARY <span class="hljs-keyword">KEY</span>,
+    cname VARCHAR2(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">UNIQUE</span>,
+    cdate <span class="hljs-built_in">DATE</span>
+);
+<span class="hljs-comment">-- &#x521B;&#x5EFA;&#x5B66;&#x751F;&#x8868;</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">REFERENCES</span> clazz (cno),<span class="hljs-comment">-- &#x5728;&#x5217;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x5916;&#x952E;&#x7EA6;&#x675F;</span>
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno),
+    <span class="hljs-keyword">CONSTRAINTS</span> uk_student_email <span class="hljs-keyword">UNIQUE</span> (email),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_age <span class="hljs-keyword">CHECK</span> (age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">18</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_gender <span class="hljs-keyword">CHECK</span>(gender <span class="hljs-keyword">IN</span> (<span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>))
+    <span class="hljs-comment">-- &#x5728;&#x8868;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x5916;&#x952E;&#x7EA6;&#x675F;</span>
+    <span class="hljs-comment">-- CONSTRAINTS fk_student_cno FOREIGN KEY (cno) REFERENCES clazz (cno)</span>
+);
+</code></pre>
+<h2 id="&#x516D;&#x3001;&#x8054;&#x7EA7;&#x5220;&#x9664;">&#x516D;&#x3001;&#x8054;&#x7EA7;&#x5220;&#x9664;</h2>
+<p>&#x6DFB;&#x52A0;&#x5916;&#x952E;&#x7EA6;&#x675F;&#x540E;&#xFF0C;&#x5728;&#x5220;&#x9664;&#x4E3B;&#x8868;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x68C0;&#x67E5;&#x8BE5;&#x4FE1;&#x606F;&#x5728;&#x5B50;&#x8868;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x88AB;&#x5F15;&#x7528;&#x3002;&#x5982;&#x679C;&#x6709;&#x5173;&#x8054;&#x7684;&#x5B50;&#x8868;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x4E3B;&#x8868;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x5141;&#x8BB8;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x5220;&#x9664;&#x5B50;&#x8868;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;,&#x624D;&#x80FD;&#x5220;&#x9664;&#x4E3B;&#x8868;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8054;&#x7EA7;&#x5220;&#x9664;&#xFF0C;&#x6765;&#x6267;&#x884C;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E3B;&#x8868;&#x7684;&#x5220;&#x9664;&#x548C;&#x4FEE;&#x6539;&#x4E3B;&#x952E;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F1A;&#x5BF9;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#xFF0C;&#x4EE5;&#x5220;&#x9664;&#x4E3A;&#x4F8B;&#xFF1A;&#x5F53;&#x8981;&#x5220;&#x9664;&#x4E3B;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x8BB0;&#x5F55;&#xFF08;&#x5373;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4F9D;&#x8D56;&#x7684;&#x5F71;&#x54CD;&#x53EF;&#x91C7;&#x53D6;&#x4E0B;&#x5217;3&#x79CD;&#x505A;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>RESTRICT&#x65B9;&#x5F0F;&#xFF1A;&#x53EA;&#x6709;&#x5F53;&#x4F9D;&#x8D56;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x5916;&#x952E;&#x503C;&#x4E0E;&#x8981;&#x5220;&#x9664;&#x7684;&#x4E3B;&#x8868;&#x4E2D;&#x4E3B;&#x952E;&#x503C;&#x76F8;&#x5BF9;&#x5E94;&#x65F6;&#xFF0C;&#x624D;&#x53EF;&#x6267;&#x884C;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>CASCADE&#x65B9;&#x5F0F;&#xFF1A;&#x5C06;&#x4F9D;&#x8D56;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x5916;&#x952E;&#x503C;&#x4E0E;&#x4E3B;&#x8868;&#x4E2D;&#x8981;&#x5220;&#x9664;&#x7684;&#x4E3B;&#x952E;&#x503C;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x8BB0;&#x5F55;&#x4E00;&#x8D77;&#x5220;&#x9664;&#x3002;</li>
+<li>SET NULL&#x65B9;&#x5F0F;&#xFF1A;&#x5C06;&#x4F9D;&#x8D56;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x4E0E;&#x4E3B;&#x8868;&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x7684;&#x4E3B;&#x952E;&#x503C;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x5916;&#x952E;&#x503C;&#x8BBE;&#x4E3A;&#x7A7A;&#x503C;&#x3002;</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> clazz <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">202</span>, <span class="hljs-string">&apos;JAVA&#x5927;&#x725B;&#x73ED;&apos;</span>, <span class="hljs-keyword">SYSDATE</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> clazz <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">102</span>, <span class="hljs-string">&apos;Android&#x5C0F;&#x725B;&#x73ED;&apos;</span>, <span class="hljs-keyword">SYSDATE</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> clazz <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">222</span>, <span class="hljs-string">&apos;PHP&#x725B;&#x725B;&#x73ED;&apos;</span>, <span class="hljs-keyword">SYSDATE</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> clazz <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">401</span>, <span class="hljs-string">&apos;&#x5927;&#x6570;&#x636E;&apos;</span>, <span class="hljs-keyword">SYSDATE</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> clazz <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">502</span>, <span class="hljs-string">&apos;UI&#x5973;&#x795E;&#x73ED;&apos;</span>, <span class="hljs-keyword">SYSDATE</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> student <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">112</span>, <span class="hljs-string">&apos;&#x5F20;&#x65E0;&#x5FCC;&apos;</span>, <span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-number">18</span>, <span class="hljs-keyword">to_date</span>(<span class="hljs-string">&apos;2017-3-28&apos;</span>, <span class="hljs-string">&apos;yyyy-mm-dd&apos;</span>), <span class="hljs-string">&apos;test@123.com&apos;</span>, <span class="hljs-number">401</span>);
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> student;
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> clazz;
+<span class="hljs-comment">-- &#x5220;&#x9664;&#x7F16;&#x53F7;&#x4E3A;222 &#x7684;&#x73ED;&#x7EA7;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> clazz <span class="hljs-keyword">WHERE</span> cno=<span class="hljs-number">222</span>;
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> student <span class="hljs-keyword">WHERE</span> cno=<span class="hljs-number">222</span>;
+<span class="hljs-comment">-- &#x8BBE;&#x7F6E;&#x7EA7;&#x8054;&#x5220;&#x9664;</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno),
+    <span class="hljs-keyword">CONSTRAINTS</span> uk_student_email <span class="hljs-keyword">UNIQUE</span> (email),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_age <span class="hljs-keyword">CHECK</span> (age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">18</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_gender <span class="hljs-keyword">CHECK</span>(gender <span class="hljs-keyword">IN</span> (<span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>)),
+    <span class="hljs-keyword">CONSTRAINTS</span> fk_student_cno FOREIGN <span class="hljs-keyword">KEY</span> (cno) <span class="hljs-keyword">REFERENCES</span> clazz (cno) <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">CASCADE</span><span class="hljs-comment">-- &#x7EA7;&#x8054;&#x5220;&#x9664;,&#x540C;&#x65F6;&#x5C06;&#x5B50;&#x8868;&#x4E2D;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x4E00;&#x8D77;&#x5220;&#x9664;</span>
+);
+
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> clazz <span class="hljs-keyword">WHERE</span> cno=<span class="hljs-number">401</span>;
+<span class="hljs-comment">-- &#x8BBE;&#x7F6E;&#x7EA7;&#x8054;&#x8BBE;&#x7A7A;</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno),
+    <span class="hljs-keyword">CONSTRAINTS</span> uk_student_email <span class="hljs-keyword">UNIQUE</span> (email),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_age <span class="hljs-keyword">CHECK</span> (age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">18</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>),
+    <span class="hljs-keyword">CONSTRAINTS</span> ck_student_gender <span class="hljs-keyword">CHECK</span>(gender <span class="hljs-keyword">IN</span> (<span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>)),
+    <span class="hljs-keyword">CONSTRAINTS</span> fk_student_cno FOREIGN <span class="hljs-keyword">KEY</span> (cno) <span class="hljs-keyword">REFERENCES</span> clazz (cno) <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">SET</span> <span class="hljs-literal">NULL</span><span class="hljs-comment">-- &#x7EA7;&#x8054;&#x8BBE;&#x7A7A;,&#x5C06;&#x5B50;&#x8868;&#x4E2D;&#x5173;&#x8054;&#x6570;&#x636E;&#x8BBE;&#x7F6E;&#x4E3A;null</span>
+);
+<span class="hljs-comment">-- &#x5220;&#x9664;&#x73ED;&#x7EA7;&#x8868;(&#x5F3A;&#x5236;&#x5220;&#x9664;&#x4E3B;&#x8868;)</span>
+<span class="hljs-comment">-- &#x5148;&#x5220;&#x9664;&#x7EA6;&#x675F;, &#x518D;&#x5220;&#x9664;&#x8868;&#x683C;</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> clazz <span class="hljs-keyword">CASCADE</span> <span class="hljs-keyword">CONSTRAINTS</span>;
+</code></pre>
+<h2 id="&#x4E03;&#x3001;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#x6DFB;&#x52A0;&#x7EA6;&#x675F;">&#x4E03;&#x3001;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#x6DFB;&#x52A0;&#x7EA6;&#x675F;</h2>
+<p>&#x4FEE;&#x6539;&#x8868;&#x65F6;&#x53EA;&#x80FD;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x5220;&#x9664;&#x7EA6;&#x675F;&#xFF0C;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#x7EA6;&#x675F;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x5220;&#x9664;&#x7EA6;&#x675F;</span>
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINTS</span> ck_student_gender;
+<span class="hljs-comment">-- &#x5728;&#x4FEE;&#x6539;&#x8868;&#x683C;&#x7684;&#x540C;&#x65F6;,&#x6DFB;&#x52A0;&#x7EA6;&#x675F;</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> clazz (
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>) PRIMARY <span class="hljs-keyword">KEY</span>,
+    cname VARCHAR2(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">UNIQUE</span>,
+    cdate <span class="hljs-built_in">DATE</span>
+);
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> student;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (
+    sno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>),
+    sname VARCHAR2(<span class="hljs-number">15</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    gender <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x7537;&apos;</span>,
+    age <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">2</span>),
+    sdate <span class="hljs-built_in">DATE</span>,
+    email VARCHAR2(<span class="hljs-number">30</span>),
+    cno <span class="hljs-built_in">NUMBER</span>(<span class="hljs-number">3</span>)
+);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINTS</span> pk_student PRIMARY <span class="hljs-keyword">KEY</span> (sno);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINTS</span> uk_student_email <span class="hljs-keyword">UNIQUE</span> (email);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINTS</span> ck_student_age <span class="hljs-keyword">CHECK</span> (age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">18</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINTS</span> ck_student_gender <span class="hljs-keyword">CHECK</span> (gender <span class="hljs-keyword">IN</span> (<span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>));
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINTS</span> fk_student_cno FOREIGN <span class="hljs-keyword">KEY</span> (cno) <span class="hljs-keyword">REFERENCES</span> clazz (cno);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../9-常用对象之表格/常用对象之表格.html" class="navigation navigation-prev " aria-label="Previous page: 9-常用对象之表格">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../11-常用对象之序列、索引/常用对象之序列、索引.html" class="navigation navigation-next " aria-label="Next page: 11-常用对象之序列、索引">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10-完整性约束","level":"1.2.10","depth":2,"next":{"title":"11-常用对象之序列、索引","level":"1.2.11","depth":2,"path":"11-常用对象之序列、索引/常用对象之序列、索引.md","ref":"11-常用对象之序列、索引/常用对象之序列、索引.md","articles":[]},"previous":{"title":"9-常用对象之表格","level":"1.2.9","depth":2,"path":"9-常用对象之表格/常用对象之表格.md","ref":"9-常用对象之表格/常用对象之表格.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-完整性约束/完整性约束.md","mtime":"2017-07-10T13:24:43.293Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-15T11:15:45.036Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
