@@ -7,13 +7,15 @@
     <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+	<link rel="stylesheet" href="/css/prism.css">
+	<title>标识符和运算符</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 标识符和运算符
+---
 
 ## 一、标识符
 
@@ -79,7 +81,7 @@ public class Demo02 {
 				+ (++a) + "\n"		//print: 7
 				+ (a++) + "\n"		//print: 7
 				+ (--b) + "\n"		//print: 1
-				+ (b--)	+ "\n");	//print: 1
+				+ (b--) + "\n");	  //print: 1
 	}
 }
 ```
@@ -98,9 +100,9 @@ public class Demo03 {
 		int b = 2;
 		int c = a + b;
 		System.out.println((c+=1) +"\n"		//print: 9
-				+ (c-=1) +"\n"		//print: 8
-				+ (c*=2) +"\n"		//print: 16
-				+ (c/=2) +"\n");	//print: 8
+				+ (c-=1) +"\n"				//print: 8
+				+ (c*=2) +"\n"				//print: 16
+				+ (c/=2) +"\n");			//print: 8
 	}
 }
 ```
@@ -231,7 +233,7 @@ public class Demo07 {
 
 示例：65&66的计算过程为：
 
-```
+```txt
 65      0100 0001
 66      0100 0010
 &       ---------
@@ -251,7 +253,7 @@ public class Demo07 {
 
 示例：65|66的计算过程为：
 
-```
+```txt
 65      0100 0001
 66      0100 0010
 |       ---------
@@ -277,7 +279,7 @@ public class Demo07 {
 
 示例：65^66的计算过程为：
 
-```
+```txt
 65      0100 0001
 66      0100 0010
 ^       ---------

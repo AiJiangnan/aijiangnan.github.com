@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/content.css">
     <link rel="stylesheet" href="/css/prism.css">
+    <title>神奇的补码</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 神奇的补码
+---
 
 在计算机系统中使用的数据都是最终以二进制的形式来表示的（可以看看这篇文章：[信息中的 0 和 1 ](https://zhuanlan.zhihu.com/p/26872482)），我们日常生活中主要使用十进制，为了方便书写二进制数，编程中还会用到十六进制，Java内部采用二进制补码运算，自动发送上溢出（乘法）和下溢出（除法），Java内部没有十进制，但是编程输出时可以按照人类的十进制习惯输出，补码负数的最高位是1，也就是符号位。
 
@@ -27,7 +29,7 @@
 
 ## 二、补码的运算
 
-**1. 加法**
+### 1. 加法
 
 普通正数的加法没有什么问题，看看正数和负数相加的情况，比如：
 
@@ -39,7 +41,7 @@
 
 结论：**在四位二进制数运算中，超出就丢弃，这种设计是非常合理的。**
 
-**2. 乘法**
+### 2. 乘法
 
 同样普通正数的乘法不用说，看看负数相乘的情况，比如：
 
@@ -55,16 +57,16 @@
 public class Complement {
 	public static void main(String[] args) {
 		int a = 3;
-		int b = ~3+1;           //取反加一
-		System.out.println(a);	//输出：3
-		System.out.println(b);	//输出：-3
+		int b = ~3+1;               //取反加一
+		System.out.println(a);      //输出：3
+		System.out.println(b);      //输出：-3
 	}
 }
 ```
 
 补码运算也不能超出范围，超出了范围就会有溢出危险，比如：
 
-8位二进制补码最多能表示$2^8$（256）个数，范围是 -128~127。
+8位二进制补码最多能表示2<sup>8</sup>（256）个数，范围是 -128~127。
 <!--Markdown从这里结束  -->
 	</textarea>
     <div id="preview" class="container"></div>

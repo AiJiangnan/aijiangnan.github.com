@@ -7,13 +7,15 @@
     <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+	<link rel="stylesheet" href="/css/prism.css">
+	<title>浅谈基本数据类型</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 浅谈基本数据类型
+---
 
 ![img01](Java数据类型.png)
 
@@ -21,12 +23,12 @@
 
 ## 一、整数类型
 
-- byte：8位，$-2^7\sim (2^7-1)$
-- short：16位，$-2^{15}\sim (2^{15}-1)$
-- int：32位，$-2^{31}\sim (2^{31}-1)$
-- long：64位，$-2^{63}\sim (2^{63}-1$
+- byte：8位，-2<sup>7</sup> ~ (2<sup>7</sup>-1)
+- short：16位，-2<sup>15</sup> ~ (2<sup>15</sup>-1)
+- int：32位，-2<sup>31</sup> ~ (2<sup>31</sup>-1)
+- long：64位，-2<sup>63</sup> ~ (2<sup>63</sup>-1)
 
-根据补码的规则，我们就可以理解不同位数能存储的数据的范围（不明白看看这篇文章：[神奇的补码](https://zhuanlan.zhihu.com/p/27170922)），整型用于表示没有小数部分的数值，它可以是负数。整型的范围与平台无关，因为不同平台的Java虚拟机中数据类型位数是一样的。
+根据补码的规则，我们就可以理解不同位数能存储的数据的范围（不明白看看这篇文章：[神奇的补码](../3-神奇的补码/神奇的补码.html)），整型用于表示没有小数部分的数值，它可以是负数。整型的范围与平台无关，因为不同平台的Java虚拟机中数据类型位数是一样的。
 
 **Java整型常数的三种表示形式**
 
@@ -40,9 +42,9 @@ public class Demo01 {
 		int a = 99;
 		int b = 073;
 		int c = 0xf1;
-		System.out.println(a);// print: 99
-		System.out.println(b);// print: 59
-		System.out.println(c);// print: 241
+		System.out.println(a);		// print: 99
+		System.out.println(b);		// print: 59
+		System.out.println(c);		// print: 241
 	}
 }
 ```
@@ -55,23 +57,23 @@ public class Demo02 {
 		long a = 66666;
 		// long b = 6666666666; 报错
 		long c = 6666666666L;
-		System.out.println(a);// print: 66666
-		System.out.println(c);// print: 6666666666
+		System.out.println(a);		// print: 66666
+		System.out.println(c);		// print: 6666666666
 	}
 }
 ```
 
 ## 二、浮点数类型
 
-- float：32位，$-2^{128}\sim (2^{128}-1)$
-- double：64位，$-2^{1024}\sim (2^{1024}-1)$
+- float：32位，-2<sup>128</sup> ~ (2<sup>128</sup>-1)
+- double：64位，-2<sup>1024</sup> ~ (2<sup>1024</sup>-1)
 
 用于表示小数的数据类型,浮点数的原理,就是二进制的科学计数法。
 
-1. 10进制浮点数科学计数法：$219345 = 2.19345\times 10^5$
-2. 2进制浮点数科学计数法：$10111 = 1.0111\times 2^{100}$
+1. 10进制浮点数科学计数法：219345 = 2.19345 × 10<sup>5</sup>
+2. 2进制浮点数科学计数法：10111 = 1.0111 × 2<sup>100</sup>
 
-以2.19345×105为例介绍下面概念：
+以2.19345×10<sup>5</sup>为例介绍下面概念：
 
 尾数：.19345
 
@@ -92,10 +94,10 @@ public class Demo03 {
 		float fa = a;
 		float fb = b;
 
-		System.out.println(fa);			//print: 2.14748365E9
-		System.out.println(fb);			//print: 2.14748365E9
-		System.out.println(a==b);		//print: false
-		System.out.println(fa==fb);		//print: true
+		System.out.println(fa);				//print: 2.14748365E9
+		System.out.println(fb);				//print: 2.14748365E9
+		System.out.println(a==b);			  //print: false
+		System.out.println(fa==fb);			//print: true
 	}
 }
 ```
@@ -131,9 +133,9 @@ public class Demo05 {
 
 ## 三、字符类型
 
-- char：16位，$0\sim (2^{16}-1)$
+- char：16位，0 ~  (2<sup>16</sup>-1)
 
-字符类型是经常用到的，字符类型是一个16位的无符号整数，是一个字符的unicode编码值。Java的char并不能表示全部的unicode编码，但可以表示常用的部分。unicode编码兼容ASCII码（范围为0~128），同时英文和数字是连续编码的。特殊的字符采用转义字符表示，比如：'\n'表示回车，'\t'表示制表符等等。
+字符类型是经常用到的，字符类型是一个16位的无符号整数，是一个字符的unicode编码值。Java的char并不能表示全部的unicode编码，但可以表示常用的部分。unicode编码兼容ASCII码（范围为0 ~ 128），同时英文和数字是连续编码的。特殊的字符采用转义字符表示，比如：'\n'表示回车，'\t'表示制表符等等。
 
 字符类型演示：
 
@@ -158,7 +160,7 @@ public class Demo06 {
 
 ## 四、布尔类型
 
-- boolean：1位，$0\sim 1$
+- boolean：1位，0 ~ 1
 
 布尔值只表示逻辑“真(true)”和“假(false)”，一般用于判断句中，例如：
 
@@ -202,7 +204,7 @@ public class Demo09{
 	public static void main(String args[]){
 		int a = 100;
 		double b = 101;
-		System.out.println(a+b);	//print: 201.0
+		System.out.println(a+b);		//print: 201.0
 		System.out.println(a+(int)b);	//print: 201
 	}
 }
