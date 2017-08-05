@@ -1,0 +1,297 @@
+# JDBC实例之用户注册与登陆
+
+前面我们已经了解了JDBC操作数据库的基本方法，这次利用JDBC来完成用户的注册与登陆。先在数据库中创建用户信息表如下：
+
+```sql
+-- 创建用户信息表
+CREATE TABLE t_user (
+	uno NUMBER(4) PRIMARY KEY,
+	uname VARCHAR2(20) NOT NULL,
+	upwd VARCHAR2(20)
+);
+-- 创建uno序列
+CREATE SEQUENCE seq_user_uno;
+```
+
+## 一、用户注册与登陆
+
+**1. 编写控制台简单界面**
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class TestUser {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		while(true){
+			System.out.println("--------------\n"
+					+ "\t1. 注册\n"
+					+ "\t2. 登陆\n"
+					+ "\t0. 退出\n"
+					+ "--------------");
+			System.out.print("请选择：");
+			switch (in.nextInt()) {
+			case 1:
+				register();
+				break;
+			case 2:
+				login();
+				break;
+			case 0:
+				System.out.println("感谢使用！");
+				return;
+			default:
+				System.out.println("输入错误！请重新输入。");
+			}
+		}
+	}
+}
+```
+
+**2. 编写注册方法**
+
+```java
+/**
+* 注册操作
+*/
+private static void register() {
+	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	String user = "ajn";
+	String password = "ajn";
+
+	Scanner in = new Scanner(System.in);
+	System.out.print("请输入用户名：");
+	String uname = in.nextLine();
+	System.out.print("请输入密码：");
+	String upwd = in.nextLine();
+
+	String sql = "insert into t_user values (seq_user_uno.nextval,'" + uname + "','" + upwd + "')";
+
+	Connection conn = null;
+	Statement stmt = null;
+
+	try {
+		Class.forName("oracle.jdbc.OracleDriver");
+		conn = DriverManager.getConnection(url, user, password);
+		stmt = conn.createStatement();
+		int rc = stmt.executeUpdate(sql);
+		if(rc>0){
+			System.out.println("注册成功！");
+		}else{
+			System.out.println("注册失败！");
+		}
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if(stmt!=null){
+				stmt.close();
+			}
+			if(conn!=null){
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+**3. 编写登陆方法**
+
+```java
+/**
+ * 登陆操作
+ */
+private static void login() {
+	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	String user = "ajn";
+	String password = "ajn";
+
+	Scanner in = new Scanner(System.in);
+	System.out.print("请输入用户名：");
+	String uname = in.nextLine();
+	System.out.print("请输入密码：");
+	String upwd = in.nextLine();
+
+	String sql = "SELECT COUNT(*) FROM t_user WHERE uname='" + uname + "' AND upwd='" + upwd + "'";
+
+	Connection conn = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+
+	try {
+		Class.forName("oracle.jdbc.OracleDriver");
+		conn = DriverManager.getConnection(url, user, password);
+		stmt = conn.createStatement();
+		rs = stmt.executeQuery(sql);
+		if(rs.next()){
+			int count = rs.getInt(1);
+			if(count==0){
+				System.out.println("登陆失败！请重新输入用户名或密码。");
+			}else{
+				System.out.println("欢迎"+uname+"登陆成功！");
+			}
+		}
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if(rs!=null){
+				rs.close();
+			}
+			if(stmt!=null){
+				stmt.close();
+			}
+			if(conn!=null){
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+分析：上面的代码可以实现用户的注册与登陆，但是不能防止SQL注入。因为登陆的SQL语句如下 ：
+
+```sql
+SELECT COUNT(*) FROM t_user WHERE uname='para_1' AND upwd='para_2';
+```
+
+其中para\_1为用户名，para\_2为密码，所以在登陆的时候用户名无论输入什么，当密码输入为`' or 1='1`时，实际执行SQL语句如下：
+
+```sql
+SELECT COUNT(*) FROM t_user WHERE uname='para_1' AND upwd='' OR 1='1';
+```
+
+这时执行的结果无论para_1为何值，执行的结果都会是1，这时登陆功能已经失效。
+
+## 二、注册与登陆防止SQL注入
+
+用前面的方法编写好界面。
+
+**1. 编写注册方法**
+
+```java
+/**
+ * 注册操作
+ */
+private static void register() {
+	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	String user = "ajn";
+	String password = "ajn";
+
+	Scanner in = new Scanner(System.in);
+	System.out.print("请输入用户名：");
+	String uname = in.next();
+	System.out.print("请输入密码：");
+	String upwd = in.next();
+
+	String sql = "insert into t_user values (seq_user_uno.nextval,?,?)";
+
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+
+	try {
+		Class.forName("oracle.jdbc.OracleDriver");
+		conn = DriverManager.getConnection(url, user, password);
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, uname);
+		pstmt.setString(2, upwd);
+		int rc = pstmt.executeUpdate();
+		if(rc>0){
+			System.out.println("注册成功！");
+		}else{
+			System.out.println("注册失败！");
+		}
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if(pstmt!=null){
+				pstmt.close();
+			}
+			if(conn!=null){
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+**2. 编写登陆方法**
+
+```java
+/**
+ * 登陆操作
+ */
+private static void login() {
+	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	String user = "ajn";
+	String password = "ajn";
+
+	Scanner in = new Scanner(System.in);
+	System.out.print("请输入用户名：");
+	String uname = in.nextLine();
+	System.out.print("请输入密码：");
+	String upwd = in.nextLine();
+
+	String sql = "SELECT COUNT(*) FROM t_user WHERE uname=? AND upwd=?";
+
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+
+	try {
+		Class.forName("oracle.jdbc.OracleDriver");
+		conn = DriverManager.getConnection(url, user, password);
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, uname);
+		pstmt.setString(2, upwd);
+		rs = pstmt.executeQuery();
+		if(rs.next()){
+			int count = rs.getInt(1);
+			if(count==0){
+				System.out.println("登陆失败！请重新输入用户名或密码。");
+			}else{
+				System.out.println("欢迎"+uname+"登陆成功！");
+			}
+		}
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if(rs!=null){
+				rs.close();
+			}
+			if(pstmt!=null){
+				pstmt.close();
+			}
+			if(conn!=null){
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+分析：使用Statement的子类PreparedStatement来创建SQL语句发送器，用参数绑定来防止SQL注入。
+
