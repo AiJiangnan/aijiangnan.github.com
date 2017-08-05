@@ -18,7 +18,7 @@ body{
     margin-left: 80px;
 }
 
-.nav-tabs>li>a:hover{
+.nav-tabs>li>a:hover,.nav>li>a:focus{
     color: #1cbf43;
     border-color: #161616;
     background-color: #161616;
