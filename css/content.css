@@ -1,0 +1,23 @@
+/*主内容  */
+.container{
+    width: 800px;
+    font-family: 微软雅黑;
+}
+
+/*段落  */
+p{
+    font-size: 16px;
+}
+
+/*图片  */
+img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/*代码  */
+code{
+    color: #333;
+    background-color: #eee;
+}

@@ -1,0 +1,38 @@
+@font-face {
+    font-family: oldfont;
+    src: url('../font/oldfont.ttf');
+}
+
+body{
+    background-color: #161616;
+    color: white;
+    font-family: oldfont;
+    font-size: 20px;
+}
+
+.nav-tabs{
+    border: 0;
+    margin-left: 80px;
+}
+
+.nav-tabs>li>a:hover{
+    color: #1cbf43;
+    border-color: #161616;
+    background-color: #161616;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+}
+
+h1{
+    width: 50px;
+    font-size: 50px;
+    float: left;
+}
+
+.container{
+    width: 240px;
+    margin-top: 100px;
+}
