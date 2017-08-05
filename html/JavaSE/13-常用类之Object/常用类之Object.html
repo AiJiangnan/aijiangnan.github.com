@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/js/markdown.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/prism.css">
+</head>
+
+<body>
+    <textarea hidden id="content">
+<!--Markdown从这里开始  -->
+# 常用类之Object
+
+Object类是类层次的根类。每个类的父类默认都是Object类，所有对象都实现这个类的方法。我们打开API文档可以看到，任何类都直接或间接继承于Object类。
+
+![image](0002.png)
+
+## 常用方法
+
+|    返回值     |         方法名          |         作用          |
+| :--------: | :------------------: | :-----------------: |
+| `boolean`  | `equals(Object obj)` | 指示其他某个对象是否与此对象“相等”。 |
+| `Class<?>` |     `getClass()`     |   返回此Object的运行时类。   |
+|   `int`    |     `hashCode()`     |     返回该对象的哈希码值。     |
+|  `String`  |     `toString()`     |    返回该对象的字符串表示。     |
+|   `void`   |      `notify()`      | 唤醒在此对象监视器上等待的单个线程。  |
+|   `void`   |    `notifyAll()`     | 唤醒在此对象监视器上等待的所有线程。  |
+|   `void`   |       `wait()`       |       当前线程等待。       |
+|   `void`   | `wait(long timeout)` |    当前线程等待指定的时间。     |
+
+## 常用方法讲解
+
+### 1. equals方法
+
+该方法用于判断其他某个对象是否与此对象“相等”，一般情况下是指内容相等。在equals方法中的参数必须是<u>非空参数</u>，也就是说传入的对象值不能为空。一般情况下，用“==”只能判断基本数据类型是否相等，而对于引用对象，“==”只能判断它们的地址值，有时候我们要判断两个对象的内容是否相等，我们则会重写这个方法来达到相应的目的。
+
+例如：我们编写一个人类，有年龄和姓名属性，重写equals方法来判断两个人内容是否相等。
+
+```java
+public class Person {
+	private int age;
+	private String name;
+
+	public Person(int age, String name) {
+		this.age = age;
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null){
+			return false;
+		}
+		if(obj instanceof Person){
+			return (age==((Person)obj).age) && (name.equals(((Person)obj).name));
+		}
+		return false;
+	}
+}
+```
+
+```java
+public class Demo01 {
+	public static void main(String[] args) {
+		Person p1 = new Person(18, "Alice");
+		Person p2 = new Person(18, "Alice");
+		System.out.println(p1==p2);				// print: false
+		System.out.println(p1.equals(p2));		// print: true
+	}
+}
+```
+
+**注意：**当此方法被重写时，通常有必要重写hashCode方法，以维护hashCode方法的常规协定，该协定声明相等对象必须具有相等的哈希码。
+
+### 2. toString方法
+
+这个方法的作用是返回该对象的字符串表示。我们在设计程序的时候，有时候要会打印当前对象的有关信息，这时，就可以重写toString方法，直接打印对象名称的时候，Java就会自动调用toString方法。
+
+在没有重写toString方法的时候，打印对象的情况：
+
+```java
+public class Demo02 {
+	public static void main(String[] args) {
+		Person p = new Person(18, "Alice");
+		System.out.println(p);
+	}
+	// print: ajn.zhihu.zhuanlan.chapter13.Person@15db9742
+}
+```
+
+为什么会打印这个东西呢？进入Object的源代码中查看，toString方法如下：
+
+```java
+public String toString() {
+	return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+```
+
+它返回的是类名@十六进制的哈希码。在前面写有Person类中重写toString方法如下：
+
+```java
+@Override
+public String toString() {
+	return "Person [age = " + age + ", name = " + name + "]";
+}
+```
+
+再重新运行Demo02的代码，则会输出如下：
+
+```
+Person [age = 18, name = Alice]
+```
+
+### 3. hashCode方法
+
+此方法是返回该对象的哈希码值。支持此方法是为了提高哈希表（后面容器会讲到）的性能。
+
+hashCode的常规协定是：
+
+- 在Java应用程序执行期间，在对同一对象多次调用hashCode方法时，必须一致地返回相同的整数，前提是将对象进行equals比较时所用的信息没有被修改。从某一应用程序的一次执行到同一应用程序的另一次执行，该整数无需保持一致。
+- 如果根据equals(Object)方法，两个对象是相等的，那么对这两个对象中的每个对象调用hashCode方法都必须生成相同的整数结果。
+- 如果根据equals(java.lang.Object)方法，两个对象不相等，那么对这两个对象中的任一对象上调用hashCode方法不要求一定生成不同的整数结果。但是，程序员应该意识到，为不相等的对象生成不同整数结果可以提高哈希表的性能。
+
+对前面写好的类重写hashCode方法：
+
+```java
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + age;
+	result = prime * result + ((name == null)?0:name.hashCode());
+	return result;
+}
+```
+
+因为整数的哈希码就是本身，再加上字符串的哈希码，可以当作Person类的哈希码。
+
+```java
+public class Demo03 {
+	public static void main(String[] args) {
+		Person p1 = new Person(18, "Alice");
+		Person p2 = new Person(18, "Alice");
+		System.out.println(p1.hashCode());
+		System.out.println(p2.hashCode());
+	}
+}
+```
+<!--Markdown从这里结束  -->
+	</textarea>
+    <div id="preview" class="container"></div>
+    <script>
+        $("#preview").html(marked($("#content").val()));
+        $("table").addClass("table table-bordered table-striped");
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

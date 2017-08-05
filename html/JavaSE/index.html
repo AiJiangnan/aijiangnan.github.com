@@ -3,13 +3,39 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>JavaSE</title>
 </head>
 
 <body>
-
+    <div class="container">
+        <div class="list-group">
+            <script>
+                var list = [
+                    { "name": "从001到OOP" },
+                    { "name": "登上爪哇岛" },
+                    { "name": "神奇的补码" },
+                    { "name": "浅谈基本数据类型" },
+                    { "name": "标识符和运算符" },
+                    { "name": "流程控制语句" },
+                    { "name": "深入循环结构" },
+                    { "name": "数组与排序" },
+                    { "name": "功能体现之方法" },
+                    { "name": "面向对象编程" },
+                    { "name": "内部类" },
+                    { "name": "处理异常" },
+                    { "name": "常用类之Object" },
+                    { "name": "常用类之Arrays" },
+                    { "name": "常用类之String" }
+                ];
+                for (var i = 0; i < list.length; i++) {
+                    var name = list[i].name;
+                    document.writeln("<a href='" + (i + 1) + "-" + name + "/" + name + ".html' class='list-group-item'>" + "第" + (i + 1) + "章 " + name + "</a>");
+                }
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>

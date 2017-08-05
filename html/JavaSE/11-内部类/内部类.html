@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/js/markdown.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/prism.css">
+</head>
+
+<body>
+    <textarea hidden id="content">
+<!--Markdown从这里开始  -->
+# 内部类
+
+一般情况，我们把类定义为独立的单元。在有些情况下，我们把一个类放在另一个类的内部定义，称为内部类。
+
+**内部类的作用：**
+
+1. 内部类提供了更好的封装。只能让外部类直接访问，不允许同一个包中的其他类直接访问。
+2. 内部类可以直接访问外部类的私有属性，内部类被当成其外部类的成员。但外部类不能访问内部类的内部属性。
+
+**内部类的使用场合：**
+
+由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，通常内部类在只为所在外部类提供服务的情况下优先使用。
+
+## 内部类的分类：
+
+1. **成员内部类**（可以使用 private、proteted、public 任意进行修饰。类文件：外部类$内部类.class）
+
+   1. 非静态内部类（外部类里使用非静态内部类和平时使用其他类没什么不同）
+
+      1. 非静态内部类必须寄存在一个外部类对象里。因此，如果有一个非静态内部类对象那么一定存在对应的外部类对象。  非静态内部类对象单独属于外部类的某个对象。
+
+      2. 非静态内部类可以使用外部类的成员，但是外部类不能直接访问非静态内部类成员。
+
+      3. 非静态内部类不能有静态方法、静态属性、静态初始化块。
+
+      4. 静态成员不能访问非静态成员：外部类的静态方法、静态代码块不能访问非静态内部类，包括不能使用非静态内部类定义变量、创建实例。
+
+      5. 成员变量访问要点：
+
+         1. 内部类里方法的局部变量：变量名
+         2. 内部类属性：this.变量名
+         3. 外部类属性：外部类名.this.变量名
+
+      6. 内部类的访问：
+
+         1. 外部类中定义内部类：new InnerClass()
+
+         2. 外部类以外的地方使用非静态内部类：
+
+            ```java
+            public class Demo01 {
+            	public static void main(String[] args) {
+            		Out out = new Out();
+            		Out.In in = out.new In();
+            		in.print();			// print: 10
+            	}
+            }
+
+            class Out{
+            	private int a=10;
+
+            	class In{
+            		public void print() {
+            			System.out.println(a);
+            		}
+            	}
+            }
+            ```
+
+   2. 静态内部类
+
+      1. 定义方式：
+
+         ```java
+         static class ClassName {
+         	//类体
+         }
+         ```
+
+      2. 使用要点：
+
+         1. 当一个静态内部类对象存在，并不一定存在对应的外部类对象。 因此，静态内部类的实例方法不能直接访问外部类的实例方法。
+
+         2. 静态内部类看做外部类的一个静态成员。 因此，外部类的方法中可以通过：静态内部类.名字 访问静态内部类的静态成员。通过 new 静态内部类()访问静态内部类的实例。
+
+         3. 在外部类的外面创建静态内部类：
+
+            ```java
+            public class Demo02 {
+            	public static void main(String[] args) {
+            		Outer.In in = new Outer.In();
+            		in.print();			// print: 12
+            	}
+            }
+
+            class Outer{
+            	private static int a=12;
+
+            	static class In{
+            		public void print() {
+            			System.out.println(a);
+            		}
+            	}
+            }
+            ```
+
+2. **匿名内部类**
+
+   适合那种只需要使用一次的类。比如： 键盘监听操作等等。
+
+   ```java
+   public class Demo03 {
+   	public static void main(String[] args) {
+   		new iOut(new iOut(){
+
+   			@Override
+   			public void print() {
+   				System.out.println("我是一个匿名内部类。");
+   			}
+   		});
+   	}
+   }
+
+   class iOut{
+   	public iOut(){
+
+   	}
+
+   	public iOut(iOut i){
+   		i.print();
+   	}
+
+   	public void print(){
+   		System.out.println("我是一个类。");
+   	}
+   }
+   ```
+
+3. **局部内部类**
+
+   定义在方法内部。作用域只限于本方法。用的非常少。
+<!--Markdown从这里结束  -->
+	</textarea>
+    <div id="preview" class="container"></div>
+    <script>
+        $("#preview").html(marked($("#content").val()));
+        $("table").addClass("table table-bordered table-striped");
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

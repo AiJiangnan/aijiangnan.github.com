@@ -1,0 +1,9 @@
+body{
+    font-weight: bold;
+    background-color: #161616;
+}
+
+.container{
+    width: 800px;
+    margin-top: 60px;
+}
