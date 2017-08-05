@@ -1,6 +1,9 @@
 @font-face {
     font-family: oldfont;
-    src: url('../font/oldfont.ttf');
+    src: url('../font/oldfont.ttf'),
+    url('../font/oldfont.eot'),
+    url('../font/oldfont.woff'),
+    url('../font/oldfont.svg');
 }
 
 body{
