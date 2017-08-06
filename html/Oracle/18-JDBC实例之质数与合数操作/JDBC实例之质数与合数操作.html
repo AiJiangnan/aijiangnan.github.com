@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/js/markdown.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/prism.css">
+</head>
+
+<body>
+    <textarea hidden id="content">
+<!--Markdown从这里开始  -->
 # JDBC实例之质数与合数操作
 
 为了增加代码的重用性，在这个实例中，会把数据库一些常用的操作封装起来，制作一个数据库工具类。
@@ -163,7 +178,7 @@ public class Num {
 	private String nno;
 	private int nnum;
 	private String ntype;
-	
+
 	public String getNno() {
 		return nno;
 	}
@@ -568,3 +583,14 @@ public class TestNum4 {
 }
 ```
 
+<!--Markdown从这里结束  -->
+	</textarea>
+    <div id="preview" class="container"></div>
+    <script>
+        $("#preview").html(marked($("#content").val()));
+        $("table").addClass("table table-bordered table-striped");
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

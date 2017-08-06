@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/js/markdown.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/prism.css">
+</head>
+
+<body>
+    <textarea hidden id="content">
+<!--Markdown从这里开始  -->
 # JDBC
 
 ## 一、JDBC概述
@@ -181,7 +196,7 @@ public class JdbcUpdate {
 		//String sql = "update emp set sal=6000 where empno=7777";
 		// 删除
 		//String sql = "delete from emp where empno=7777";
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -304,3 +319,14 @@ public class JdbcTCL {
 - 自动提交事务时，如果有SQL语句遇到异常，其他没有遇到异常的SQL语句还会执行。比如，上面的实例中，如果转账方无异常成功执行，收账方却遇到异常，则会导致转账方余额减少，而收账方余额却没增加，因为这种情况，我们要设置手动提交事务。
 - 手动提交事务时，只有在所有SQL语句都执行成功的情况下，才手动提交事务，而其中只要有一条SQL语句执行不成功或者出现异常，则回滚事务。
 
+<!--Markdown从这里结束  -->
+	</textarea>
+    <div id="preview" class="container"></div>
+    <script>
+        $("#preview").html(marked($("#content").val()));
+        $("table").addClass("table table-bordered table-striped");
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

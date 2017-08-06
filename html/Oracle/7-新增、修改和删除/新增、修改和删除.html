@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/js/markdown.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/prism.css">
+</head>
+
+<body>
+    <textarea hidden id="content">
+<!--Markdown从这里开始  -->
 # 新增、修改和删除
 
 数据库的新增、修改和删除操作属于DML操作，它们都会破坏原有数据，为了不破坏原有的数据，所以我们在进行这些操作前复制一张表格。
@@ -61,5 +76,14 @@ DELETE temp2;
 -- 清空表中的数据, 效率高
 TRUNCATE TABLE temp2;
 ```
+<!--Markdown从这里结束  -->
+	</textarea>
+    <div id="preview" class="container"></div>
+    <script>
+        $("#preview").html(marked($("#content").val()));
+        $("table").addClass("table table-bordered table-striped");
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
 
-
+</html>
