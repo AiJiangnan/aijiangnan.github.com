@@ -7,13 +7,15 @@
     <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+	<link rel="stylesheet" href="/css/prism.css">
+	<title>MySQL数据库</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # MySQL数据库
+---
 
 ## 一、字段数据类型
 
@@ -39,7 +41,7 @@
 
 **1. 数据库操作**
 
-```mysql
+```sql
 -- 查看数据库
 show databases;
 -- 创建数据库
@@ -52,7 +54,7 @@ drop database db_num;
 
 **2. 表操作**
 
-```mysql
+```sql
 -- 查看数据库中的表
 show tables;
 -- 创建表
@@ -71,7 +73,7 @@ drop table t_num;
 
 **3. 增删改查**
 
-```mysql
+```sql
 -- 插入
 insert into t_num values ("abcdefghijklmn",2,'ZS');
 -- 查询

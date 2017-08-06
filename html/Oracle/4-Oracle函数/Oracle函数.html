@@ -5,15 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script src="/js/markdown.js"></script>
     <script src="/js/jquery.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']]},"HTML-CSS": { scale: 85 } });
+    </script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/content.css">
     <link rel="stylesheet" href="/css/prism.css">
+    <title>Oracle函数</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # Oracle函数
+---
 
 使用函数可以大大提高SELECT查询语句操作数据库的能力，它给数据的转换和处理提供了方便。函数只是将取出的数据进行处理，不会改变数据库中的值。在这只列举一些常用函数，想要学习更多函数用法，可上网找资料拓展，后面代码中会用到Oracle中的一张名为dual虚拟表，专门用于测试。
 
@@ -152,16 +158,17 @@ SELECT MOD(10,3) FROM dual;
 说明：
 $$
 abs(x)=\begin{cases}
-x,&x\ge 0\\
+x,&x\ge 0\\\
 -x,&x<0
 \end{cases}
 \\
 sign(x)=\begin{cases}
-1,&x>0\\
-0,&x=0\\
+1,&x>0\\\
+0,&x=0\\\
 -1,&x<0
 \end{cases}
 $$
+
 **c) 指数运算**
 
 ```sql
@@ -274,11 +281,12 @@ SELECT ename,sal,comm, NVL2(comm,sal+comm,sal) salary FROM emp;
 说明：
 $$
 nvl(x1,x2)=\begin{cases}
-x1,&x1\ne NULL\\
+x1,&x1\ne NULL\\\
 x2,&x1=NULL
-\end{cases}\\
+\end{cases}
+\\\
 nvl2(x,x1,x2)=\begin{cases}
-x1,&x\ne NULL\\
+x1,&x\ne NULL\\\
 x2,&x=NULL
 \end{cases}
 $$
@@ -294,9 +302,9 @@ SELECT DISTINCT job,DECODE(job,'CLERK','职员','SALESMAN','销售','PRESIDENT',
 说明：
 $$
 decode(x,x_1,y_1,[x_2,y_2,...])=\begin{cases}
-y_1,&x=x_1\\
-y_2,&x=x_2\\
-\vdots\\
+y_1,&x=x_1\\\
+y_2,&x=x_2\\\
+\vdots\\\
 y_n,&x=x_n
 \end{cases}
 $$
