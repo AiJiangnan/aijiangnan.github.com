@@ -101,7 +101,7 @@
     - 服务器关闭
     - session过期：默认是30分钟，在tomcat的web.xml中可以配置，在本项目中的web.xml中也可以修改，还可以通过`setMaxInactiveInterval(seconds)`设置。
     - `session.invalidate()`
-- session的跟踪机制：通过cookie画存储JSessionId。
+- session的跟踪机制：通过cookie来存储JSessionId。
 
 ### 6. Cookie
 
@@ -157,7 +157,7 @@
 
 1. 根路径
 
-   - 项目根路径：/bjsxt
+   - 项目根路径：/project
    - 服务器根路径：/
 
 2. 相对路径
@@ -217,20 +217,17 @@
 
    - `core: <%@taglib uri="http://java.sum.com/jsp/jstl/core" prefix="c"%>`
 
-
    - `set,out,remove,if,choose,when,otherwise,forEach`
 
 4. 格式化标签库：
 
    - `format: <%@taglib uri="http://java.sum.com/jsp/jstl/fmt" prefix="fmt"%>`
 
-
    - `formatDate,formatNum,parseDate,parseNum`
 
 5. 函数标签库：
 
    - `functions: <%@taglib uri="http://java.sum.com/jsp/jstl/functions" prefix="fn"%>`
-
 
    - `${fn:length(str)},trim(),contains(),join(),...`
 
