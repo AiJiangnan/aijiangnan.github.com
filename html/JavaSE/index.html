@@ -12,7 +12,8 @@
     <div class="container">
         <div class="list-group">
             <script>
-                var list = [
+                var result = "";
+                var article = [
                     { "name": "从001到OOP" },
                     { "name": "登上爪哇岛" },
                     { "name": "神奇的补码" },
@@ -34,10 +35,11 @@
                     { "name": "常用类之包装类" },
                     { "name": "集合" }
                 ];
-                for (var i = 0; i < list.length; i++) {
-                    var name = list[i].name;
-                    document.writeln("<a href='" + (i + 1) + "-" + name + "/" + name + ".html' class='list-group-item'>" + "第" + (i + 1) + "章 " + name + "</a>");
+                for (var i = 0, n = article.length; i < n; i++) {
+                    var name = article[i].name;
+                    result += "<a href='" + (i + 1) + "-" + name + "/" + name + ".html' class='list-group-item'>" + "第" + (i + 1) + "章 " + name + "</a>";
                 }
+                document.writeln(result);
             </script>
         </div>
     </div>
