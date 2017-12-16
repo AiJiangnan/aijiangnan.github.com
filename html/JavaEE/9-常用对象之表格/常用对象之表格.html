@@ -3,11 +3,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="/js/markdown.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+    <script src="../../../js/markdown.js"></script>
+    <script src="../../../js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../../../css/content.css">
+
     <title>常用对象之表格</title>
 </head>
 
@@ -15,7 +15,6 @@
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 常用对象之表格
----
 
 在创建表格时，我们需要对每个字段设置数据类型，Oracle中数据类型如下：
 
@@ -118,7 +117,7 @@ DROP TABLE stu PURGE;
         $("#preview").html(marked($("#content").val()));
         $("table").addClass("table table-bordered table-striped");
     </script>
-    <script src="/js/prism.js"></script>
+
 </body>
 
 </html>

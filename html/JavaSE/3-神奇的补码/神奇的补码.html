@@ -3,11 +3,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="/js/markdown.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+    <script src="../../../js/markdown.js"></script>
+    <script src="../../../js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../css/content.css">
     <title>神奇的补码</title>
 </head>
 
@@ -15,7 +13,6 @@
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 神奇的补码
----
 
 在计算机系统中使用的数据都是最终以二进制的形式来表示的（可以看看这篇文章：[信息中的 0 和 1 ](https://zhuanlan.zhihu.com/p/26872482)），我们日常生活中主要使用十进制，为了方便书写二进制数，编程中还会用到十六进制，Java内部采用二进制补码运算，自动发送上溢出（乘法）和下溢出（除法），Java内部没有十进制，但是编程输出时可以按照人类的十进制习惯输出，补码负数的最高位是1，也就是符号位。
 
@@ -74,7 +71,6 @@ public class Complement {
         $("#preview").html(marked($("#content").val()));
         $("table").addClass("table table-bordered table-striped");
     </script>
-    <script src="/js/prism.js"></script>
 </body>
 
 </html>

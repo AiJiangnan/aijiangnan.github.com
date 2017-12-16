@@ -3,15 +3,14 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="/js/markdown.js"></script>
-    <script src="/js/jquery.min.js"></script>
+    <script src="../../../js/markdown.js"></script>
+    <script src="../../../js/jquery.min.js"></script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']]},"HTML-CSS": { scale: 85 } });
     </script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/prism.css">
+
+    <link rel="stylesheet" href="../../../css/content.css">
     <title>Oracle函数</title>
 </head>
 
@@ -19,7 +18,6 @@
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # Oracle函数
----
 
 使用函数可以大大提高SELECT查询语句操作数据库的能力，它给数据的转换和处理提供了方便。函数只是将取出的数据进行处理，不会改变数据库中的值。在这只列举一些常用函数，想要学习更多函数用法，可上网找资料拓展，后面代码中会用到Oracle中的一张名为dual虚拟表，专门用于测试。
 
@@ -357,7 +355,7 @@ SELECT deptno,SUM(sal),AVG(sal) FROM emp WHERE deptno=10;
         $("#preview").html(marked($("#content").val()));
         $("table").addClass("table table-bordered table-striped");
     </script>
-    <script src="/js/prism.js"></script>
+
 </body>
 
 </html>

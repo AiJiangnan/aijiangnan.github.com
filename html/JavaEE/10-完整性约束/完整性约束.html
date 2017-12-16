@@ -3,19 +3,17 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="/js/markdown.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/content.css">
-	<link rel="stylesheet" href="/css/prism.css">
-	<title>完整性约束</title>
+    <script src="../../../js/markdown.js"></script>
+    <script src="../../../js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../../../css/content.css">
+    <title>完整性约束</title>
 </head>
 
 <body>
     <textarea hidden id="content">
 <!--Markdown从这里开始  -->
 # 完整性约束
----
 
 在数据库设计的时候，表的数据有一定的取值范围和联系，多表之间的数据有时也有一定的参照关系。在创建表和修改表时，可通过定义约束条件来保证数据的完整性和一致性。约束条件是一些规则，在对数据进行插入、删除和修改时要对这些规则进行验证，从而起到约束作用。
 
@@ -280,7 +278,6 @@ ALTER TABLE student DROP CONSTRAINTS fk_student_cno FOREIGN KEY (cno) REFERENCES
         $("#preview").html(marked($("#content").val()));
         $("table").addClass("table table-bordered table-striped");
     </script>
-    <script src="/js/prism.js"></script>
 </body>
 
 </html>
