@@ -21,7 +21,7 @@ footer {
 footer ul {
     float: left;
     list-style: none;
-    margin-top: 5px;
+    margin: 7px 0 0 35px;
 }
 
 footer img, footer li {
