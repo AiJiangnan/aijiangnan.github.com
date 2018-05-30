@@ -4,12 +4,29 @@
 }
 
 a {
-    color: #666;
     text-decoration: none;
 }
 
 body {
     background-image: url('../images/main.jpg');
+    background-repeat: no-repeat;
+}
+
+nav {
+    height: 35px;
+    background-color: rgba(33, 33, 33, 0.3);
+}
+
+nav a {
+    color: #ccc;
+    display: block;
+    float: left;
+    line-height: 35px;
+    margin-left: 35px;
+}
+
+nav a:hover {
+    color: white;
 }
 
 footer {
@@ -24,6 +41,7 @@ footer {
 }
 
 footer a {
+    color: #666;
     margin-left: 35px;
 }
 
