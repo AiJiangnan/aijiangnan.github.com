@@ -3,11 +3,20 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="../../../js/jquery.min.js"></script>
     <title>JavaSE</title>
 </head>
-
 <body>
-
+<ul id="c"></ul>
+<script>
+    $.get("javase.json", function (d) {
+        var s = '';
+        for (var i = 0; i < d.length; i++) {
+            s += '<li>' + d[i].name + '</li>';
+        }
+        $('#c').html(s);
+    })
+</script>
 </body>
 
 </html>
