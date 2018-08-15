@@ -1,12 +1,3 @@
 .page {
     margin: 50px;
 }
-
-a {
-    color: #333;
-}
-
-a:hover {
-    color: #9a9a9a;
-    text-decoration: underline;
-}
