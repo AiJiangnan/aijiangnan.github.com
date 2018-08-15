@@ -36,7 +36,6 @@ body {
     line-height: 1.6;
 }
 
-
 /*主内容  */
 
 .container {
@@ -94,7 +93,6 @@ h6 {
     color: #777;
 }
 
-
 /*图片  */
 
 img {
@@ -102,7 +100,6 @@ img {
     display: block;
     margin: 20px auto;
 }
-
 
 /*代码  */
 
@@ -115,10 +112,9 @@ pre {
 
 code {
     font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 4px 0px 4px;
+    padding: 2px 4px 0 4px;
     font-size: 0.9em;
 }
-
 
 /*表格  */
 
