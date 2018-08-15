@@ -117,7 +117,19 @@ code {
 }
 
 /*表格  */
+table {
+    padding: 5px;
+    border: #666 solid 1px;
+    border-collapse: collapse;
+}
 
 th {
     text-align: center;
+    background-color: #dedede;
+    border: #333 solid 1px;
+}
+
+td {
+    border: #333 solid 1px;
+    padding: 8px;
 }
