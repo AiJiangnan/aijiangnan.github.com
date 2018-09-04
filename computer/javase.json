@@ -1,62 +1,82 @@
 [
   {
-    "name": "从001到OOP"
+    "name": "从001到OOP",
+    "description": "世界上第一台计算机是在1946年的情人节诞生的，计算机语言却不知道是什么时候开始形成的，大家都知道计算机是怎么产生的，差不多就是几根线几个逻辑开关组成的电路，然后根据线的通和断这种二进制的特性来存储数据（可以看看这篇文章），如果单是学习计算机语言，并不要这么深入，我们只需了解。"
   },
   {
-    "name": "登上爪哇岛"
+    "name": "登上爪哇岛",
+    "description": "Java SE(Java Platform,Standard Edition)。Java SE以前称为J2SE。它允许开发和部署在桌面、服务器、嵌入式环境和实时环境中使用的Java应用程序。Java SE包含了支持Java Web服务开发的类，并为Java Platform,Enterprise Edition(Java EE)提供基础。"
   },
   {
-    "name": "神奇的补码"
+    "name": "神奇的补码",
+    "description": "description"
   },
   {
-    "name": "浅谈基本数据类型"
+    "name": "浅谈基本数据类型",
+    "description": "description"
   },
   {
-    "name": "标识符和运算符"
+    "name": "标识符和运算符",
+    "description": "description"
   },
   {
-    "name": "流程控制语句"
+    "name": "流程控制语句",
+    "description": "description"
   },
   {
-    "name": "深入循环结构"
+    "name": "深入循环结构",
+    "description": "description"
   },
   {
-    "name": "数组与排序"
+    "name": "数组与排序",
+    "description": "description"
   },
   {
-    "name": "功能体现之方法"
+    "name": "功能体现之方法",
+    "description": "description"
   },
   {
-    "name": "面向对象编程"
+    "name": "面向对象编程",
+    "description": "description"
   },
   {
-    "name": "内部类"
+    "name": "内部类",
+    "description": "description"
   },
   {
-    "name": "处理异常"
+    "name": "处理异常",
+    "description": "description"
   },
   {
-    "name": "常用类之Object"
+    "name": "常用类之Object",
+    "description": "description"
   },
   {
-    "name": "常用类之Arrays"
+    "name": "常用类之Arrays",
+    "description": "description"
   },
   {
-    "name": "常用类之String"
+    "name": "常用类之String",
+    "description": "description"
   },
   {
-    "name": "常用类之Date"
+    "name": "常用类之Date",
+    "description": "description"
   },
   {
-    "name": "常用类之Math"
+    "name": "常用类之Math",
+    "description": "description"
   },
   {
-    "name": "常用类之File"
+    "name": "常用类之File",
+    "description": "description"
   },
   {
-    "name": "常用类之包装类"
+    "name": "常用类之包装类",
+    "description": "description"
   },
   {
-    "name": "集合"
+    "name": "集合",
+    "description": "description"
   }
 ]
